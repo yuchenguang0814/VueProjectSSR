@@ -1,15 +1,12 @@
 <template>
   <div id="app">
     <header-nav></header-nav>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 <script>
-import HeaderNav from 'components/common/Header'
+import HeaderNav from 'components/common/header/Header'
+
 export default {
   components: {
     HeaderNav
