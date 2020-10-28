@@ -11,11 +11,14 @@
         </a>
       </div>
     </div>
-    <div class="prodict-container">
+    <div class="product-container">
         <div class="pro-tit">
           <img src="http://qizhong114.com/static/home/img/tit_products.png">
-          <div class="dt"></div>
-          <div class="text"></div>
+          <div class="dt">
+            <img src="http://qizhong114.com/static/home/img/tit_zs.png">
+            "广东顺发-起重机专业制造和服务供应商"
+          </div>
+          <div class="text">推荐设备：单梁起重机、双梁起重机、欧式起重机</div>
         </div>
         <div class="pro-item">
           <ul>
@@ -54,15 +57,15 @@ export default {
 
 <style scoped>
 .product {
-  padding: 30px;
-}
-.product-swiper {
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
-  list-style: none;
   width: 100%;
   height: 100%;
+}
+.product-swiper {
+  padding: 30px;
+  margin-left: 20px;
+  list-style: none;
   box-sizing:content-box;
   display: flex;
 }
@@ -119,4 +122,29 @@ export default {
   margin-left: -15px
 }
 
+.product-container {
+  width:100%;
+  padding: 35px 0;
+  background-color: #f0f3fa;
+}
+.product-container .pro-tit {
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 35px;
+}
+.product-container .pro-tit>img {
+  height: 88px;
+  width: auto;
+  vertical-align: middle;
+}
+.product-container .pro-tit .dt {
+  font-size: 38px;
+  color: #05163f;
+  font-weight: bold;
+  margin-top: -60px;
+}
+.product-container .pro-tit .text {
+  font-size: 18px;
+  margin-top: 20px;
+}
 </style>

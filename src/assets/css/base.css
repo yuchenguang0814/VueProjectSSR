@@ -27,8 +27,6 @@ body {
   background: var(--color-background);
   color: var(--color-text);
   text-align: var(--text-align);
-  /* rem vw/vh */
-  width: 100vw;
 }
 
 a{

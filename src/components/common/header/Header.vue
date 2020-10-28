@@ -199,6 +199,7 @@ header .logo img {
 }
 
 header .box {
+  border-left: 1px solid #f0f3fa;
   flex: 1;
   width: 0;
   max-width: 880px;
