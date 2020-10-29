@@ -205,6 +205,7 @@ export default {
       this.startTimer()
     },
     clickItem: function (num) {
+      console.log(this.totalWidth)
       console.log(num)
       console.log(this.currentIndex)
       // 1.移除定时器
