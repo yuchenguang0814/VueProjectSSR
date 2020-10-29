@@ -48,32 +48,32 @@ export default {
         {
           index: 1,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200715/f726e4e844fea5c39b151e06c89925c5.jpg'
         },
         {
           index: 2,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
         },
         {
           index: 3,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200715/f726e4e844fea5c39b151e06c89925c5.jpg'
         },
         {
           index: 4,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200704/90ab5c4220ee870015a45c6826d6c4db.jpg'
         },
         {
           index: 5,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
         },
         {
           index: 6,
           link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
+          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
         }
       ],
       products: {
