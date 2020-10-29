@@ -12,10 +12,32 @@
     </div>
     <swiper ref="caseSwiper" :options="swiperOptions">
       <swiper-slide v-for="item in banners" :key="item.index">
-        <a :href="item.link">
+        <a :href="item.link" @click.prevent="clikeNext">
           <div class="pic">
             <div class="o">
               <img :src="item.image">
+            </div>
+          </div>
+          <div class="box"><span>能源行业起重机应用</span>
+          </div>
+        </a>
+      </swiper-slide>
+      <div class="swiper-slide">
+        <a href="#">
+          <div class="pic">
+            <div class="o">
+              <img :src="banners[0].image" alt="">
+            </div>
+          </div>
+          <div class="box"><span>能源行业起重机应用</span>
+          </div>
+        </a>
+      </div>
+      <swiper-slide>
+        <a href="#">
+          <div class="pic">
+            <div class="o">
+              <img :src="banners[0].image" alt="">
             </div>
           </div>
           <div class="box"><span>能源行业起重机应用</span>
@@ -49,13 +71,21 @@ export default {
       return this.$refs.caseSwiper.$swiper
     }
   },
+  methods: {
+    clikeNext () {
+      console.log(this.swiper)
+      this.swiper.slideNext()
+    }
+  },
   mounted () {
-    console.log(this.$refs)
-    this.swiper.slideTo(3, 1000, false)
   },
   data () {
     return {
       swiperOptions: {
+        loop: true,
+        slidesPerView: 'auto',
+        loopedSlides: 8,
+        autoplay: false,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -70,17 +100,20 @@ export default {
 <style>
 .case {
   padding: 70px 55px 50px 0;
+  overflow:hidden;
 }
 .case .swiper-container {
   margin: 0;
   overflow: visible;
-  width: 400px;
+  width: 440px;
   height: 429px;
 }
 .case-swiper {
   padding-bottom: 30px !important;
 }
-
+.case .swiper-slide {
+  padding-left: 40px;
+}
 .case .swiper-slide a {
   display: block;
   overflow: hidden;
@@ -150,5 +183,15 @@ export default {
   background: #f7ac1b;
   opacity: 1
 }
+.case .swiper-slide a:hover:before {
+  bottom: 0
+}
 
+.case .swiper-slide a:hover .pic img {
+  transform: scale(1.05)
+}
+
+.case .swiper-slide a:hover .box span {
+  color: #e61e37
+}
 </style>
