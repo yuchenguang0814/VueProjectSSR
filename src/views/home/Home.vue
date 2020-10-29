@@ -4,7 +4,10 @@
     </home-swiper>
     <home-product :products="products">
     </home-product>
-    <home-case :banners="caseBanners"></home-case>
+    <home-case :banners="caseBanners">
+    </home-case>
+    <home-appointment>
+    </home-appointment>
   </div>
 </template>
 
@@ -12,13 +15,15 @@
 import HomeSwiper from './childrenComps/HomeSwiper'
 import HomeProduct from './childrenComps/HomeProduct'
 import HomeCase from './childrenComps/HomeCase'
+import HomeAppointment from './childrenComps/HomeAppointment'
 
 export default {
   name: 'Home',
   components: {
     HomeSwiper,
     HomeProduct,
-    HomeCase
+    HomeCase,
+    HomeAppointment
   },
   data () {
     return {
