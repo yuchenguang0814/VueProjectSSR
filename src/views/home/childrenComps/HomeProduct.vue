@@ -1,13 +1,13 @@
 <template>
   <div class="product">
-    <div class="product-swiper">
-      <div class="product-item" v-for="item in products.category" :key="item.id">
-        <a :href="item.link"><span>{{item.name}}</span>
-        <p>{{item.description}}</p>
-        <div class="box">
-          <img :src="item.imagePro" class="p">
-          <img src="~assets/image/icon_num_5.png" class="num">
-        </div>
+    <div class="product-category pc">
+      <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
+        <a :href="item.link">
+            <div class="img"><img :src="item.imagePro" alt="img"></div>
+            <div class="info">
+                <h3>{{item.name}}</h3>
+                <p>{{item.description}}</p>
+            </div>
         </a>
       </div>
     </div>
@@ -62,70 +62,137 @@ export default {
   width: 100%;
   height: 100%;
 }
-.product-swiper {
-  padding: 30px;
-  margin-left: 20px;
-  list-style: none;
-  box-sizing:content-box;
+.product-category {
   display: flex;
-}
-.product-item {
-  flex:1;
-}
-.product-item a {
-  display: block;
-  overflow: hidden;
-  background: url(~assets/image/bj_sb_bg.png) no-repeat;
+  padding: 30px 50px 30px 50px;
+  background-image: url(~assets/image/bj_wljg.jpg);
   background-size: 100% 100%;
-  padding: 25px 45px 25px 30px;
-  margin-right: 20px;
 }
-.product-item span {
-  font-size: 26px;
-  color: #05163f;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: all .5s;
-  font-weight: bold
-}
-.product-item  p {
-  font-size: 16px;
-  color: #555f7d;
-  height: 56px;
-  line-height: 28px;
-  margin: 20px 0 25px 0;
-  display: block;
-  overflow: hidden
-}
-.product-item .box {
-  margin: 0 -25px 0 0
-}
-.product-item .box .p {
-  width: 50%;
-  height: auto;
-  float: left;
-  transition: all .5s
-}
-.product-item .box .num {
-  width: 45%;
-  height: auto;
-  margin-top: 20px;
-  float: right;
-}
-.product-item a:hover span {
-  color: #e61e37
+.ih-item {
+    position: relative;
+    transition: all 0.35s ease-in-out;
+    flex:1;
 }
 
-.product-item a:hover .box .p {
-  margin-left: -15px
+.ih-item,
+.ih-item * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+.ih-item a {
+    color: #333;
+}
+
+.ih-item a:hover {
+    text-decoration: none;
+}
+
+.ih-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.ih-item.circle {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-right: 60px;
+}
+
+.ih-item.circle .img {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.ih-item.circle .img:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+
+.ih-item.circle .img img {
+    border-radius: 50%;
+}
+
+.ih-item.circle .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 50%;
+    backface-visibility: hidden;
+}
+.ih-item.circle.effect3 .img {
+    z-index: 11;
+    transition: all 0.35s ease-in-out;
+}
+.ih-item.circle.effect3 .info {
+    background: #333333;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.35s ease-in-out;
+}
+
+.ih-item.circle.effect3 .info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin: 0 30px;
+    padding: 55px 0 0 0;
+    height: 110px;
+    text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ih-item.circle.effect3 .info p {
+    color: #bbb;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.ih-item.circle.effect3.left_to_right a:hover .img {
+    transform: scale(0.5) translateX(100%);
+}
+
+.ih-item.circle.effect3.right_to_left .img {
+    transform: scale(1) translateX(0);
+}
+
+.ih-item.circle.effect3.right_to_left .info {
+    transform: translateX(100%);
+}
+
+.ih-item.circle.effect3.right_to_left a:hover .img {
+    transform: scale(0.5) translateX(-100%);
+}
+
+.ih-item.circle.effect3.right_to_left a:hover .info {
+    opacity: 1;
+    transform: translateX(0);
+}
 .product-container {
   width:100%;
   padding: 35px 0;
   background-color: #f0f3fa;
+  display: inline-block;
 }
 .product-container ul {
   margin: -15px;

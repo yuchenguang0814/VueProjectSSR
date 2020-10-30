@@ -8,6 +8,8 @@
     </home-case>
     <home-appointment>
     </home-appointment>
+    <home-news></home-news>
+    <home-about></home-about>
   </div>
 </template>
 
@@ -16,6 +18,8 @@ import HomeSwiper from './childrenComps/HomeSwiper'
 import HomeProduct from './childrenComps/HomeProduct'
 import HomeCase from './childrenComps/HomeCase'
 import HomeAppointment from './childrenComps/HomeAppointment'
+import HomeNews from './childrenComps/HomeNews'
+import HomeAbout from './childrenComps/HomeAbout'
 
 export default {
   name: 'Home',
@@ -23,7 +27,9 @@ export default {
     HomeSwiper,
     HomeProduct,
     HomeCase,
-    HomeAppointment
+    HomeAppointment,
+    HomeNews,
+    HomeAbout
   },
   data () {
     return {

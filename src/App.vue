@@ -2,19 +2,23 @@
   <div id="app">
     <header-nav></header-nav>
     <router-view/>
+    <footer-box></footer-box>
   </div>
 </template>
 <script>
 import HeaderNav from 'components/common/header/Header'
+import FooterBox from 'components/common/Footer'
 
 export default {
   components: {
-    HeaderNav
+    HeaderNav,
+    FooterBox
   }
 }
 </script>
 <style>
 @import "assets/css/base.css";
+@import "assets/css/mstyle.css";
 .container {
   width: 100%;
   max-width: 1300px;

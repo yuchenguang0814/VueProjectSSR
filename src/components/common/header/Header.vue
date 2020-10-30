@@ -8,9 +8,9 @@
         </a>
       </div>
       <!-- 手机端小图标 -->
-      <div class="navbut"></div>
+      <div class="navbut wap"></div>
       <!-- 导航栏 -->
-      <div class="box">
+      <div class="box pc">
         <!-- 导航栏顶部 -->
         <div class="top">
           <slot></slot>
@@ -169,7 +169,6 @@ export default {
     showSub (e, index) {
       if (e.currentTarget.children.sub) {
         this.isShow = index
-        console.log(index)
       }
     },
     hiddenSub (e) {
@@ -199,11 +198,11 @@ header .logo img {
 }
 
 header .box {
-  border-left: 1px solid #f0f3fa;
+  border-left: 2px solid #f0f3fa;
   flex: 1;
   width: 0;
   max-width: 880px;
-  margin-left: 20px
+  margin-left: 20px;
 }
 
 header .top {

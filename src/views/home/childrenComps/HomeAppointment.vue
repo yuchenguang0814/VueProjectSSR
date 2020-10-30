@@ -15,7 +15,7 @@
         <li><a href="http://www.qizhong114.com/wljg/209.html"><img src="http://www.qizhong114.com/uploads/images/20200704/deecc788579450c7a540a5780dc15c42.jpg"><span>物流仓储行业起重机应用</span></a></li>
       </ul>
     </div>
-    <form action="http://www.qizhong114.com/form/case" method="post" onsubmit="javascript:return messdd()">
+    <form action="">
       <ul class="mess">
         <li>
           <select name="scx">
@@ -50,7 +50,7 @@
           <input type="text" placeholder="您的电话" name="tel" id="dingzhi_tel" autocomplete="off">
         </li>
         <li>
-          <input type="submit" value="申请定制" id="dingzhi_but">
+          <input type="submit" value="申请定制" id="dingzhi_but" @click="onSubmit()">
         </li>
       </ul>
     </form>
@@ -60,7 +60,12 @@
 
 <script>
 export default {
-
+  name: 'HomeAppointment',
+  methods: {
+    onSubmit () {
+      alert('提交成功')
+    }
+  }
 }
 </script>
 <style>
@@ -131,6 +136,60 @@ export default {
   text-overflow: ellipsis;
   padding: 10px 0;
   background: transparent;
-  background: linear-gradient(top, transparent, rgba(0, 0, 0, 0.8))
+  background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.8))
+}
+.order .mess {
+  overflow: hidden;
+  margin: 60px -10px 0 -10px
+}
+
+.order .mess li {
+  float: left;
+  width: 21%;
+  padding: 0 10px
+}
+
+.order .mess li select,
+.order .mess li input[type='text'] {
+  border: 1px solid #7882a0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #4b556e;
+  width: 100%;
+  background: #fff
+}
+
+.order .mess li select {
+  -webkit-appearance: none;
+  background: url(~assets/image/icon_jtb_s.png) no-repeat 94%;
+  background-size: auto 12px
+}
+
+.order .mess li input[type='text'] {
+  background: url(~assets/image/icon_xing.png) no-repeat 8px center
+}
+
+.order .mess li input[type='submit'] {
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 0;
+  border: 0;
+  outline: none;
+  float: right;
+  cursor: pointer;
+  background: #8d224e;
+  background: linear-gradient(to right, #8d224e, #1b2057);
+  transition: all .5s
+}
+
+.order .mess li input[type='submit']:hover {
+  background: linear-gradient(to right, #1b2057, #8d224e)
+}
+
+.order .mess li:last-child {
+  width: 16%
 }
 </style>
