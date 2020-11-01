@@ -3,7 +3,7 @@
   <div class="bj">
     <div class="box">
       <div class="text">
-        <div class="bt"><span>物料搬运设备&amp;</span>深度剖析</div>
+        <div class="dt"><span>物料搬运设备&amp;</span>深度剖析</div>
         <p>1t-250t起重设备任您选，覆盖多样化！</p>
         <p>携新型环保欧式工艺，助您一臂之力</p>
       </div>
@@ -91,13 +91,13 @@ export default {
   line-height: 40px;
   width: 450px
 }
-.order .box .text .bt {
+.order .box .text .dt {
   margin-bottom: 20px;
   font-size: 38px;
   color: #05163f;
   font-weight: bold
 }
-.order .box .text .bt span {
+.order .box .text .dt span {
   color: #e61e37
 }
 .order .box ul {

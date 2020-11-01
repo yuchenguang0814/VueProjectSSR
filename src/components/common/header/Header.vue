@@ -36,7 +36,7 @@
         <nav>
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <a href="item.link">{{item.name}}</a>
+              <a :href="item.link">{{item.name}}</a>
               <transition name="fade">
                 <div v-if="item.sub" id="sub" v-show="item.id==isShow">
                   <a :href="item2.link" v-for="(item2, index2) in item.sub" :key="index2">{{item2.name}}
@@ -60,11 +60,11 @@ export default {
         {
           id: 1,
           name: '产品中心',
-          link: '#',
+          link: '/product',
           sub: [
             {
               name: '1号产品中心',
-              link: '#'
+              link: '/prodict/catagory'
             },
             {
               name: '2号产品中心',
@@ -109,12 +109,12 @@ export default {
         {
           id: 11,
           name: '首页',
-          link: '#'
+          link: '/'
         },
         {
           id: 12,
           name: '关于我们',
-          link: '#',
+          link: '/about',
           sub: [
             {
               name: '企业介绍',
@@ -133,7 +133,7 @@ export default {
         {
           id: 13,
           name: '新闻中心',
-          link: '#',
+          link: '/news',
           sub: [
             {
               name: '企业新闻',
@@ -148,7 +148,7 @@ export default {
         {
           id: 14,
           name: '有问必答',
-          link: '#'
+          link: '/question'
         },
         {
           id: 15,
@@ -158,7 +158,7 @@ export default {
         {
           id: 16,
           name: '联系我们',
-          link: '#'
+          link: 'content'
         }
       ],
       telPhone: 18968919292,
@@ -361,5 +361,39 @@ header nav ul li.on>a {
 }
 .fade-enter, .fade-leave-active {
   top: 66%
+}
+@media (max-width:999px) {
+    header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 0 5px #eee
+  }
+
+  header .container {
+    height: 55px
+  }
+
+  header .logo img {
+    height: 35px
+  }
+  header .navbut {
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url(~assets/image/icon_wap_nav.png) center center no-repeat;
+    background-size: auto 24px;
+    margin-right: -10px
+  }
+
+  header .box {
+    position: absolute;
+    border-left: 0;
+    max-width: inherit;
+    margin-left: 0
+  }
 }
 </style>

@@ -3,7 +3,7 @@
   <div class="box_hengdh" style="background-image: url(http://www.qizhong114.com/uploads/images/20200523/dec449f80c4338e88c46f33326de3b86.png);">
     <div class="container">
       <div class="box">
-        <div class="bt">创造客户价值 助力客户成功</div>
+        <div class="dt">创造客户价值 助力客户成功</div>
         <div class="text">
           广东顺发凭借良好的声誉，优异的品质及完善的服务赢得世界点赞，在国内外众多企业大放异彩。
         </div>
@@ -62,7 +62,7 @@ export default {
   display: none
 }
 
-.box_hengdh .bt {
+.box_hengdh .dt {
   font-size: 24px;
   color: #fff;
   border-left: 5px solid #e61e37;
