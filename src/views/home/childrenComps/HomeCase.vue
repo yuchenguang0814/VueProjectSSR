@@ -22,28 +22,6 @@
           </div>
         </a>
       </swiper-slide>
-      <div class="swiper-slide">
-        <a href="#">
-          <div class="pic">
-            <div class="o">
-              <img :src="banners[0].image" alt="">
-            </div>
-          </div>
-          <div class="box"><span>能源行业起重机应用</span>
-          </div>
-        </a>
-      </div>
-      <swiper-slide>
-        <a href="#">
-          <div class="pic">
-            <div class="o">
-              <img :src="banners[0].image" alt="">
-            </div>
-          </div>
-          <div class="box"><span>能源行业起重机应用</span>
-          </div>
-        </a>
-      </swiper-slide>
       <div class="swiper-pagination banner-num" slot="pagination"></div>
     </swiper>
   </div>
@@ -73,19 +51,29 @@ export default {
   },
   methods: {
     clikeNext () {
-      console.log(this.swiper)
-      this.swiper.slideNext()
+      this.swiper.destroy(false)
+    },
+    _isMobilew () {
+      const flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+      return flag
     }
   },
   mounted () {
+    const flag = this._isMobilew()
+    if (flag) {
+      this.swiperOptions.slidesPerView = 1.8
+      this.swiperOptions.spaceBetween = 15
+      this.swiper.destroy()
+      this.$refs.caseSwiper.initSwiper()
+    }
   },
   data () {
     return {
       swiperOptions: {
         loop: true,
-        slidesPerView: 'auto',
-        loopedSlides: 8,
+        slidesPerView: 3,
         autoplay: false,
+        spaceBetween: 40,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -99,20 +87,11 @@ export default {
 
 <style>
 .case {
-  padding: 70px 55px 50px 0;
+  padding: 70px 55px 30px 55px;
   overflow:hidden;
 }
 .case .swiper-container {
-  margin: 0;
-  overflow: visible;
-  width: 440px;
-  height: 429px;
-}
-.case-swiper {
-  padding-bottom: 30px !important;
-}
-.case .swiper-slide {
-  padding-left: 40px;
+  padding-bottom: 20px;
 }
 .case .swiper-slide a {
   display: block;
@@ -166,8 +145,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 100% !important;
-  bottom: -20px !important;
+  bottom: 0px !important;
 }
 .case .swiper-pagination-bullet {
   border-radius: 50px;
@@ -175,7 +153,7 @@ export default {
   height: 14px;
   background: #000;
   transition: all .5s;
-  opacity: .2
+  opacity: .2;
 }
 
 .case .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -193,5 +171,59 @@ export default {
 
 .case .swiper-slide a:hover .box span {
   color: #e61e37
+}
+@media (max-width:999px) {
+  .case {
+        padding: 20px 20px
+    }
+
+    .case .in-tit {
+        padding-left: 10px;
+        padding-right: 10px
+    }
+
+    .case .swiper-slide a:before {
+        right: 5px;
+        width: 18px;
+        height: 84px
+    }
+
+    .case .swiper-slide .pic {
+        padding: 10px 10px 20px 0
+    }
+
+    .case .swiper-slide .box {
+        padding: 10px 30px 0 0;
+        font-size: 12px
+    }
+
+    .case .swiper-slide .box span {
+        font-size: 16px;
+        margin-bottom: 5px
+    }
+
+    .case .swiper-slide .box p {
+        margin-top: 2px
+    }
+
+    .case .swiper-slide .box p img {
+        height: 13px;
+        margin-top: -3px;
+        margin-right: 5px
+    }
+
+    .case .banner-num {
+        margin-top: 15px
+    }
+
+    .case .banner-num .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px !important
+    }
+
+    .case .banner-num .swiper-pagination-bullet-active {
+        width: 20px
+    }
 }
 </style>

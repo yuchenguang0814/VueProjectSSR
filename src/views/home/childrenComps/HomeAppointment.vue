@@ -192,4 +192,84 @@ export default {
 .order .mess li:last-child {
   width: 16%
 }
+@media (max-width:999px) {
+  .order {
+        padding: 10px
+    }
+
+    .order .bj {
+        padding: 10px
+    }
+
+    .order .box {
+        display: block;
+        overflow: hidden;
+        margin-right: 0;
+        text-align: center
+    }
+
+    .order .box .text {
+        font-size: 12px;
+        line-height: 20px;
+        width: 100%;
+        padding: 0 0 10px 0
+    }
+
+    .order .box .text .dt {
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding: 10px 0 0 0
+    }
+
+    .order .box ul {
+        width: auto;
+        margin: -5px
+    }
+
+    .order .box ul li {
+        width: 33.33333333%;
+        padding: 5px
+    }
+
+    .order .box ul li a {
+        font-size: 12px
+    }
+
+    .order .box ul li:first-child {
+        margin-left: 16.66666667%
+    }
+
+    .order .mess {
+        margin: 5px 0 -3px 0
+    }
+
+    .order .mess li {
+        width: 100%;
+        padding: 3px 0
+    }
+
+    .order .mess li select,
+    .order .mess li input[type='text'] {
+        padding: 10px;
+        font-size: 14px
+    }
+
+    .order .mess li select {
+        background-position: 96% center;
+        background-size: auto 8px
+    }
+
+    .order .mess li input[type='text'] {
+        background-position: 2px center
+    }
+
+    .order .mess li input[type='submit'] {
+        font-size: 14px;
+        padding: 10px 0
+    }
+
+    .order .mess li:last-child {
+        width: 100%
+    }
+}
 </style>

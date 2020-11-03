@@ -90,8 +90,7 @@ export default {
     return {
       showPc: true,
       swiperOptions: {
-        loop: true,
-        slidesPerView: 1.8,
+        slidesPerView: 1.5,
         spaceBetween: 15,
         pagination: {
         }
@@ -111,7 +110,7 @@ export default {
 }
 .product-category {
   display: flex ;
-  padding: 30px 50px 30px 50px;
+  padding: 30px 0 30px 50px;
   background-image: url(~assets/image/bj_wljg.jpg);
   background-size: 100% 100%;
 }
@@ -143,16 +142,16 @@ export default {
 
 .ih-item.circle {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     margin-right: 60px;
 }
 
 .ih-item.circle .img {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 }
 
@@ -330,6 +329,33 @@ export default {
   margin-top: 10px
 }
 @media (max-width:999px) {
+  .product-category {
+    padding:20px 20px;
+  }
+  .ih-item.circle {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+}
+
+.ih-item.circle .img {
+    width: 120px;
+    height: 120px;
+}
+.ih-item.circle.effect3 .info h3 {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin: 10px 20px;
+    padding: 2px 0 0 0;
+    height: 40px;
+}
+
+.ih-item.circle.effect3 .info p {
+    padding: 10px 5px;
+    margin: 0 20px;
+    font-size: 8px;
+}
 .product .swiper-container {
   padding: 20px 10px;
 }

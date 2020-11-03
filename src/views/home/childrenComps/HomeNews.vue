@@ -179,5 +179,59 @@ export default {
 .in_news .xun dl dd em {
   float: right
 }
+@media (max-width:999px) {
+  .news {
+    padding: 20px 0;
+  }
+  .in_news .tab li {
+        line-height: 40px;
+        font-size: 16px
+    }
 
+    .in_news .xun {
+        padding: 10px
+    }
+
+    .in_news .xun dl {
+        margin: 0
+    }
+
+    .in_news .xun dl dt,
+    .in_news .xun dl dd {
+        width: 100%;
+        padding: 0;
+        font-size: 12px;
+        line-height: 34px
+    }
+
+    .in_news .xun dl dt a {
+        padding: 0 40px 0 22px;
+        background-position: left 8px;
+        background-size: auto 18px;
+        font-size: 14px
+    }
+
+    .in_news .xun dl dt a:after {
+        width: 29px;
+        height: 18px
+    }
+
+    .in_news .xun dl dt a:hover {
+        margin-left: 0
+    }
+
+    .in_news .xun dl dd a {
+        padding-left: 15px;
+        background-position: left 12px;
+        background-size: auto 12px
+    }
+
+    .in_news .xun dl dd a:hover {
+        margin-left: 0
+    }
+
+    .in_news .xun dl dd em {
+        padding: 0 0 0 10px
+    }
+}
 </style>
