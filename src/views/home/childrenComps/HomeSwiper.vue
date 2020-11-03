@@ -30,13 +30,10 @@ export default {
       return this.$refs.mySwiper.$swiper
     }
   },
-  mounted () {
-    console.log(this.$refs)
-    this.swiper.slideTo(3, 1000, false)
-  },
   data () {
     return {
       swiperOptions: {
+        loop: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -84,5 +81,25 @@ export default {
 .banner .banner-num .swiper-pagination-bullet-active {
   width: 54px;
   background: #f7ac1b
+}
+@media (max-width:999px) {
+  .banner.swiper-container {
+    display: block;
+    margin-top: 50px;
+  }
+
+  .banner .banner-num {
+    bottom: 10px !important
+  }
+
+  .banner .banner-num .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 2px !important
+  }
+
+  .banner .banner-num .swiper-pagination-bullet-active {
+    width: 34px
+  }
 }
 </style>

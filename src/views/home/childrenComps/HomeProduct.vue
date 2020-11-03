@@ -1,6 +1,17 @@
 <template>
   <div class="product">
-    <div class="product-category pc">
+    <swiper v-show="!showPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
+      <swiper-slide class="category-item" v-for="item in products.category" :key="item.id">
+        <a :href="item.link"><span>{{item.name}}</span>
+          <p>{{item.description}}</p>
+          <div class="box">
+            <img :src="item.imagePro" class="p">
+            <img src="~assets/image/icon_num_5.png" class="num">
+          </div>
+          </a>
+      </swiper-slide>
+    </swiper>
+    <div v-show="showPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
         <a :href="item.link">
             <div class="img"><img :src="item.imagePro" alt="img"></div>
@@ -41,6 +52,7 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'HomeProduct',
@@ -51,11 +63,46 @@ export default {
         return {}
       }
     }
+  },
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  mounted () {
+    if (this._isMobile()) {
+      this.showPc = false
+    } else {
+      this.showPc = true
+    }
+  },
+  methods: {
+    _isMobile () {
+      const flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+      return flag
+    }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.categorySwiper.$swiper
+    }
+  },
+  data () {
+    return {
+      showPc: true,
+      swiperOptions: {
+        loop: true,
+        slidesPerView: 1.8,
+        spaceBetween: 15,
+        pagination: {
+        }
+        // Some Swiper option/callback...
+      }
+    }
   }
 }
 </script>
 
-<style scoped>
+<style>
 .product {
   position: relative;
   overflow: hidden;
@@ -63,7 +110,7 @@ export default {
   height: 100%;
 }
 .product-category {
-  display: flex;
+  display: flex ;
   padding: 30px 50px 30px 50px;
   background-image: url(~assets/image/bj_wljg.jpg);
   background-size: 100% 100%;
@@ -281,5 +328,85 @@ export default {
 
 .product-container li .box p {
   margin-top: 10px
+}
+@media (max-width:999px) {
+.product .swiper-container {
+  padding: 20px 10px;
+}
+.category-item a {
+  display: block;
+  overflow: hidden;
+  background: url(~assets/image/bj_sb_bg.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 20px 35px 20px 25px;
+  width: 100%;
+}
+.category-item span {
+  font-size: 16px;
+  color: #05163f;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all .5s;
+  font-weight: bold
+}
+.category-item  p {
+  font-size: 12px;
+  color: #555f7d;
+  height: 40px;
+  line-height: 20px;
+  margin: 5px 0;
+  display: block;
+  overflow: hidden
+}
+.category-item .box {
+  margin: 0 -25px 0 0
+}
+.category-item .box .p {
+  width: 40%;
+  height: auto;
+  float: left;
+  transition: all .5s
+}
+.category-item .box .num {
+  width: 35%;
+  height: auto;
+  margin-top: 10px;
+  float: right;
+}
+.category-item a:hover .box .p {
+    margin-left: -10px
+}
+.product .product-container  {
+    padding: 0 10px;
+}
+.product .product-container  li {
+  width: 50%;
+  padding: 5px
+}
+
+.product .product-container  li span {
+  line-height: 30px;
+  font-size: 14px
+}
+
+.product .product-container  li .box {
+  font-size: 12px;
+  padding: 5px 0 10px 10px;
+  margin-left: -1px
+}
+
+.product .product-container  li .box img {
+  width: 13px
+}
+
+.product .product-container  li .box p {
+  margin-top: 2px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
 }
 </style>

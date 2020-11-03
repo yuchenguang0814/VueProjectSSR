@@ -363,7 +363,7 @@ header nav ul li.on>a {
   top: 66%
 }
 @media (max-width:999px) {
-    header {
+  header {
     position: fixed;
     left: 0;
     top: 0;
