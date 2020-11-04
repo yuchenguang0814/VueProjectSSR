@@ -71,19 +71,17 @@ export default {
   opacity: 0;
 }
 .fixed_kefu:before {
-  content: '';
-  padding: 10px 10px;
-  line-height: 10px;
-  font-size:22px;
+  content: '\25B2';
+  /* 25BC */
+  line-height: 20px;
   text-align: center;
+  font-size: 100%;
   width: 100%;
   height: 20px;
   background: #e61e37;
-  background: url(http://qizhong114.com/static/home/img/fixed_kefu_5.png) center no-repeat;
-  background-size: 80% 80%;
   transition: all 0.5s;
   position: absolute;
-  top: -10px;
+  top: -20px;
 }
 .fixed_kefu {
   position: fixed;
