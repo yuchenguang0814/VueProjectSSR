@@ -297,7 +297,7 @@ export default {
   background-size: 100% 100%;
   padding: 15px 0 25px 30px;
   width: 101.5%;
-  margin-left: -2px
+  margin-left: -2px;
 }
 
 .product-container li .box em {
@@ -405,7 +405,6 @@ export default {
 }
 
 .product .product-container  li .box {
-  font-size: 12px;
   padding: 5px 0 10px 10px;
   margin-left: -1px
 }
@@ -419,7 +418,11 @@ export default {
   display: block;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.product .product-container  li .box em {
+  font-size: 12px;
 }
 }
 </style>

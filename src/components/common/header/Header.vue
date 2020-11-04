@@ -117,16 +117,12 @@ export default {
           link: '/about',
           sub: [
             {
-              name: '企业介绍',
-              link: '#'
+              name: '工厂实景',
+              link: '/about/factory'
             },
             {
               name: '荣誉资质',
-              link: '#'
-            },
-            {
-              name: '工厂实景',
-              link: '#'
+              link: '/about/honor'
             }
           ]
         },
