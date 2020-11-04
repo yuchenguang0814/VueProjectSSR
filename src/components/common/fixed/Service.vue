@@ -1,7 +1,6 @@
 <template>
   <div>
     <ul class="fixed_kefu pc">
-      <li class="close">收缩</li>
       <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/fixed_kefu_1.png"><em>在线客服</em></a></li>
       <li><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_2.png"><em>咨询报价</em></a>
         <div class="hideewm"><img src="http://www.qizhong114.com/uploads/images/20200520/6bd23fdf030d01c27eb610f6d4ecf624.jpg"></div></li>
@@ -71,10 +70,25 @@ export default {
 .back-enter, .back-leave-active {
   opacity: 0;
 }
+.fixed_kefu:before {
+  content: '';
+  padding: 10px 10px;
+  line-height: 10px;
+  font-size:22px;
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  background: #e61e37;
+  background: url(http://qizhong114.com/static/home/img/fixed_kefu_5.png) center no-repeat;
+  background-size: 80% 80%;
+  transition: all 0.5s;
+  position: absolute;
+  top: -10px;
+}
 .fixed_kefu {
   position: fixed;
   right: 20px;
-  bottom: 90px;
+  bottom: 20px;
   z-index: 10000;
   padding-bottom: 80px
 }
