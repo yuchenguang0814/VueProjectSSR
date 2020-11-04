@@ -69,12 +69,15 @@ export default {
   padding: 0 0 0 10px;
   margin-bottom: 20px
 }
-
+footer .in_box {
+  padding: 50px 0;
+}
 .box_hengdh .text {
   color: #fff;
   font-size: 16px;
   line-height: 2
 }
+
 .box_dpxun {
   overflow: hidden;
   margin: -5px
@@ -138,5 +141,56 @@ export default {
 
 .footer .right a:first-child {
   margin-left: 0
+}
+@media (max-width: 999px) {
+  footer {
+    padding-bottom: 44px;
+  }
+  .box_hengdh {
+    background-size: auto 100%
+  }
+
+  .box_hengdh .container {
+    height: 180px
+  }
+
+  .box_hengdh .dt {
+    font-size: 16px;
+    border-left: 2px solid #e61e37;
+    padding: 0 0 0 5px;
+    margin-bottom: 10px
+  }
+
+  .box_hengdh .text {
+    font-size: 12px;
+    line-height: 20px
+  }
+  footer .in_box {
+    padding: 20px 0;
+  }
+  .box_dpxun li {
+    width: 25%
+  }
+  .footer {
+    padding: 10px 0;
+    font-size: 12px;
+    color: #777;
+    display: block;
+
+  }
+
+  .footer .left {
+    float: none
+  }
+
+  .footer .left .icp {
+    height: 0;
+    display: block;
+    overflow: hidden
+  }
+
+  .footer .right {
+    display: none
+  }
 }
 </style>

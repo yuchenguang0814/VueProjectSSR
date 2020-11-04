@@ -131,4 +131,30 @@ export default {
   font-family: Impact Regular;
   font-weight: bold
 }
+@media (max-width: 999px) {
+  .about {
+    padding: 20px 0
+  }
+
+  .about ul {
+    padding: 20px 0
+  }
+
+  .about ul li {
+    width: 25%;
+    font-size: 12px
+  }
+
+  .about ul li .pic img {
+    max-width: 46px
+  }
+
+  .about ul li .dt {
+    margin: 5px 0 0 0
+  }
+
+  .about ul li .dt em {
+    font-size: 20px
+  }
+}
 </style>

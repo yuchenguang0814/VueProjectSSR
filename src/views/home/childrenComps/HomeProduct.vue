@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <swiper v-show="!showPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
+    <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
       <swiper-slide class="category-item" v-for="item in products.category" :key="item.id">
         <a :href="item.link"><span>{{item.name}}</span>
           <p>{{item.description}}</p>
@@ -11,7 +11,7 @@
           </a>
       </swiper-slide>
     </swiper>
-    <div v-show="showPc" class="product-category">
+    <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
         <a :href="item.link">
             <div class="img"><img :src="item.imagePro" alt="img"></div>
@@ -68,19 +68,6 @@ export default {
     Swiper,
     SwiperSlide
   },
-  mounted () {
-    if (this._isMobile()) {
-      this.showPc = false
-    } else {
-      this.showPc = true
-    }
-  },
-  methods: {
-    _isMobile () {
-      const flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
-      return flag
-    }
-  },
   computed: {
     swiper () {
       return this.$refs.categorySwiper.$swiper
@@ -110,7 +97,7 @@ export default {
 }
 .product-category {
   display: flex ;
-  padding: 30px 0 30px 50px;
+  padding: 30px 0 30px 100px;
   background-image: url(~assets/image/bj_wljg.jpg);
   background-size: 100% 100%;
 }
@@ -330,7 +317,7 @@ export default {
 }
 @media (max-width:999px) {
   .product-category {
-    padding:20px 20px;
+    padding: 20px 0 20px 50px;
   }
   .ih-item.circle {
     width: 120px;

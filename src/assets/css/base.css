@@ -27,6 +27,7 @@ body {
   background: var(--color-background);
   color: var(--color-text);
   text-align: var(--text-align);
+  width: 100vw;
 }
 
 a{
@@ -40,6 +41,9 @@ a:hover{
 }
 a:active{
   color:#fff;
+}
+a:link{
+  color:var(--color-text);
 }
 
 

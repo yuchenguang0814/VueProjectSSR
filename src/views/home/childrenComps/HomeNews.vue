@@ -11,8 +11,8 @@
     </div>
     <div class="in_news">
       <ul class="tab">
-        <li :class="ison==1?'on':''"  @mouseenter="showSub(1)"><a href="http://www.qizhong114.com/hyxw">行业新闻</a></li>
-        <li :class="ison==2?'on':''" @mouseenter="showSub(2)" ><a href="http://www.qizhong114.com/jswx">技术文献</a></li>
+        <li :class="ison==1?'on':''"  @mouseenter="showSub(1)"><a href="http://www.qizhong114.com/hyxw" @click.prevent="showSub(1)">行业新闻</a></li>
+        <li :class="ison==2?'on':''" @mouseenter="showSub(2)" ><a href="http://www.qizhong114.com/jswx" @click.prevent="showSub(2)">技术文献</a></li>
       </ul>
       <div class="xun">
         <dl data-title="行业新闻">
@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     showSub (index) {
-      console.log(index)
       this.ison = index
     }
   }
@@ -168,11 +167,12 @@ export default {
   text-overflow: ellipsis;
   padding-left: 30px;
   background: url(~assets/image/icon_news_li.png) left 22px no-repeat;
-  color: #4b556e
+  color: #4b556e;
+  transition: all 0.5s;
 }
 
 .in_news .xun dl dd a:hover {
-  margin-left: -15px;
+  margin-left: 15px;
   color: #e61e37
 }
 
