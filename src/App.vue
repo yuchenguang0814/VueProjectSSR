@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-nav></header-nav>
+    <breadcrumb/>
     <router-view>
     </router-view>
     <footer-box></footer-box>
@@ -11,12 +12,14 @@
 import HeaderNav from 'components/common/header/Header'
 import FooterBox from 'components/common/footer/Footer'
 import Service from 'components/common/fixed/Service'
+import Breadcrumb from 'components/common/Breadcrumb'
 
 export default {
   components: {
     HeaderNav,
     FooterBox,
-    Service
+    Service,
+    Breadcrumb
   },
   methods: {
     isPc () {

@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <ul class="fixed_kefu pc">
+  <section class="fixed_kefu">
+    <span :class="`close pc ${isClose?'active':''}`" @click="clickClose">
+      <img src="~assets/image/icon_jtb_s.png" alt="">
+      客服栏</span>
+    <ul :class= "`fixed pc ${isClose?'active':''}`">
       <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/fixed_kefu_1.png"><em>在线客服</em></a></li>
       <li><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_2.png"><em>咨询报价</em></a>
         <div class="hideewm"><img src="http://www.qizhong114.com/uploads/images/20200520/6bd23fdf030d01c27eb610f6d4ecf624.jpg"></div></li>
@@ -19,7 +22,7 @@
       <li><a href="tel:0757-86283883"><img src="http://qizhong114.com/static/home/img/icon_dh.png"><em>一键拨打</em></a></li>
       <transition name="back"><li class="backtop" v-show="showTop"  @click="scrollTopfun"><img src="http://qizhong114.com/static/home/img/icon_mtop.png"></li></transition>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -28,7 +31,8 @@ export default {
   data () {
     return {
       showTop: false,
-      scrollTop: null
+      scrollTop: null,
+      isClose: false
     }
   },
   mounted () {
@@ -41,21 +45,35 @@ export default {
     },
     scrollTopfun () {
       const $this = this
+      const text = document.createTextNode('::-webkit-scrollbar-thumb{background-color: #007aff;}')
+      const style = document.createElement('style')
+      style.appendChild(text)
+      document.body.appendChild(style)
+      let i = 0
       setTimeout(function animation () {
         if ($this.scrollTop > 0) {
           setTimeout(() => {
-            $this.scrollTop = $this.scrollTop - 30
+            $this.scrollTop = $this.scrollTop - i
             if (document.documentElement.scrollTop > 0) {
-              document.documentElement.scrollTop = $this.scrollTop - 30
+              document.documentElement.scrollTop = $this.scrollTop - i
             } else if (window.pageYOffset > 0) {
-              window.pageYOffset = $this.scrollTop - 30
+              window.pageYOffset = $this.scrollTop - i
             } else if (document.body.scrollTop > 0) {
-              document.body.scrollTop = $this.scrollTop - 30
+              document.body.scrollTop = $this.scrollTop - i
+            }
+            if (i < 200) {
+              i += 1
             }
             animation()
-          }, 1)
+          }, 20)
+        } else {
+          style.appendChild(document.createTextNode('::-webkit-scrollbar-thumb{background-color: #555;}'))
+          document.body.appendChild(style)
         }
       }, 1)
+    },
+    clickClose () {
+      this.isClose = !this.isClose
     }
   }
 }
@@ -63,6 +81,23 @@ export default {
 </script>
 
 <style>
+::-webkit-scrollbar
+{
+    width: 16px;
+    height: 16px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
 .back-enter-active, .back-leave-active {
   opacity: 1;
   transition: all 0.5s
@@ -70,25 +105,52 @@ export default {
 .back-enter, .back-leave-active {
   opacity: 0;
 }
-.fixed_kefu:before {
-  content: '\25B2';
-  /* 25BC */
-  line-height: 20px;
+.close{
+  font-weight: bold;
+  line-height: 30px;
   text-align: center;
-  font-size: 100%;
-  width: 100%;
-  height: 20px;
-  background: #e61e37;
-  transition: all 0.5s;
+  color:#555;
+  width: 88px;
+  height: 30px;
+  background-color: #007aff;
+  z-index: 10000;
+  padding-left:16px;
+  transition: all 1s;
+}
+.close:hover {
+  background-color: red;
+  color:#fff !important;
+}
+.close img{
+  width: 16px;
+  height: 16px;
+  display: block;
   position: absolute;
-  top: -20px;
+  left: 8px;
+  top: 6px;
+  transition: all 0.5s;
+}
+.close.active {
+  color: #fff;
+  background-color: red;
+}
+.close.active img {
+  transform:rotate(180deg)
 }
 .fixed_kefu {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: 150px;
   z-index: 10000;
-  padding-bottom: 80px
+  padding-bottom: 80px;
+}
+.fixed_kefu .fixed {
+  transition: all 0.5s;
+  height: 430px;
+}
+.fixed_kefu .fixed.active {
+  height: 0;
+  overflow: hidden;
 }
 
 .fixed_kefu li {
@@ -205,6 +267,9 @@ export default {
   height: 13px
 }
 @media (max-width: 999px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
   .fixed_kefu_wap {
     display: block;
     position: fixed;

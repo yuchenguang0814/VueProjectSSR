@@ -27,7 +27,6 @@ body {
   background: var(--color-background);
   color: var(--color-text);
   text-align: var(--text-align);
-  width: 100vw;
 }
 
 a{
@@ -101,7 +100,9 @@ a:link{
 }
 
 @media (max-width:999px) {
-
+  body {
+    /* overflow-y: hidden; */
+  }
   .container {
     padding: 0 10px
   }

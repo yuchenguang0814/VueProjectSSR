@@ -133,11 +133,15 @@ export default {
           sub: [
             {
               name: '企业新闻',
-              link: '#'
+              link: '/news/companyNews'
             },
             {
               name: '行业新闻',
-              link: '#'
+              link: '/news/industryNews'
+            },
+            {
+              name: '技术文献',
+              link: '/news/literatureNews'
             }
           ]
         },
@@ -149,12 +153,12 @@ export default {
         {
           id: 15,
           name: '服务支持',
-          link: '#'
+          link: '/service'
         },
         {
           id: 16,
           name: '联系我们',
-          link: 'content'
+          link: '/contact'
         }
       ],
       telPhone: 18968919292,

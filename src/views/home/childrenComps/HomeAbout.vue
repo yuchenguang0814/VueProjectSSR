@@ -116,9 +116,23 @@ export default {
 }
 
 .about ul li .pic:hover:after {
-  -webkit-animation: sonarEffect 1.3s ease-out 75ms;
-  -moz-animation: sonarEffect 1.3s ease-out 75ms;
   animation: sonarEffect 1.3s ease-out 75ms
+}
+@keyframes sonarEffect {
+  0% {
+    opacity: .3
+  }
+
+  40% {
+    opacity: .5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5)
+  }
+
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0
+  }
 }
 
 .about ul li .bt {
