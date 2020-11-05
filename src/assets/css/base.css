@@ -98,7 +98,46 @@ a:link{
   font-size: 18px;
   margin-top: 20px;
 }
+.banner a {
+  display: block;
+  overflow: hidden
+}
 
+.banner a img {
+  width: 100%;
+  height: auto
+}
+
+.banner .banner-num {
+  position: absolute;
+  bottom: 35px !important;
+  z-index: 5;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center
+}
+
+.banner .banner-num .swiper-pagination-bullet {
+  border-radius: 50px;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px !important;
+  background: #fff;
+  transition: all .5s;
+  opacity: 1;
+  outline: 0
+}
+
+.banner .banner-num .swiper-pagination-bullet-active {
+  width: 54px;
+  background: #f7ac1b
+}
 @media (max-width:999px) {
   body {
     /* overflow-y: hidden; */

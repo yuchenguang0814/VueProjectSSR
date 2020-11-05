@@ -5,7 +5,7 @@
         <a class="breadTitle" :href="item.path">
         <span>{{item.meta.title}}</span>
       </a>
-      <span v-show="index!=spnum-1">></span>
+      <span v-show="index!=spnum">></span>
       </span>
     </p>
   </div>
@@ -42,8 +42,9 @@ export default {
       this.breadList = matched
     }
   },
-  updated () {
-    this.spnum = document.getElementsByClassName('breadTitle').length
+  mounted () {
+    this.spnum = document.getElementsByClassName('breadTitle').length - 1
+    console.log(this.spnum)
   },
   created () {
     this.getBreadcrumb()
@@ -54,6 +55,10 @@ export default {
 <style>
 .list_head {
   color: #555f7d;
+  border-top: #f0f3fa 1px solid;
+  border-bottom: #f0f3fa 1px solid;
+  max-width: 1300px;
+  padding: 15px 0;
 }
 .list_head .breadTitle {
     margin-right: 5px;

@@ -140,7 +140,7 @@ export default {
 .fixed_kefu {
   position: fixed;
   right: 20px;
-  top: 150px;
+  top: 100px;
   z-index: 10000;
   padding-bottom: 80px;
 }
