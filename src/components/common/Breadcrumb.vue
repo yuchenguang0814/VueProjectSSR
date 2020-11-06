@@ -1,5 +1,6 @@
 <template>
   <div v-show="!this.isH" class="list_head">
+    <div class="container">
     <p>您当前的位置:
       <span v-for="(item, index) in breadList" :key="index">
         <a class="breadTitle" :href="item.path">
@@ -8,6 +9,7 @@
       <span v-show="index!=spnum">></span>
       </span>
     </p>
+    </div>
   </div>
 </template>
 <script>
@@ -44,7 +46,6 @@ export default {
   },
   mounted () {
     this.spnum = document.getElementsByClassName('breadTitle').length - 1
-    console.log(this.spnum)
   },
   created () {
     this.getBreadcrumb()
@@ -57,7 +58,6 @@ export default {
   color: #555f7d;
   border-top: #f0f3fa 1px solid;
   border-bottom: #f0f3fa 1px solid;
-  max-width: 1300px;
   padding: 15px 0;
 }
 .list_head .breadTitle {

@@ -1,5 +1,6 @@
 <template>
-  <section class="fixed_kefu">
+  <section>
+    <div class="fixed_kefu">
     <span :class="`close pc ${isClose?'active':''}`" @click="clickClose">
       <img src="~assets/image/icon_jtb_s.png" alt="">
       客服栏</span>
@@ -17,11 +18,12 @@
       <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/fixed_kefu_4.png"><em>在线留言</em></a></li>
       <transition name="back"><li class="backtop" v-show="showTop" @click="scrollTopfun"><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_5.png"><em>返回顶部</em></a></li></transition>
     </ul>
-    <ul class="fixed_kefu_wap wap">
+  </div>
+  <ul class="fixed_kefu_wap wap">
       <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/icon_zx.png"><em>咨询客服</em></a></li>
       <li><a href="tel:0757-86283883"><img src="http://qizhong114.com/static/home/img/icon_dh.png"><em>一键拨打</em></a></li>
       <transition name="back"><li class="backtop" v-show="showTop"  @click="scrollTopfun"><img src="http://qizhong114.com/static/home/img/icon_mtop.png"></li></transition>
-    </ul>
+  </ul>
   </section>
 </template>
 
@@ -314,7 +316,7 @@ export default {
     color: #fff
   }
 
-  .fixed_kefu_wap .backtop {
+ .fixed_kefu_wap .backtop {
     position: absolute;
     right: 0;
     bottom: 100%;

@@ -28,7 +28,9 @@ body {
   color: var(--color-text);
   text-align: var(--text-align);
 }
-
+img {
+  vertical-align: middle;
+}
 a{
   text-decoration:none;
 }
@@ -82,6 +84,13 @@ a:link{
   text-align: center;
   overflow: hidden;
   padding-bottom: 35px;
+}
+.in-tit .texts {
+  margin-top: 20px;
+  line-height: 28px;
+  font-size: 16px;
+  text-align: justify;
+  text-indent: 2em;
 }
 .container .in-tit>img {
   height: 88px;
@@ -152,6 +161,11 @@ a:link{
 
   .wap {
     display: block !important
+  }
+  .in-tit .texts {
+    margin-top: 5px;
+    line-height: 20px;
+    font-size: 12px;
   }
   html body .container .in-tit {
     padding-bottom: 15px

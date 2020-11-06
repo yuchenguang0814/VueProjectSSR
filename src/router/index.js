@@ -4,7 +4,6 @@ import Home from '../views/home/Home.vue'
 import NotFound from 'components/common/NotFound.vue'
 
 Vue.use(VueRouter)
-
 const routes = [
   {
     path: '/',
