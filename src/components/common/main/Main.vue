@@ -101,4 +101,23 @@ export default {
 .list_case li:hover .dt {
   color: #fff
 }
+@media (max-width: 999px) {
+  .main {
+    padding: 20px 0
+  }
+  .list_case {
+    margin: -5px
+  }
+
+  .list_case li {
+    width: 50%;
+    padding: 5px
+  }
+
+  .list_case li .dt {
+    padding: 0 10px;
+    line-height: 34px;
+    font-size: 14px
+  }
+}
 </style>

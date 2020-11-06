@@ -85,4 +85,34 @@ export default {
 .main_pages .pagination li.disabled {
   margin-top: 20px
 }
+@media (max-width: 999px) {
+  .main_pages .pagination {
+    padding: 0 10px;
+    margin: 25px 0 0 0
+  }
+
+  .main_pages .pagination li {
+    font-size: 14px;
+    width: 26px
+  }
+
+  .main_pages .pagination li a {
+    padding: 10px 0
+  }
+
+  .main_pages .pagination li.active:before {
+    top: -6px;
+    left: -2px;
+    width: 30px;
+    height: 42px
+  }
+
+  .main_pages .pagination li.active span {
+    margin-top: 5px
+  }
+
+  .main_pages .pagination li.disabled {
+    margin-top: 10px
+  }
+}
 </style>

@@ -70,4 +70,10 @@ export default {
 .list_head .breadTitle:hover {
     color: #e61e37;
 }
+@media (max-width: 999px) {
+  .list_head {
+    padding: 10px 0;
+    font-size: 12px;
+  }
+}
 </style>>
