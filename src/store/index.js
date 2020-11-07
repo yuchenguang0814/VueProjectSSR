@@ -5,9 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isPc: true
+    isPc: true,
+    nbanners: [],
+    childPath: [],
+    routePath: ''
   },
   getters: {
+    getNbanner (state) {
+      let nb1 = []
+      state.nbanners.filter(item => {
+        if (item.path === state.routePath) {
+          nb1 = item
+        }
+      })
+      nb1.childPath = state.childPath
+      return nb1
+    }
   },
   mutations: {
     checkIsPc (state) {
@@ -18,6 +31,13 @@ export default new Vuex.Store({
         state.isPc = true
       }
       return state.isPc
+    },
+    getnb (state, payload) {
+      state.nbanners = payload.data1
+      state.childPath = payload.data2
+    },
+    getPath (state, path) {
+      state.routePath = path
     }
   },
   actions: {

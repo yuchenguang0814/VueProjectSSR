@@ -1,6 +1,6 @@
 <template>
 <div>
-  <slot name="nb" :props="this.nb" >
+  <slot name="nb" :props="$store.getters.getNbanner" >
   </slot>
   <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/about'">
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import AboutUs from './chidrenComps/AboutUs'
-import AboutProduct from './chidrenComps/AboutProduct'
-import AboutCooperation from './chidrenComps/AboutCooperation'
+import AboutUs from './childrenComps/AboutUs'
+import AboutProduct from './childrenComps/AboutProduct'
+import AboutCooperation from './childrenComps/AboutCooperation'
 export default {
   name: '',
   components: {
@@ -25,16 +25,6 @@ export default {
     AboutCooperation
   },
   computed: {
-    nb () {
-      let nb1 = null
-      this.nbanners.filter(item => {
-        if (item.path === this.$route.path) {
-          nb1 = item
-        }
-      })
-      nb1.childPath = this.childPath
-      return nb1
-    }
   },
   data () {
     return {
@@ -68,7 +58,13 @@ export default {
       }]
     }
   },
+  methods: {
+  },
+  created () {
+  },
   mounted () {
+    this.$store.commit('getnb', { data1: this.nbanners, data2: this.childPath })
+    this.$store.commit('getPath', this.$route.path)
   }
 }
 

@@ -7,7 +7,7 @@
           <div class="text">{{nbanners.props.text}}</div>
         </div>
         <ul v-if="nbanners.props.childPath" class="tab">
-          <li v-for="(item, index) in nbanners.props.childPath" :key="index"><a :href="item.path" :class="`${this.path == item.path?'on':''}`">{{item.name}}</a></li>
+          <li v-for="(item, index) in nbanners.props.childPath" :key="index"><a :href="item.path" :class="`${path == item.path?'on':''}`">{{item.name}}</a></li>
         </ul>
       </div>
     </div>
@@ -96,7 +96,8 @@ export default {
   font-size: 18px;
   color: #fff;
   padding: 10px 40px;
-  border: 1px solid #fff
+  border: 1px solid #fff;
+  transition: all 0.5s;
 }
 
 .nbanner .tab li a:hover {
