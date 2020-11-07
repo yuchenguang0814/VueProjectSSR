@@ -1,30 +1,5 @@
 <template>
   <div>
-    <nbanner>
-      <div
-        slot="nbanner"
-        class="nbanner"
-        style="background-image: url(http://www.qizhong114.com/uploads/images/20200606/c4087db633604ad00e9247a3419436b5.jpg);"
-      >
-        <div class="container">
-          <div class="box">
-            <div class="in-tit">
-              <img
-                src="http://www.qizhong114.com/uploads/images/20200430/ebbe9b2e706e5b3aa884a96ea0d7ae77.png"
-              />
-              <div class="dt">
-                <img
-                  src="http://qizhong114.com/static/home/img/tit_zs.png"
-                />及时回复 &amp; 帮您解忧
-              </div>
-              <div class="text">
-                在这里为你提供了各系列设备在购买前以及实际运营过程中可能遇到的各类问题解答，如有特殊需求，可以拨打我们的免费服务热线与我们取得联系，或者通过在线咨询与我们交谈。
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nbanner>
     <slot name="crumb"></slot>
     <div class="main news">
       <div class="container">
@@ -117,11 +92,9 @@
 </template>
 
 <script>
-import Nbanner from 'components/common/Nbanner'
 import MainPages from 'components/common/main/MainPages'
 export default {
   components: {
-    Nbanner,
     MainPages
   }
 }

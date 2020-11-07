@@ -1,12 +1,37 @@
 <template>
-  <div>
-    <slot name="nbanner"></slot>
+  <div class="nbanner" :style="`background-image: url(${nbanners.props.backgroundImage});`">
+    <div class="container">
+      <div class="box">
+        <div class="in-tit"><img :src="nbanners.props.inTitImg">
+          <div class="dt"><img :src="nbanners.props.dtImg">{{this.$route.meta.title}}</div>
+          <div class="text">{{nbanners.props.text}}</div>
+        </div>
+        <ul v-if="nbanners.props.childPath" class="tab">
+          <li v-for="(item, index) in nbanners.props.childPath" :key="index"><a :href="item.path" :class="`${this.path == item.path?'on':''}`">{{item.name}}</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: {
+    nbanners: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
+  computed: {
+    path () {
+      return this.$route.path
+    }
+  },
+  mounted () {
+    console.log(this.$route.path)
+  }
 }
 </script>
 
@@ -20,12 +45,7 @@ export default {
 
 .nbanner .container {
   height: 396px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
   align-items: center
 }
 
@@ -33,32 +53,25 @@ export default {
   display: none
 }
 
-.nbanner .contact {
-  height: 600px
-}
-
-.nbanner .box {
+.nbanner .container .box {
   width: 100%;
-  max-width: 800px
-}
-
-.nbanner .all {
+  max-width: 800px;
   max-width: inherit
 }
 
-.nbanner .in-tit {
+.nbanner .container .in-tit {
   text-align: left;
   color: #7ea8e5;
   padding-bottom: 0
 }
 
-.nbanner .in-tit .dt {
+.nbanner .container .in-tit .dt {
   color: #fff;
   padding-left: 25px;
   margin-top: -45px
 }
 
-.nbanner .in-tit .text {
+.nbanner .container .in-tit .text {
   line-height: 32px
 }
 
@@ -66,6 +79,10 @@ export default {
   margin: -7px;
   overflow: hidden;
   padding-top: 30px
+}
+.nbanner .tab .on {
+  background: #e61e37;
+  border-color: #e61e37;
 }
 
 .nbanner .tab li {
@@ -215,14 +232,14 @@ export default {
   transition: all .5s
 }
 
-.nbanner .form li input[type='submit']:hover {
+.nbanner  .form li input[type='submit']:hover {
   background: -webkit-linear-gradient(left, #1b2057, #8d224e);
   background: -o-linear-gradient(right, #1b2057, #8d224e);
   background: -moz-linear-gradient(right, #1b2057, #8d224e);
   background: linear-gradient(to right, #1b2057, #8d224e)
 }
 
-.nbanner .form li:last-child {
+.nbanner  .form li:last-child {
   width: 16%
 }
 @media (max-width: 999px) {
@@ -230,31 +247,31 @@ export default {
         height: 180px
     }
 
-    .nbanner .contact {
+    .nbanner .container .contact {
         height: 280px
     }
 
-    .nbanner .in-tit {
+    .nbanner .container .in-tit {
         text-align: left;
         color: #7ea8e5;
         padding-bottom: 0
     }
 
-    .nbanner .in-tit .dt {
+    .nbanner .container .in-tit .dt {
         color: #fff;
         padding-left: 25px;
         margin-top: -25px
     }
 
-    .nbanner .in-tit .text {
+    .nbanner .container .in-tit .text {
         display: none
     }
 
-    .nbanner .in-tit .texts {
+    .nbanner .container .in-tit .texts {
         display: none
     }
 
-    .nbanner .in-tit .textc {
+    .nbanner .container.in-tit .textc {
         display: none
     }
 
