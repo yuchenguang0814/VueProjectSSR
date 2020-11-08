@@ -1,5 +1,6 @@
 <template>
   <div>
+    <slot name="nb" :props="$store.getters.getNbanner" ></slot>
     <slot name="crumb"></slot>
     <div class="main news">
       <div class="container">
@@ -96,6 +97,22 @@ import MainPages from 'components/common/main/MainPages'
 export default {
   components: {
     MainPages
+  },
+  data () {
+    return {
+      nbanners: [{
+        path: '/question',
+        backgroundImage: 'http://www.qizhong114.com/uploads/images/20200606/c4087db633604ad00e9247a3419436b5.jpg',
+        inTitImg: 'http://www.qizhong114.com/uploads/images/20200430/ebbe9b2e706e5b3aa884a96ea0d7ae77.png',
+        dtImg: 'http://qizhong114.com/static/home/img/tit_zs.png',
+        text: '在这里为你提供了各系列设备在购买前以及实际运营过程中可能遇到的各类问题解答，如有特殊需求，可以拨打我们的免费服务热线与我们取得联系，或者通过在线咨询与我们交谈。'
+      }],
+      childPath: []
+    }
+  },
+  mounted () {
+    this.$store.commit('getnb', { data1: this.nbanners, data2: this.childPath })
+    this.$store.commit('getPath', this.$route.path)
   }
 }
 </script>

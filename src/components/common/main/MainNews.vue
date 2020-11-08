@@ -61,15 +61,14 @@ export default {
 
 <style>
 .main {
-  padding: 40px 0 60px 0
+    padding: 40px 0 60px 0
 }
-.in_box.news {
+.news {
     background: #f0f3fa
 }
 .list_news {
     position: relative
 }
-
 .list_news:before {
     content: '';
     background: #bcbcbc;
@@ -84,7 +83,6 @@ export default {
     margin-top: 25px;
     position: relative
 }
-
 .list_news li:before {
     content: '';
     position: absolute;
@@ -95,7 +93,6 @@ export default {
     background: #fff;
     transition: all .5s
 }
-
 .list_news li:after {
     content: '';
     position: absolute;
@@ -107,21 +104,13 @@ export default {
     background: #05163f;
     transition: all .5s
 }
-
 .list_news li a {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
     align-items: center;
-    -webkit-justify-content: space-between;
     justify-content: space-between;
     color: #555f7d;
     overflow: hidden
 }
-
 .list_news li .date {
     width: 170px;
     position: relative;
@@ -133,7 +122,6 @@ export default {
     color: #05163f;
     font-size: 16px
 }
-
 .list_news li .date:before {
     content: '';
     width: 45px;
@@ -143,7 +131,6 @@ export default {
     left: 100%;
     top: 50%
 }
-
 .list_news li .date:after {
     content: '';
     position: absolute;
@@ -156,17 +143,12 @@ export default {
     z-index: 3;
     display: none
 }
-
 .list_news li .date em {
     font-size: 52px;
     margin-bottom: 3px;
     display: block
 }
 .list_news li .box {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     width: 0;
     background: #fff;
@@ -174,7 +156,6 @@ export default {
     position: relative;
     z-index: 10
 }
-
 .list_news li .box span {
     font-size: 24px;
     color: #05163f;
@@ -184,20 +165,17 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis
 }
-
 .list_news li .box .cs {
     padding: 20px 0 15px 0;
     overflow: hidden;
     color: #788291
 }
-
 .list_news li .box .cs img {
     margin-right: 10px;
     margin-top: -3px;
     height: 21px;
     width: auto
 }
-
 .list_news li .box .cs img:last-of-type {
     margin-left: 40px;
     height: 16px
@@ -210,34 +188,25 @@ export default {
     height: 56px;
     line-height: 28px
 }
-
 .list_news li:hover:before {
-    width: 1920px
+    width: 99%;
 }
-
 .list_news li:hover:after {
     width: 960px
 }
-
 .list_news li:hover .date {
     color: #fff
 }
-
 .list_news li:hover .date:before {
     background: #05163f
 }
-
 .list_news li:hover .date:after {
     display: block
 }
-
 .list_news li:hover .box span {
     color: #e61e37
 }
 
-.list_news li:first-child {
-    margin-top: 0
-}
 @media (max-width: 999px) {
   .main {
     padding: 20px 0

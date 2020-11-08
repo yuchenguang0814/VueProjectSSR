@@ -6,20 +6,20 @@
       <div slot="crumb"><breadcrumb/></div>
     </router-view>
     <footer-box></footer-box>
-    <service></service>
+    <customer></customer>
   </div>
 </template>
 <script>
 import HeaderNav from 'components/common/header/Header'
 import FooterBox from 'components/common/footer/Footer'
-import Service from 'components/common/fixed/Service'
+import Customer from 'components/common/fixed/Customer'
 import Breadcrumb from 'components/common/Breadcrumb'
 import Nbanner from 'components/common/Nbanner'
 export default {
   components: {
     HeaderNav,
     FooterBox,
-    Service,
+    Customer,
     Breadcrumb,
     Nbanner
   },

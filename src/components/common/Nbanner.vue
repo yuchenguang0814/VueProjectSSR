@@ -9,6 +9,23 @@
         <ul v-if="nbanners.props.childPath" class="tab">
           <li v-for="(item, index) in nbanners.props.childPath" :key="index"><a :href="item.path" :class="`${path == item.path?'on':''}`">{{item.name}}</a></li>
         </ul>
+      <div v-if="path == '/contact'">
+        <ul class="cont">
+          <li>
+            <div class="box"><img src="http://www.qizhong114.com/static/home/img/con_dh.png">
+              <div class="n"><span>服务热线</span>
+                <p>0757-86283883</p>
+              </div>
+            </div>
+          </li>
+          <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank" class="box"><img src="http://www.qizhong114.com/static/home/img/con_kf.png">
+            <div class="n"><span>联系客服</span>
+              <p>点击马上咨询</p>
+            </div>
+            </a></li>
+        </ul>
+        <div class="address"><img src="http://www.qizhong114.com/static/home/img/icon_wzxx.png">公司 地址： 佛山市三水区南山镇华侨工业园</div>
+      </div>
       </div>
     </div>
   </div>
@@ -56,7 +73,6 @@ export default {
 .nbanner .container .box {
   width: 100%;
   max-width: 800px;
-  max-width: inherit
 }
 
 .nbanner .container .in-tit {
@@ -244,6 +260,10 @@ export default {
   width: 16%
 }
 @media (max-width: 999px) {
+  .nbanner {
+    margin-top: 50px;
+    padding: 10px 0;
+  }
   .nbanner .container {
         height: 180px
     }

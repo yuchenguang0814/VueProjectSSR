@@ -65,7 +65,7 @@ const routes = [
   {
     path: '/service',
     name: 'Service',
-    component: () => import('../views/service/Service.vue'),
+    component: () => import('../views/support/Support.vue'),
     meta: { title: '服务支持' }
   },
   {
