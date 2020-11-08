@@ -44,6 +44,7 @@
                 </div>
               </transition>
             </li>
+            <li><a href="">英文</a></li>
           </ul>
         </nav>
       </div>
@@ -289,7 +290,7 @@ header nav {
 }
 header nav ul li {
   float: left;
-  width: 16.333%;
+  width: 14.2%;
   text-align: center;
   position: relative;
   z-index: 999;

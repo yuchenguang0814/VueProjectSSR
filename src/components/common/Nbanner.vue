@@ -7,7 +7,7 @@
           <div class="text">{{nbanners.props.text}}</div>
         </div>
         <ul v-if="nbanners.props.childPath" class="tab">
-          <li v-for="(item, index) in nbanners.props.childPath" :key="index"><a :href="item.path" :class="`${path == item.path?'on':''}`">{{item.name}}</a></li>
+          <li v-for="(item, index) in nbanners.props.childPath" :key="index" :class="`${path == item.path?'on':''}`"><a :href="item.path">{{item.name}}</a></li>
         </ul>
       <div v-if="path == '/contact'">
         <ul class="cont">

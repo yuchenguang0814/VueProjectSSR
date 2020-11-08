@@ -73,6 +73,21 @@ a:link{
   max-width: 1300px;
   margin: 0 auto;
 }
+.container:after {
+  width: 100%;
+  clear: both;
+  line-height: 0;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+  font-size: 0;
+  content: '.'
+}
+.line_height60 {
+  height:60px;
+  width: 100%;
+  overflow: hidden;
+}
 .pc {
   display: block;
 }
@@ -154,7 +169,9 @@ a:link{
   .container {
     padding: 0 10px
   }
-
+  .line_height60 {
+    height:20px
+  }
   .pc {
     display: none !important
   }
