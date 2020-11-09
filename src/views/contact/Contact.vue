@@ -3,7 +3,6 @@
     <slot name="nb" :props="$store.getters.getNbanner"></slot>
     <slot name="crumb"></slot>
     <contact-process></contact-process>
-    <div class="line_height60"></div>
     <contact-map></contact-map>
   </div>
 </template>

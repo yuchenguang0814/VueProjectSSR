@@ -4,40 +4,45 @@
     <ul class="list_case">
           <li><a href="http://www.qizhong114.com/factory/85.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/3484c82b74fea2790519169b6295584b.jpg"></div>
-        <div class="dt">顺发起重公司工厂俯视</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
             <li><a href="http://www.qizhong114.com/factory/84.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/20a935ecb5df129305fd337963cfbef9.jpg"></div>
-        <div class="dt">顺发起重公司大门</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
             <li><a href="http://www.qizhong114.com/factory/86.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/23a014f51ac9e6af71b4cd67d974a8a5.jpg"></div>
-        <div class="dt">顺发起重办公楼</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
             <li><a href="http://www.qizhong114.com/factory/87.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/a02188dd3ae3f7c62c54880b5a20191d.jpg"></div>
-        <div class="dt">顺发起重焊接车间</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
             <li><a href="http://www.qizhong114.com/factory/88.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/225a7002a7762c00667ab11c31187ae9.jpg"></div>
-        <div class="dt">顺发起重生产车间</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
             <li><a href="http://www.qizhong114.com/factory/89.html">
         <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200524/c7b23f63c2942a3ad292c47523c54f50.jpg"></div>
-        <div class="dt">起重机自动焊接机械手(松下)</div>
+        <div class="dt"><slot name='dt1'>顺发起重公司工厂俯视</slot></div>
         </a></li>
     </ul>
   </div>
-  <main-Pages></main-Pages>
+  <!-- <div v-if="path.indexOf('/solution') == -1"><main-Pages></main-Pages></div> -->
 </div>
 </template>
 
 <script>
-import MainPages from './MainPages.vue'
+// import MainPages from './MainPages.vue'
 export default {
   name: '',
   components: {
-    MainPages
+    // MainPages
+  },
+  computed: {
+    path () {
+      return this.$route.path
+    }
   },
   data () {
     return {
@@ -58,14 +63,14 @@ export default {
 .list_case li {
   width: 33.33333333%;
   float: left;
-  padding: 15px
+  padding: 15px;
 }
 
 .list_case li a {
   display: block;
   overflow: hidden;
   color: #555f7d;
-  background: #05163f
+  background: #05163f;
 }
 .list_case li .pic {
   overflow: hidden;

@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home/Home.vue'
+import Products from '../views/product/Products.vue'
+import Vid from '../views/vid/Vid.vue'
+import Solution from '../views/solution/Solution.vue'
 import NotFound from 'components/common/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -10,6 +13,35 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: { title: '首页' }
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products,
+    meta: { title: '产品中心' }
+  },
+  {
+    path: '/solution',
+    name: 'Solution',
+    component: Solution,
+    meta: { title: '解决方案' },
+    children: [{
+      path: 'customer',
+      component: () => import('views/solution/child/Customer'),
+      name: 'Customer',
+      meta: { title: '客户案例' }
+    }, {
+      path: 'industry',
+      component: () => import('../views/solution/child/Industry.vue'),
+      name: 'Industry',
+      meta: { title: '行业应用' }
+    }]
+  },
+  {
+    path: '/video',
+    name: 'Video',
+    component: Vid,
+    meta: { title: '视频中心' }
   },
   {
     path: '/about',

@@ -61,49 +61,41 @@ export default {
         {
           id: 1,
           name: '产品中心',
-          link: '/product',
+          link: '/products',
           sub: [
             {
               name: '1号产品中心',
-              link: '/prodict/catagory'
+              link: '/prodicts/catagory'
             },
             {
               name: '2号产品中心',
-              link: '#'
+              link: '/prodicts/catagory'
             },
             {
               name: '3号产品中心',
-              link: '#'
+              link: '/prodicts/catagory'
             }
           ]
         },
         {
           id: 2,
           name: '解决方案',
-          link: '#',
+          link: '/solution',
           sub: [
             {
-              name: '1号解决方案',
-              link: '#'
+              name: '客户案例',
+              link: '/solution/customer'
             },
             {
-              name: '2号解决方案',
-              link: '#'
-            },
-            {
-              name: '3号解决方案',
-              link: '#'
-            },
-            {
-              name: '4号解决方案',
-              link: '#'
+              name: '行业应用',
+              link: '/solution/industry'
             }
           ]
         },
         {
           id: 3,
           name: '视频中心',
-          link: '#'
+          link: '/video'
         }
       ],
       navItem: [

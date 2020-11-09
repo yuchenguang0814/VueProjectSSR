@@ -9,6 +9,10 @@
         <ul v-if="nbanners.props.childPath" class="tab">
           <li v-for="(item, index) in nbanners.props.childPath" :key="index" :class="`${path == item.path?'on':''}`"><a :href="item.path">{{item.name}}</a></li>
         </ul>
+        <div v-if="path.indexOf('/solution') != -1">
+        <form-order></form-order>
+      </div>
+  </div>
       <div v-if="path == '/contact'">
         <ul class="cont">
           <li>
@@ -28,11 +32,14 @@
       </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
+import FormOrder from './form/FormOrder'
 export default {
+  components: {
+    FormOrder
+  },
   props: {
     nbanners: {
       type: Object,

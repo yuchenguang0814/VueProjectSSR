@@ -46,19 +46,19 @@ export default {
 </script>
 
 <style>
-.order .mess {
+ .mess {
   overflow: hidden;
   margin: 60px -10px 0 -10px
 }
 
-.order .mess li {
+ .mess li {
   float: left;
   width: 21%;
   padding: 0 10px
 }
 
-.order .mess li select,
-.order .mess li input[type='text'] {
+ .mess li select,
+ .mess li input[type='text'] {
   border: 1px solid #7882a0;
   border-radius: 10px;
   padding: 15px 20px;
@@ -68,17 +68,17 @@ export default {
   background: #fff
 }
 
-.order .mess li select {
+ .mess li select {
   -webkit-appearance: none;
   background: url(~assets/image/icon_jtb_s.png) no-repeat 94%;
   background-size: auto 12px
 }
 
-.order .mess li input[type='text'] {
+ .mess li input[type='text'] {
   background: url(~assets/image/icon_xing.png) no-repeat 8px center
 }
 
-.order .mess li input[type='submit'] {
+ .mess li input[type='submit'] {
   width: 100%;
   font-size: 16px;
   color: #fff;
@@ -93,38 +93,38 @@ export default {
   transition: all .5s
 }
 
-.order .mess li input[type='submit']:hover {
+ .mess li input[type='submit']:hover {
   background: linear-gradient(to right, #1b2057, #8d224e)
 }
 
-.order .mess li:last-child {
+ .mess li:last-child {
   width: 16%
 }
 @media (max-width: 999px) {
-  .order .mess {
+   .mess {
       margin: 5px 0 -3px 0
   }
-  .order .mess li {
+   .mess li {
       width: 100%;
       padding: 3px 0
   }
-  .order .mess li select,
-  .order .mess li input[type='text'] {
+   .mess li select,
+   .mess li input[type='text'] {
       padding: 10px;
       font-size: 14px
   }
-  .order .mess li select {
+   .mess li select {
       background-position: 96% center;
       background-size: auto 8px
   }
-  .order .mess li input[type='text'] {
+   .mess li input[type='text'] {
       background-position: 2px center
   }
-  .order .mess li input[type='submit'] {
+   .mess li input[type='submit'] {
       font-size: 14px;
       padding: 10px 0
   }
-  .order .mess li:last-child {
+   .mess li:last-child {
       width: 100%
   }
 }
