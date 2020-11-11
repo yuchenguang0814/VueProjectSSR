@@ -15,7 +15,7 @@
         <div class="text">广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品。</div>
       </div>
       <a href="http://www.qizhong114.com/wljg" class="more">更多行业应用<img src="http://www.qizhong114.com/static/home/img/icon_jtr_s.png"></a> </div>
-      <mains><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
+      <mains class="list"><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
   </div>
 </div>
     <router-view v-else></router-view>

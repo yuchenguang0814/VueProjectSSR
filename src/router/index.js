@@ -18,7 +18,18 @@ const routes = [
     path: '/products',
     name: 'Products',
     component: Products,
-    meta: { title: '产品中心' }
+    meta: { title: '产品中心' },
+    children: [{
+      path: 'category',
+      component: () => import('views/product/child/Category.vue'),
+      name: 'Category',
+      meta: { title: '产品分类' }
+    }, {
+      path: 'product',
+      component: () => import('../views/product/child/Product.vue'),
+      name: 'Product',
+      meta: { title: '商品详情' }
+    }]
   },
   {
     path: '/solution',

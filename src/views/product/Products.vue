@@ -1,20 +1,21 @@
 <template>
   <div>
-    <slot name="nb" :props="$store.getters.getNbanner" ></slot>
+    <slot v-if="this.$route.path == '/products'" name="nb" :props="$store.getters.getNbanner" ></slot>
     <slot name="crumb"></slot>
-    <div class="pro_index">
+    <div  v-if="this.$route.path == '/products'" class="pro_index">
       <div class="pro_index_li">
     <div class="container category">
-      <div class="left b1">
+      <div class="proLeft b1">
         <div class="bt"><span>桥式起重机</span><em 变频="">变频</em></div>
         <div class="text">我们作为优质的起重机设备提供商，我们能为您提供品质良好的桥式起重机，具体主要包括LD型电动单梁桥式起重机、LH型双梁桥式起重机、QD型通用桥式起重机等各种不同类型的桥式起重机设备，并根据您的具体要求，量身定制配套的整体设计和施工方案。</div>
         <a href="http://www.qizhong114.com/overheadcranes" class="more">查看更多产品<img src="http://www.qizhong114.com/static/home/img/icon_jtr.png"></a> </div>
-      <div class="right">
+      <div class="proRight list">
         <mains><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
       </div>
     </div>
   </div>
     </div>
+    <router-view v-else></router-view>
   </div>
 </template>
 
@@ -33,6 +34,10 @@ export default {
         inTitImg: '',
         dtImg: '',
         text: ''
+      }, {
+        path: '/products/category'
+      }, {
+        path: '/products/product'
       }]
     }
   },
@@ -45,7 +50,6 @@ export default {
 </script>
 
 <style>
-
 .pro_index .pro_index_li {
   padding: 90px 0 50px 0
 }
@@ -81,7 +85,7 @@ export default {
   background: #f0f3fa
 }
 
-.pro_index .pro_index_li .left {
+.pro_index .pro_index_li .proLeft {
   width: 300px;
   background-size: 100% 100%;
   color: #fff;
@@ -89,7 +93,7 @@ export default {
   padding: 85px 30px 0 30px
 }
 
-.pro_index .pro_index_li .left:before {
+.pro_index .pro_index_li .proLeft:before {
   content: '';
   position: absolute;
   left: 30px;
@@ -100,7 +104,7 @@ export default {
   z-index: 3
 }
 
-.pro_index .pro_index_li .left.b1 {
+.pro_index .pro_index_li .proLeft.b1 {
   background-image: url(~assets/image/pro_bg01.jpg)
 }
 
@@ -118,13 +122,13 @@ export default {
   align-items: center
 }
 
-.pro_index .pro_index_li .left .bt span {
+.pro_index .pro_index_li .proLeft .bt span {
   font-size: 32px;
   color: #fff;
   font-weight: bold
 }
 
-.pro_index .pro_index_li .left .bt em {
+.pro_index .pro_index_li .proLeft .bt em {
   background: url(~assets/image/icon_tb.png) no-repeat;
   width: 67px;
   height: 28px;
@@ -138,14 +142,14 @@ export default {
   padding-left: 5px
 }
 
-.pro_index .pro_index_li .left .text {
+.pro_index .pro_index_li .proLeft .text {
   font-size: 16px;
   color: #fff;
   line-height: 30px;
   padding: 15% 0
 }
 
-.pro_index .pro_index_li .left .more {
+.pro_index .pro_index_li .proLeft .more {
   font-size: 16px;
   color: #fff;
   border: 1px solid #05163f;
@@ -154,7 +158,7 @@ export default {
   transition: all 0.5s;
 }
 
-.pro_index .pro_index_li .left .more img {
+.pro_index .pro_index_li .proLeft .more img {
   height: 14px;
   width: auto;
   vertical-align: middle;
@@ -162,11 +166,11 @@ export default {
   margin-left: 5px
 }
 
-.pro_index .pro_index_li .left .more:hover {
+.pro_index .pro_index_li .proLeft .more:hover {
   background: #05163f;
 }
 
-.pro_index .pro_index_li .right {
+.pro_index .pro_index_li .proRight {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1;
@@ -175,43 +179,81 @@ export default {
   width: 0;
   margin-left: 30px
 }
-.right .main{
+.proRight .main{
   padding: 0;
-}
-.pro_index .list_case li .dt{
-    background: url(~assets/image/icon_dian.png) 10px center no-repeat;
-    background-size: auto 34px;
-    padding: 0 15px 0 30px;
-}
-.pro_index .list_case li .dt div {
-  line-height: 50px;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    font-size: 18px;
-}
-.pro_index .list_case li .dt img{
-    float: right;
-    height: 38px;
-    width: auto;
-    margin-top: 6px;
 }
 
 @media (max-width: 999px) {
-  .pro_index .list_case li .dt div{
-    background-size: auto 20px;
-    padding: 0 5px 0 20px;
-    line-height: 34px;
-    font-size: 14px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .pro_index .pro_index_li .proRight .container {
+    padding:0 !important;
   }
-  .pro_index .list_case li .dt div img{
+  .pro_index .pro_index_li {
+    padding: 40px 0 20px 0
+  }
+
+  .pro_index .pro_index_li .container {
+    display: block
+  }
+
+  .pro_index .pro_index_li .container:before {
+    left: 0px;
+    top: -35px;
+    width: 44px;
+    height: 60px
+  }
+
+  .pro_index .pro_index_li .proLeft {
+    width: 100%;
+    padding: 25px 15px 160px 15px;
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    margin-bottom: 10px
+  }
+
+  .pro_index .pro_index_li .proLeft:before {
+    left: 40px;
+    top: -35px;
+    width: 44px;
+    height: 60px
+  }
+
+  .pro_index .pro_index_li .proLeft .bt span {
+    font-size: 20px
+  }
+
+  .pro_index .pro_index_li .proLeft .bt em {
+    width: 47px;
     height: 18px;
-    margin-top: 8px;
+    line-height: 18px;
+    font-size: 12px;
+    margin-left: 5px;
+    padding-left: 5px
+  }
+
+  .pro_index .pro_index_li .proLeft .text {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 10px 0
+  }
+
+  .pro_index .pro_index_li .proLeft .more {
+    font-size: 12px;
+    padding: 10px;
+    line-height: 1;
+    background: #e61e37;
+    border-color: #e61e37
+  }
+
+  .pro_index .pro_index_li .proLeft .more img {
+    height: 10px;
+    margin-top: -2px;
+    margin-left: 3px
+  }
+
+  .pro_index .pro_index_li .proRight {
+    width: 100%;
+    margin-left: 0
   }
 }
 </style>

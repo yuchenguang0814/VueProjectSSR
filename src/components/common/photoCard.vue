@@ -39,7 +39,7 @@ export default {
       const relY = (event.offsetY + 1) / card.offsetHeight
       const rotY = `rotateY(${(relX - 0.5) * 60}deg)`
       const rotX = `rotateX(${(relY - 0.5) * -60}deg)`
-      card.style.transform = `perspective(500px) scale(2) ${rotY} ${rotX}`
+      card.style.transform = `perspective(600px) scale(1.2) ${rotY} ${rotX}`
       const lightX = this.scale(relX, 0, 1, 150, -50)
       const lightY = this.scale(relY, 0, 1, 30, -100)
       const lightConstrain = Math.min(Math.max(relY, 0.3), 0.7)
@@ -67,8 +67,7 @@ export default {
 }
 .card {
   background-color: #ccc;
-  width: 150px;
-  height: 150px;
+  width: 100%;
   transition: all 0.1s ease;
   border-radius: 3px;
   position: relative;
@@ -103,8 +102,8 @@ export default {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  -webkit-filter: grayscale(0.65);
-  filter: grayscale(0.65);
+  -webkit-filter: grayscale(0.2);
+  filter: grayscale(0.2);
   transition: all 0.3s ease;
 }
 </style>

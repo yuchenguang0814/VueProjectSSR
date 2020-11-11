@@ -65,15 +65,15 @@ export default {
           sub: [
             {
               name: '1号产品中心',
-              link: '/prodicts/catagory'
+              link: '/products/category'
             },
             {
               name: '2号产品中心',
-              link: '/prodicts/catagory'
+              link: '/products/category'
             },
             {
               name: '3号产品中心',
-              link: '/prodicts/catagory'
+              link: '/products/category'
             }
           ]
         },

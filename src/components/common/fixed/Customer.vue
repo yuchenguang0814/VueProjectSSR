@@ -86,7 +86,7 @@ export default {
 ::-webkit-scrollbar
 {
     width: 16px;
-    height: 16px;
+    height: 0px;
     background-color: #F5F5F5;
 }
 ::-webkit-scrollbar-track
@@ -270,7 +270,7 @@ export default {
 }
 @media (max-width: 999px) {
   ::-webkit-scrollbar {
-    display: none;
+    width: 0 !important;;
   }
   .fixed_kefu_wap {
     display: block;
