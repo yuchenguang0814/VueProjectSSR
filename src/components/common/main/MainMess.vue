@@ -185,4 +185,98 @@ export default {
     display: block;
     content: ""
 }
+@media (max-width: 999px) {
+    .box_mess.big {
+        background-image: url(~assets/image/bj_ly_bg.jpg);
+        height: auto;
+        border-radius: 30px;
+        padding: 35px 15px 40px 15px;
+        position: relative;
+        margin-bottom: 25px
+    }
+
+    .box_mess .box .bt {
+        font-size: 20px
+    }
+
+    .box_mess .box .text {
+        font-size: 12px;
+        line-height: 20px;
+        margin: 5px 20% 0 0
+    }
+
+    .box_mess .box .bq {
+        flex-wrap: wrap;
+        padding: 16% 0 20px 0
+    }
+
+    .box_mess .box .bq li {
+        padding: 0 15px 0 10px;
+        font-size: 14px;
+        line-height: 36px;
+        margin-left: 10px;
+        width: auto;
+        margin-top: 10px
+    }
+
+    .box_mess .box .bq li:before {
+        width: 20px;
+        height: 100%;
+        right: -5px
+    }
+
+    .box_mess .box .bq li:after {
+        width: 30px;
+        height: 100%;
+        right: -10px
+    }
+
+    .box_mess .box .bq li:first-child {
+        margin-left: 0
+    }
+
+    .box_mess .box .form {
+        margin: -5px
+    }
+
+    .box_mess .box .form li {
+        padding: 5px
+    }
+
+    .box_mess .box .form li input,
+    .box_mess .box .form li textarea {
+        height: 44px;
+        padding: 0 0 0 30px;
+        font-size: 14px
+    }
+
+    .box_mess .box .form li textarea {
+        height: 80px;
+        background-size: 20px 20px;
+        padding: 15px 30px
+    }
+
+    .box_mess .box .form li #mess_name {
+        background-size: 20px 20px
+    }
+
+    .box_mess .box .form li #mess_tel {
+        background-size: 20px 20px
+    }
+
+    .box_mess button {
+        border-width: 4px;
+        bottom: -20px;
+        height: 50px;
+        width: 50%;
+        left: 25%;
+        font-size: 18px
+    }
+
+    .box_mess button:after {
+        width: 26px;
+        height: 26px;
+        right: 10px
+    }
+}
 </style>

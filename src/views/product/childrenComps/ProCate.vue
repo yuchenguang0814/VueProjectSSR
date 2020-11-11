@@ -3,8 +3,8 @@
   <div class="container">
     <ul>
       <li><a href="javascript:;"  @click="scrollFun('#tiao_detail')">产品描述</a></li>
-      <li><a href="javascript:;"  @click="scrollFun('#tiao_detail')">产品介绍</a></li>
-      <li><a href="javascript:;"  @click="scrollFun('#tiao_detail')">在线留言</a></li>
+      <li><a href="javascript:;"  @click="scrollFun('#tiao_body')">产品介绍</a></li>
+      <li><a href="javascript:;"  @click="scrollFun('#tiao_mess')">在线留言</a></li>
     </ul>
   </div>
 </div>
