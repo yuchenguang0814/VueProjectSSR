@@ -15,11 +15,11 @@
         <div class="top">
           <slot></slot>
           <ul>
-            <li v-for="(item) in topItem" :key="item.id" @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <a :href="item.link">{{item.name}}</a>
+            <li v-for="(item) in topList" :key="item.id" @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
+              <a :href="item.pagePath">{{item.pageName}}</a>
               <transition name="fade">
-                <div v-if="item.sub" id="sub" v-show="item.id==isShow">
-                  <a :href="item2.link" v-for="(item2, index2) in item.sub" :key="index2">{{item2.name}}
+                <div id="sub" v-show="item.id==isShow">
+                  <a :href="item2.link" v-for="(item2) in item.sub" :key="item2.id">{{item2.categoryName}}
                   </a>
                 </div>
               </transition>
@@ -35,13 +35,13 @@
         <!-- 导航栏底部 -->
         <nav>
           <ul>
-            <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <a :href="item.link">{{item.name}}</a>
+            <li v-for="item in bottomList" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
+              <a :href="item.pagePath">{{item.pageName}}</a>
               <transition name="fade">
-                <div v-if="item.sub" id="sub" v-show="item.id==isShow">
+                <!-- <div v-if="item.sub" id="sub" v-show="item.id==isShow">
                   <a :href="item2.link" v-for="(item2, index2) in item.sub" :key="index2">{{item2.name}}
                   </a>
-                </div>
+                </div> -->
               </transition>
             </li>
             <li><a href="">英文</a></li>
@@ -55,120 +55,149 @@
 <script>
 export default {
   name: 'HeaderNav',
+  props: {
+    navList: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    childList: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
   data () {
     return {
-      topItem: [
-        {
-          id: 1,
-          name: '产品中心',
-          link: '/products',
-          sub: [
-            {
-              name: '1号产品中心',
-              link: '/products/category'
-            },
-            {
-              name: '2号产品中心',
-              link: '/products/category'
-            },
-            {
-              name: '3号产品中心',
-              link: '/products/category'
-            }
-          ]
-        },
-        {
-          id: 2,
-          name: '解决方案',
-          link: '/solution',
-          sub: [
-            {
-              name: '客户案例',
-              link: '/solution/customer'
-            },
-            {
-              name: '行业应用',
-              link: '/solution/industry'
-            }
-          ]
-        },
-        {
-          id: 3,
-          name: '视频中心',
-          link: '/video'
-        }
-      ],
-      navItem: [
-        {
-          id: 11,
-          name: '首页',
-          link: '/'
-        },
-        {
-          id: 12,
-          name: '关于我们',
-          link: '/about',
-          sub: [
-            {
-              name: '工厂实景',
-              link: '/about/factory'
-            },
-            {
-              name: '荣誉资质',
-              link: '/about/honor'
-            }
-          ]
-        },
-        {
-          id: 13,
-          name: '新闻中心',
-          link: '/news',
-          sub: [
-            {
-              name: '企业新闻',
-              link: '/news/companyNews'
-            },
-            {
-              name: '行业新闻',
-              link: '/news/industryNews'
-            },
-            {
-              name: '技术文献',
-              link: '/news/literatureNews'
-            }
-          ]
-        },
-        {
-          id: 14,
-          name: '有问必答',
-          link: '/question'
-        },
-        {
-          id: 15,
-          name: '服务支持',
-          link: '/service'
-        },
-        {
-          id: 16,
-          name: '联系我们',
-          link: '/contact'
-        }
-      ],
+      // topItem: [
+      //   {
+      //     id: 1,
+      //     name: '产品中心',
+      //     link: '/products',
+      //     sub: [
+      //       {
+      //         name: '1号产品中心',
+      //         link: '/products/category'
+      //       },
+      //       {
+      //         name: '2号产品中心',
+      //         link: '/products/category'
+      //       },
+      //       {
+      //         name: '3号产品中心',
+      //         link: '/products/category'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 2,
+      //     name: '解决方案',
+      //     link: '/solution',
+      //     sub: [
+      //       {
+      //         name: '客户案例',
+      //         link: '/solution/customer'
+      //       },
+      //       {
+      //         name: '行业应用',
+      //         link: '/solution/industry'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 3,
+      //     name: '视频中心',
+      //     link: '/video'
+      //   }
+      // ],
+      // navItem: [
+      //   {
+      //     id: 11,
+      //     name: '首页',
+      //     link: '/'
+      //   },
+      //   {
+      //     id: 12,
+      //     name: '关于我们',
+      //     link: '/about',
+      //     sub: [
+      //       {
+      //         name: '工厂实景',
+      //         link: '/about/factory'
+      //       },
+      //       {
+      //         name: '荣誉资质',
+      //         link: '/about/honor'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 13,
+      //     name: '新闻中心',
+      //     link: '/news',
+      //     sub: [
+      //       {
+      //         name: '企业新闻',
+      //         link: '/news/companyNews'
+      //       },
+      //       {
+      //         name: '行业新闻',
+      //         link: '/news/industryNews'
+      //       },
+      //       {
+      //         name: '技术文献',
+      //         link: '/news/literatureNews'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 14,
+      //     name: '有问必答',
+      //     link: '/question'
+      //   },
+      //   {
+      //     id: 15,
+      //     name: '服务支持',
+      //     link: '/service'
+      //   },
+      //   {
+      //     id: 16,
+      //     name: '联系我们',
+      //     link: '/contact'
+      //   }
+      // ],
       telPhone: 18968919292,
       isShow: -1
     }
   },
+  computed: {
+    topList () {
+      return this.navList.slice(0, 3)
+    },
+    bottomList () {
+      return this.navList.slice(3)
+    }
+  },
   methods: {
+    mmm () {
+      this.topItem = [{ 1: '1' }]
+      // console.log(this.topItem)
+    },
     showSub (e, index) {
-      if (e.currentTarget.children.sub) {
-        this.isShow = index
-      }
+      const arr = this.childList.filter(item => item.pageId === index)
+      this.navList[index].sub = arr
+      this.isShow = index
+      console.log(this.navList)
     },
     hiddenSub (e) {
       if (e.currentTarget.children.sub) {
         this.isShow = -1
       }
     }
+  },
+  mounted () {
   }
 }
 </script>

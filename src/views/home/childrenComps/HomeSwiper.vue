@@ -25,6 +25,9 @@ export default {
     Swiper,
     SwiperSlide
   },
+  mounted () {
+    console.log(this.banners)
+  },
   computed: {
     swiper () {
       return this.$refs.mySwiper.$swiper

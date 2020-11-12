@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-swiper :banners="banners">
+    <home-swiper :banners="homeList.banner">
     </home-swiper>
     <home-product :products="products">
     </home-product>
@@ -31,30 +31,16 @@ export default {
     HomeNews,
     HomeAbout
   },
+  props: {
+    homeList: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
   data () {
     return {
-      banners: [
-        {
-          index: 1,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg'
-        },
-        {
-          index: 2,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
-        },
-        {
-          index: 3,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg'
-        },
-        {
-          index: 4,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg'
-        }
-      ],
       caseBanners: [
         {
           index: 1,
@@ -200,13 +186,6 @@ export default {
         ]
       }
     }
-  },
-  created () {
-    // GetHomeMultidata().then(res => {
-    //   this.banners = res.data.banner
-    //   this.recommand = res.data.recommand
-    //   console.log(res.data)
-    // })
   }
 }
 </script>

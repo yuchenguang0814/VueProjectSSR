@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { GetHomeMultidata } from 'network/home'
 
 Vue.use(Vuex)
 
@@ -8,7 +9,8 @@ export default new Vuex.Store({
     isPc: true,
     nbanners: [],
     childPath: [],
-    routePath: ''
+    routePath: '',
+    homeList: []
   },
   getters: {
     getNbanner (state) {
@@ -38,9 +40,17 @@ export default new Vuex.Store({
     },
     getPath (state, path) {
       state.routePath = path
+    },
+    setHomeList (state, res) {
+      state.homeList = res
     }
   },
   actions: {
+    getHomeDate (context) {
+      GetHomeMultidata().then(res => {
+        context.commit('setHomeList', res.data)
+      })
+    }
   },
   modules: {
   }
