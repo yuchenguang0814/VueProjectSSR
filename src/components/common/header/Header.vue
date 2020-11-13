@@ -10,15 +10,15 @@
       <!-- 手机端小图标 -->
       <div class="navbut wap"></div>
       <!-- 导航栏 -->
-      <div class="box pc">
+      <div class="box">
         <!-- 导航栏顶部 -->
-        <div class="top">
+        <div class="top pc">
           <slot></slot>
           <ul>
             <li v-for="(item) in topItem" :key="item.id" @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
               <a :href="item.pagePath">{{item.pageName}}</a>
               <transition name="fade">
-                <div v-if="item.child.length>0" id="sub" v-show="item.id==isShow">
+                <div v-if="item.child.length>0" class="sub" v-show="item.id==isShow">
                   <a :href="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
                   </a>
                 </div>
@@ -37,8 +37,9 @@
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
               <a :href="item.pagePath">{{item.pageName}}</a>
+              <i v-if="item.child.length>0" @click="showSub($event,item.id)"></i>
               <transition name="fade">
-                <div v-if="item.child.length>0" id="sub" v-show="item.id==isShow">
+                <div v-if="item.child.length>0" class="sub"  v-show="item.id==isShow">
                   <a :href="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
                   </a>
                 </div>
@@ -57,103 +58,6 @@ export default {
   name: 'HeaderNav',
   data () {
     return {
-      // topItem: [
-      //   {
-      //     id: 1,
-      //     name: '产品中心',
-      //     link: '/products',
-      //     sub: [
-      //       {
-      //         name: '1号产品中心',
-      //         link: '/products/category'
-      //       },
-      //       {
-      //         name: '2号产品中心',
-      //         link: '/products/category'
-      //       },
-      //       {
-      //         name: '3号产品中心',
-      //         link: '/products/category'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     id: 2,
-      //     name: '解决方案',
-      //     link: '/solution',
-      //     sub: [
-      //       {
-      //         name: '客户案例',
-      //         link: '/solution/customer'
-      //       },
-      //       {
-      //         name: '行业应用',
-      //         link: '/solution/industry'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     id: 3,
-      //     name: '视频中心',
-      //     link: '/video'
-      //   }
-      // ],
-      // navItem: [
-      //   {
-      //     id: 11,
-      //     name: '首页',
-      //     link: '/'
-      //   },
-      //   {
-      //     id: 12,
-      //     name: '关于我们',
-      //     link: '/about',
-      //     sub: [
-      //       {
-      //         name: '工厂实景',
-      //         link: '/about/factory'
-      //       },
-      //       {
-      //         name: '荣誉资质',
-      //         link: '/about/honor'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     id: 13,
-      //     name: '新闻中心',
-      //     link: '/news',
-      //     sub: [
-      //       {
-      //         name: '企业新闻',
-      //         link: '/news/companyNews'
-      //       },
-      //       {
-      //         name: '行业新闻',
-      //         link: '/news/industryNews'
-      //       },
-      //       {
-      //         name: '技术文献',
-      //         link: '/news/literatureNews'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     id: 14,
-      //     name: '有问必答',
-      //     link: '/question'
-      //   },
-      //   {
-      //     id: 15,
-      //     name: '服务支持',
-      //     link: '/service'
-      //   },
-      //   {
-      //     id: 16,
-      //     name: '联系我们',
-      //     link: '/contact'
-      //   }
-      // ],
       telPhone: 18968919292,
       isShow: -1
     }
@@ -168,6 +72,7 @@ export default {
   },
   methods: {
     showSub (e, index) {
+      console.log(index)
       if (e.currentTarget.children.sub) {
         this.isShow = index
       }
@@ -241,7 +146,7 @@ header .top ul li>a {
   box-shadow: 2px 0 15px rgba(21, 53, 133, 0.2) inset
 }
 
-header .top ul li #sub {
+header .top ul li .sub {
   display: block;
   border-radius: 30px;
   overflow: hidden;
@@ -252,7 +157,7 @@ header .top ul li #sub {
   line-height: 40px;
 }
 
-header .top ul li #sub a {
+header .top ul li .sub a {
   display: block;
   white-space: nowrap;
   overflow: hidden;
@@ -261,7 +166,7 @@ header .top ul li #sub a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 }
 
-header .top ul li #sub a:hover {
+header .top ul li .sub a:hover {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
@@ -332,7 +237,7 @@ header nav ul li:hover>a:after {
   width: 100%
 }
 
-header nav ul li #sub {
+header nav ul li .sub {
   position: absolute;
   left: 0;
   top: 100%;
@@ -342,7 +247,7 @@ header nav ul li #sub {
   line-height: 40px
 }
 
-header nav ul li #sub a {
+header nav ul li .sub a {
   display: block;
   white-space: nowrap;
   overflow: hidden;
@@ -351,7 +256,7 @@ header nav ul li #sub a {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 }
 
-header nav ul li #sub a:hover {
+header nav ul li .sub a:hover {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
@@ -397,6 +302,90 @@ header nav ul li.on>a {
     border-left: 0;
     max-width: inherit;
     margin-left: 0
+  }
+  header .box nav {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    bottom: 0;
+    width: 500px;
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 0 5px #eee;
+  }
+  header .box nav ul li {
+    width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  header .box nav ul li > a {
+    line-height: 50px;
+    font-size: 16px;
+    padding: 0 15px;
+    border-bottom: 1px solid #eee;
+  }
+  header .box nav ul li > a:before,
+  header .box nav ul li > a:after {
+    display: none;
+  }
+  header .box nav ul li i {
+    display: block;
+    position: absolute;
+    left:70%;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  header .box nav ul li i:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    transform: rotate(-45deg);
+    margin-top: -7px;
+  }
+  header .box nav ul li .sub {
+    position: static;
+    line-height: 34px;
+    background: #f5f5f5;
+    text-align: left;
+  }
+  header .box nav ul li .sub a {
+    padding: 0 15px;
+    border-bottom: 1px solid #eee;
+    color: #888;
+  }
+  header .box nav ul li .sub a:hover {
+    background: none;
+  }
+  header .box nav ul li:hover > a {
+    color: #555f7d;
+  }
+  header .box nav ul li.on > a {
+    color: #fff;
+    background: #e61e37;
+  }
+  header .box nav ul li.on i:before {
+    border-left-color: #fff;
+    border-bottom-color: #fff;
+  }
+  header .box nav ul li > a {
+    line-height: 50px;
+    font-size: 16px;
+  }
+  header .box nav ul li > a:before,
+  header .box nav ul li > a:after {
+    height: 1px;
   }
 }
 </style>
