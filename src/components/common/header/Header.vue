@@ -8,7 +8,7 @@
         </a>
       </div>
       <!-- 手机端小图标 -->
-      <div class="navbut wap"></div>
+      <div class="navbut wap" @click="showNav()"></div>
       <!-- 导航栏 -->
       <div class="box">
         <!-- 导航栏顶部 -->
@@ -33,11 +33,11 @@
           </div>
         </div>
         <!-- 导航栏底部 -->
-        <nav>
+        <nav v-show="this.$store.state.isPc | showN !== false">
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
               <a :href="item.pagePath">{{item.pageName}}</a>
-              <i v-if="item.child.length>0" @click="showSub($event,item.id)"></i>
+              <i v-if="item.child.length>0" @click="showNsub($event,item.id)"></i>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub"  v-show="item.id==isShow">
                   <a :href="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
@@ -59,7 +59,8 @@ export default {
   data () {
     return {
       telPhone: 18968919292,
-      isShow: -1
+      isShow: -1,
+      showN: false
     }
   },
   computed: {
@@ -72,15 +73,27 @@ export default {
   },
   methods: {
     showSub (e, index) {
-      console.log(index)
-      if (e.currentTarget.children.sub) {
+      if (this.$store.state.isPc) {
         this.isShow = index
       }
     },
+    showNsub (e, index) {
+      if (this.isShow === index) {
+        this.isShow = -1
+        e.target.className = ''
+      } else {
+        this.isShow = index
+        e.target.className = 'up'
+      }
+    },
     hiddenSub (e) {
-      if (e.currentTarget.children.sub) {
+      if (this.$store.state.isPc) {
         this.isShow = -1
       }
+    },
+    showNav () {
+      this.showN = !this.showN
+      console.log(!this.$store.state.isPc & !this.showN === false)
     }
   },
   mounted () {
@@ -331,7 +344,7 @@ header nav ul li.on>a {
   header .box nav ul li i {
     display: block;
     position: absolute;
-    left:70%;
+    left:50%;
     top: 0;
     height: 50px;
     width: 50px;
@@ -353,6 +366,11 @@ header nav ul li.on>a {
     border-left: 1px solid #bbb;
     transform: rotate(-45deg);
     margin-top: -7px;
+    transform: rotate(-45deg);
+    transition: transform 1.5s;
+  }
+  header .box nav ul li i.up {
+    transform: rotate(180deg);
   }
   header .box nav ul li .sub {
     position: static;
