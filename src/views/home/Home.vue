@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-swiper :banners="homeList.banner">
+    <home-swiper :banners="banners">
     </home-swiper>
     <home-product :products="products">
     </home-product>
@@ -20,6 +20,7 @@ import HomeCase from './childrenComps/HomeCase'
 import HomeAppointment from './childrenComps/HomeAppointment'
 import HomeNews from './childrenComps/HomeNews'
 import HomeAbout from './childrenComps/HomeAbout'
+import { GetHomeMultidata } from 'network/home'
 
 export default {
   name: 'Home',
@@ -31,16 +32,22 @@ export default {
     HomeNews,
     HomeAbout
   },
-  props: {
-    homeList: {
-      type: Object,
-      default () {
-        return {}
-      }
+  watch: {
+    homeLists () {
+      this.banners = this.homeLists.banner
     }
+  },
+  created () {
+    GetHomeMultidata().then(res => {
+      this.homeLists = res.data
+      // console.log('home')
+      // console.log(this.homeLists)
+    })
   },
   data () {
     return {
+      homeLists: [],
+      banners: [],
       caseBanners: [
         {
           index: 1,

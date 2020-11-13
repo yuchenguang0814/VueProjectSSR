@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot v-if="this.$route.path == '/products'" name="nb" :props="$store.getters.getNbanner" ></slot>
+    <!-- <slot v-if="this.$route.path == '/products'" name="nb" :props="$store.getters.getNbanner" ></slot> -->
     <slot name="crumb"></slot>
     <div  v-if="this.$route.path == '/products'" class="pro_index">
       <div class="pro_index_li">
@@ -108,11 +108,11 @@ export default {
   background-image: url(~assets/image/pro_bg01.jpg)
 }
 
-.pro_index .pro_index_li .left.b1:before {
+.pro_index .pro_index_li .proLeft.b1:before {
   background-image: url(~assets/image/icon_nums_1.png)
 }
 
-.pro_index .pro_index_li .left .bt {
+.pro_index .pro_index_li .proLeft .bt {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;

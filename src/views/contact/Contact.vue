@@ -1,6 +1,6 @@
 <template>
   <div class="gg">
-    <slot name="nb" :props="$store.getters.getNbanner"></slot>
+    <slot name="nb" :props="$store.getters.getNbanner" class="11"></slot>
     <slot name="crumb"></slot>
     <contact-process></contact-process>
     <contact-map></contact-map>
@@ -34,8 +34,13 @@ export default {
 }
 </script>
 
-<style scoped>
-.gg .nbanner {
- padding:40px 0 ;
+<style>
+.gg .nbanner .container {
+  height: 600px !important;
+}
+@media (max-width:999px) {
+  .gg .nbanner .container {
+    height: 280px !important;
+  }
 }
 </style>

@@ -12,7 +12,6 @@
         <div v-if="path.indexOf('/solution') != -1">
         <form-order></form-order>
       </div>
-  </div>
       <div v-if="path == '/contact'">
         <ul class="cont">
           <li>
@@ -30,6 +29,7 @@
         </ul>
         <div class="address"><img src="http://www.qizhong114.com/static/home/img/icon_wzxx.png">公司 地址： 佛山市三水区南山镇华侨工业园</div>
       </div>
+  </div>
       </div>
     </div>
 </template>

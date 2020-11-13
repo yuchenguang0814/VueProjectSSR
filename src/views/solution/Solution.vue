@@ -59,10 +59,6 @@ export default {
 }
 </script>
 <style>
-.solution {
-  padding: 50px 0
-}
-
 .solution .btit {
   display: -webkit-box;
   display: -moz-box;

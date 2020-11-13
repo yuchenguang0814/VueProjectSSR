@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { GetHomeMultidata } from 'network/home'
+import { GetPageMultidata } from 'network/page.js'
 
 Vue.use(Vuex)
 
@@ -10,7 +10,7 @@ export default new Vuex.Store({
     nbanners: [],
     childPath: [],
     routePath: '',
-    homeList: []
+    pageList: []
   },
   getters: {
     getNbanner (state) {
@@ -41,14 +41,17 @@ export default new Vuex.Store({
     getPath (state, path) {
       state.routePath = path
     },
-    setHomeList (state, res) {
-      state.homeList = res
+    setPageList (state, res) {
+      res.page.forEach(item => {
+        item.child = res.category.filter(item1 => item.id === item1.pageId)
+      })
+      state.pageList = res.page
     }
   },
   actions: {
-    getHomeDate (context) {
-      GetHomeMultidata().then(res => {
-        context.commit('setHomeList', res.data)
+    getPageDate (context) {
+      GetPageMultidata().then(res => {
+        context.commit('setPageList', res.data)
       })
     }
   },

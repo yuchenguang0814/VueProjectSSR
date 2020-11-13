@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-nav :navList="homeList.page" :childList="homeList.category"></header-nav>
-    <router-view :homeList="homeList">
+    <header-nav></header-nav>
+    <router-view :pageList="pageList">
       <div slot="nb" slot-scope="props"><nbanner :nbanners="props"></nbanner></div>
       <div slot="crumb"><breadcrumb/></div>
     </router-view>
@@ -25,30 +25,31 @@ export default {
   },
   data () {
     return {
-      homeList: {}
+      pageList: {}
     }
   },
   mounted () {
     this.$store.commit('checkIsPc')
   },
   computed: {
-    homeDate () {
-      return this.$store.state.homeList
+    pageDate () {
+      return this.$store.state.pageList
     }
   },
   watch: {
-    homeDate () {
+    pageDate () {
       this.setcate()
     }
   },
   methods: {
     setcate () {
-      this.homeList = this.homeDate
-      console.log(this.homeList)
+      this.pageList = this.pageDate
+      // console.log('app')
+      // console.log(this.pageList)
     }
   },
   created () {
-    this.$store.dispatch('getHomeDate')
+    this.$store.dispatch('getPageDate')
   }
 }
 </script>
