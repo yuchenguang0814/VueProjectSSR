@@ -5,24 +5,24 @@
       <img src="~assets/image/icon_jtb_s.png" alt="">
       客服栏</span>
     <ul :class= "`fixed pc ${isClose?'active':''}`">
-      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/fixed_kefu_1.png"><em>在线客服</em></a></li>
-      <li><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_2.png"><em>咨询报价</em></a>
-        <div class="hideewm"><img src="http://www.qizhong114.com/uploads/images/20200520/6bd23fdf030d01c27eb610f6d4ecf624.jpg"></div></li>
-      <li><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_3.png"><em>销售热线</em></a>
-        <div class="hide"><img src="http://www.qizhong114.com/uploads/images/20200520/6bd23fdf030d01c27eb610f6d4ecf624.jpg">
+      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="~assets/image/fixed_kefu_1.png"><em>在线客服</em></a></li>
+      <li><a href="javascript:;"><img src="~assets/image/fixed_kefu_2.png"><em>咨询报价</em></a>
+        <div class="hideewm"><img src="~assets/image/6bd23fdf030d01c27eb610f6d4ecf624.jpg"></div></li>
+      <li><a href="javascript:;"><img src="~assets/image/fixed_kefu_3.png"><em>销售热线</em></a>
+        <div class="hide"><img src="~assets/image/6bd23fdf030d01c27eb610f6d4ecf624.jpg">
           <div class="box">
             <p><span>扫码</span>即可拨打电话</p>
             <strong>0757-86283883</strong></div>
         </div>
       </li>
-      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/fixed_kefu_4.png"><em>在线留言</em></a></li>
-      <transition name="back"><li class="backtop" v-show="showTop" @click="scrollTopfun"><a href="javascript:;"><img src="http://qizhong114.com/static/home/img/fixed_kefu_5.png"><em>返回顶部</em></a></li></transition>
+      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="~assets/image/fixed_kefu_4.png"><em>在线留言</em></a></li>
+      <transition name="back"><li class="backtop" v-show="showTop" @click="scrollTopfun"><a href="javascript:;"><img src="~assets/image/fixed_kefu_5.png"><em>返回顶部</em></a></li></transition>
     </ul>
   </div>
   <ul class="fixed_kefu_wap wap">
-      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="http://qizhong114.com/static/home/img/icon_zx.png"><em>咨询客服</em></a></li>
-      <li><a href="tel:0757-86283883"><img src="http://qizhong114.com/static/home/img/icon_dh.png"><em>一键拨打</em></a></li>
-      <transition name="back"><li class="backtop" v-show="showTop"  @click="scrollTopfun"><img src="http://qizhong114.com/static/home/img/icon_mtop.png"></li></transition>
+      <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank"><img src="~assets/image/icon_zx.png"><em>咨询客服</em></a></li>
+      <li><a href="tel:0757-86283883"><img src="~assets/image/icon_dh.png"><em>一键拨打</em></a></li>
+      <transition name="back"><li class="backtop" v-show="showTop"  @click="scrollTopfun"><img src="~assets/image/icon_mtop.png"></li></transition>
   </ul>
   </section>
 </template>

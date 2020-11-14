@@ -1,6 +1,6 @@
 <template>
   <div class="solution">
-    <slot name="nb" :props="$store.getters.getNbanner" ></slot>
+    <slot name="nb" :props="$store.getters.getPageNbanner" ></slot>
     <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/solution'" class="main_index">
   <div class="container">
@@ -29,31 +29,9 @@ export default {
     Mains
   },
   data () {
-    return {
-      nbanners: [{
-        path: '/solution',
-        backgroundImage: 'http://www.qizhong114.com/uploads/images/20200606/f31a02875173c975b32a6710724f8baf.jpg',
-        inTitImg: 'http://www.qizhong114.com/uploads/images/20200516/89f1ed9ce8c4c9e84fe66a463451896e.png',
-        dtImg: 'http://qizhong114.com/static/home/img/tit_zs.png',
-        text: '我们积累了丰富的实战经验，以“为多个行业提供专业的物料搬运起重设备提供解决方案，产品广泛应用于机械、冶金、铁路、水利港口、码头、造纸、化工、矿山、汽车、航空、航天、军工制造等多种行业。'
-      }, {
-        path: '/solution/customer',
-        backgroundImage: 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg',
-        inTitImg: 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png',
-        dtImg: 'http://qizhong114.com/static/home/img/tit_zs.png',
-        text: '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案'
-      }, {
-        path: '/solution/industry',
-        backgroundImage: 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg',
-        inTitImg: 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png',
-        dtImg: 'http://qizhong114.com/static/home/img/tit_zs.png',
-        text: '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.'
-      }],
-      childPath: []
-    }
+    return {}
   },
-  mounted () {
-    this.$store.commit('getnb', { data1: this.nbanners, data2: this.childPath })
+  created () {
     this.$store.commit('getPath', this.$route.path)
   }
 }

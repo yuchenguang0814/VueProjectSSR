@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-11-13 17:02:35
+Date: 2020-11-14 14:36:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -43,11 +43,11 @@ CREATE TABLE `category` (
   `pageId` int(11) NOT NULL,
   `pageName` varchar(255) DEFAULT NULL,
   `pagePath` varchar(255) DEFAULT NULL,
-  `pageBgImage` varchar(255) DEFAULT NULL,
+  `pageImage` varchar(255) DEFAULT NULL,
   `pageTitleImage` varchar(255) DEFAULT NULL,
   `pageDescription` varchar(255) DEFAULT NULL,
   `pageKey` varchar(255) DEFAULT NULL,
-  `pageImage` varchar(255) DEFAULT NULL,
+  `pagePImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `pageId` (`pageId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
@@ -58,7 +58,7 @@ CREATE TABLE `category` (
 INSERT INTO `category` VALUES ('1', '5', '荣誉中心', '/about/honor', 'http://www.qizhong114.com/static/home/img/pic_banner_project.jpg', 'http://www.qizhong114.com/static/home/img/tit_hongxing.png', '广东顺发起重设备有限公司长期与广大新老客户的合作中积累了丰富的经验，使得公司的产品在同行业中更具独特性，深受广大用户的青睐和好评，并在起重机行业中拥有最高级别的A级生产许可证，公司生产依据ISO9001质量控制体系对产品在其来料、加工过程、整机、出货各个环节严格把关，确保出货产品的性能和质量，多个产品系列已获得欧盟CE认证。经过多年发展公司已先后获“广东省著名商标”、“中国AAA级信用企业”、“中国行业十佳品牌”、“民营科技企业”等荣誉称号.', '荣誉中心', null);
 INSERT INTO `category` VALUES ('2', '5', '工厂实景', '/about/factory', 'http://www.qizhong114.com/uploads/images/20200606/8e4dfed80f42cafb01259428a0a656e2.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司拥有多个大型标准生产车间，按起重机模块流水线生产布局，完全符合ISO国际标准，欧洲标准、中国标准。我们拥有包括40m数控火焰切割生产线，40m数控等离子切割系统、箱型梁成型生产线、多台龙门式自动埋弧焊系统、机器人焊接系统生产线(60m 10台)、整机预组装平台、整梁抛丸处理线等生产装备。', '工厂实景', null);
 INSERT INTO `category` VALUES ('3', '6', '企业新闻', '/news/companyNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是经国家质量监督检验检疫总局颁证认可的起重机制造生产厂家并提供安装、维修、保养为一体的专业性厂家。从1994年至今已有接近30年的起重机设计、制造、安装的丰富经验。', '企业新闻', null);
-INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg。', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻', null);
+INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻', null);
 INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献', null);
 INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg', 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例', null);
 INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用', null);

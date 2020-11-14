@@ -71,7 +71,7 @@ const routes = [
       path: 'honor',
       component: () => import('views/about/child/Honor.vue'),
       name: 'Honor',
-      meta: { title: '荣誉资质' }
+      meta: { title: '荣誉中心' }
     }]
   },
   {
@@ -86,7 +86,7 @@ const routes = [
       path: 'companyNews',
       component: () => import('../views/new/child/CompanyNews.vue'),
       name: 'CompanyNews',
-      meta: { title: '公司新闻' }
+      meta: { title: '企业新闻' }
     }, {
       path: 'industryNews',
       component: () => import('../views/new/child/IndustryNews.vue'),

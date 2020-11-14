@@ -1,6 +1,6 @@
 <template>
   <div class="video">
-    <slot name="nb" :props="$store.getters.getNbanner" ></slot>
+    <slot name="nb" :props="$store.getters.getPageNbanner" ></slot>
     <slot name="crumb"></slot>
     <mains class="list"><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
   </div>
@@ -26,7 +26,6 @@ export default {
     }
   },
   mounted () {
-    this.$store.commit('getnb', { data1: this.nbanners, data2: this.childPath })
     this.$store.commit('getPath', this.$route.path)
   }
 }

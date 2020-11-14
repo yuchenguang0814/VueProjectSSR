@@ -42,7 +42,6 @@ export default {
     }
   },
   mounted () {
-    this.$store.commit('getnb', { data1: this.nbanners, data2: this.childPath })
     this.$store.commit('getPath', this.$route.path)
   }
 }

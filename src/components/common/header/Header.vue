@@ -8,7 +8,7 @@
         </a>
       </div>
       <!-- 手机端小图标 -->
-      <div class="navbut wap" @click="showNav()"></div>
+      <div class="navbut wap" @click="showNav($event)"></div>
       <!-- 导航栏 -->
       <div class="box">
         <!-- 导航栏顶部 -->
@@ -33,7 +33,7 @@
           </div>
         </div>
         <!-- 导航栏底部 -->
-        <nav v-show="this.$store.state.isPc | showN !== false">
+        <nav v-show="this.$store.state.isPc | showN !== false" id="nav">
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
               <a :href="item.pagePath">{{item.pageName}}</a>
@@ -91,9 +91,16 @@ export default {
         this.isShow = -1
       }
     },
-    showNav () {
+    showNav (e) {
+      if (this.$store.state.isPc) {
+        const nav = document.getElementById('nav')
+        if (this.showN) {
+          nav.style.display = 'block'
+        } else {
+          nav.style.display = 'none'
+        }
+      }
       this.showN = !this.showN
-      console.log(!this.$store.state.isPc & !this.showN === false)
     }
   },
   mounted () {
@@ -318,10 +325,8 @@ header nav ul li.on>a {
   }
   header .box nav {
     position: fixed;
-    left: 0;
     top: 55px;
-    bottom: 0;
-    width: 500px;
+    width: 100%;
     border-top: 0;
     background: #fff;
     box-shadow: 0 0 5px #eee;
@@ -344,7 +349,7 @@ header nav ul li.on>a {
   header .box nav ul li i {
     display: block;
     position: absolute;
-    left:50%;
+    right: 0;
     top: 0;
     height: 50px;
     width: 50px;

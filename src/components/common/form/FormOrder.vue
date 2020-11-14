@@ -48,7 +48,7 @@ export default {
 <style>
  .mess {
   overflow: hidden;
-  margin: 60px -10px 0 -10px
+  margin: 30px -10px 0 -10px
 }
 
  .mess li {

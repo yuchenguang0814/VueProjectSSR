@@ -1,13 +1,13 @@
 <template>
-  <div class="nbanner" :style="`background-image: url(${nbanners.props.backgroundImage});`">
+  <div v-if="nbanners.props !== undefined" class="nbanner" :style="`background-image: url(${nbanners.props.pageImage});`">
     <div class="container">
       <div class="box">
-        <div class="in-tit"><img :src="nbanners.props.inTitImg">
-          <div class="dt"><img :src="nbanners.props.dtImg">{{this.$route.meta.title}}</div>
-          <div class="text">{{nbanners.props.text}}</div>
+        <div class="in-tit"><img :src="nbanners.props.pageTitleImage">
+          <div class="dt"><img src="~assets/image/tit_zs.png">{{this.$route.meta.title}}</div>
+          <div class="text">{{nbanners.props.pageDescription}}</div>
         </div>
-        <ul v-if="nbanners.props.childPath" class="tab">
-          <li v-for="(item, index) in nbanners.props.childPath" :key="index" :class="`${path == item.path?'on':''}`"><a :href="item.path">{{item.name}}</a></li>
+        <ul v-if="nbanners.props.child" class="tab">
+          <li v-for="item in nbanners.props.child" :key="item.id" :class="`${path == item.pagePath?'on':''}`"><a :href="item.pagePath">{{item.pageName}}</a></li>
         </ul>
         <div v-if="path.indexOf('/solution') != -1">
         <form-order></form-order>
@@ -15,23 +15,23 @@
       <div v-if="path == '/contact'">
         <ul class="cont">
           <li>
-            <div class="box"><img src="http://www.qizhong114.com/static/home/img/con_dh.png">
+            <div class="box"><img src="~assets/image/con_dh.png">
               <div class="n"><span>服务热线</span>
                 <p>0757-86283883</p>
               </div>
             </div>
           </li>
-          <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank" class="box"><img src="http://www.qizhong114.com/static/home/img/con_kf.png">
+          <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank" class="box"><img src="~assets/image/con_kf.png">
             <div class="n"><span>联系客服</span>
               <p>点击马上咨询</p>
             </div>
             </a></li>
         </ul>
-        <div class="address"><img src="http://www.qizhong114.com/static/home/img/icon_wzxx.png">公司 地址： 佛山市三水区南山镇华侨工业园</div>
+        <div class="address"><img src="~assets/image/icon_wzxx.png">公司 地址： 佛山市三水区南山镇华侨工业园</div>
       </div>
   </div>
       </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -54,7 +54,6 @@ export default {
     }
   },
   mounted () {
-    // console.log(this.$route.path)
   }
 }
 </script>

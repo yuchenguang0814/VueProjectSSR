@@ -13,15 +13,26 @@ export default new Vuex.Store({
     pageList: []
   },
   getters: {
-    getNbanner (state) {
-      let nb1 = []
-      state.nbanners.filter(item => {
-        if (item.path === state.routePath) {
-          nb1 = item
+    getPageNbanner (state) {
+      let nb2 = []
+      if (state.pageList.length > 0) {
+        state.pageList.forEach(item => {
+          if (item.pagePath === state.routePath) {
+            nb2 = item
+          }
+        })
+        if (nb2.length === 0 || nb2 === undefined) {
+          state.pageList.forEach(item => {
+            item.child.forEach(item2 => {
+              if (item2.pagePath === state.routePath) {
+                nb2 = item2
+                nb2.child = item.child
+              }
+            })
+          })
         }
-      })
-      nb1.childPath = state.childPath
-      return nb1
+        return nb2
+      }
     }
   },
   mutations: {
@@ -33,10 +44,6 @@ export default new Vuex.Store({
         state.isPc = true
       }
       return state.isPc
-    },
-    getnb (state, payload) {
-      state.nbanners = payload.data1
-      state.childPath = payload.data2
     },
     getPath (state, path) {
       state.routePath = path
