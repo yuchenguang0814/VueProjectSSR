@@ -35,162 +35,26 @@ export default {
   watch: {
     homeLists () {
       this.banners = this.homeLists.banner
+      this.caseBanners = this.homeLists.case
+      this.products.category = this.homeLists.goodCates
+      this.products.product = this.homeLists.goods
     }
   },
   created () {
     GetHomeMultidata().then(res => {
       this.homeLists = res.data
-      // console.log('home')
-      // console.log(this.homeLists)
     })
   },
   data () {
     return {
       homeLists: [],
       banners: [],
-      caseBanners: [
-        {
-          index: 1,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200715/f726e4e844fea5c39b151e06c89925c5.jpg'
-        },
-        {
-          index: 2,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
-        },
-        {
-          index: 3,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200715/f726e4e844fea5c39b151e06c89925c5.jpg'
-        },
-        {
-          index: 4,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200704/90ab5c4220ee870015a45c6826d6c4db.jpg'
-        },
-        {
-          index: 5,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
-        },
-        {
-          index: 6,
-          link: '#',
-          image: 'http://www.qizhong114.com/uploads/images/20200704/0d36391d254e005a12817d92984041e9.jpg'
-        }
-      ],
+      caseBanners: [],
       products: {
         category:
-        [
-          {
-            id: 1,
-            name: '产品分类1',
-            link: '#',
-            description: '这是产品分类1',
-            imagePro: 'http://www.qizhong114.com/uploads/images/20200608/3a1de072d4d508acfbab7c88355a34df.png'
-            // imageNum: '/assets/image/icon_num_1.png'
-          },
-          {
-            id: 2,
-            name: '产品分类2',
-            link: '#',
-            description: '这是产品分类2',
-            imagePro: 'http://www.qizhong114.com/uploads/images/20200608/3a1de072d4d508acfbab7c88355a34df.png'
-            // imageNum: '../assets/image/icon_num_2.png'
-          },
-          {
-            id: 3,
-            name: '产品分类3',
-            link: '#',
-            description: '这是产品分类3',
-            imagePro: 'http://www.qizhong114.com/uploads/images/20200608/3a1de072d4d508acfbab7c88355a34df.png'
-            // imageNum: '/assets/image/icon_num_3.png'
-          },
-          {
-            id: 4,
-            name: '产品分类4',
-            link: '#',
-            description: '这是产品分类4',
-            imagePro: 'http://www.qizhong114.com/uploads/images/20200608/3a1de072d4d508acfbab7c88355a34df.png'
-            // imageNum: '/assets/image/icon_num4.png'
-          },
-          {
-            id: 5,
-            name: '产品分类5',
-            link: '#',
-            description: '这是产品分类5',
-            imagePro: 'http://www.qizhong114.com/uploads/images/20200608/3a1de072d4d508acfbab7c88355a34df.png'
-            // imageNum: '~assets/image/icon_num_5.png'
-          }
-        ],
+        [],
         product:
-        [
-          {
-            id: 1,
-            name: '这是产品1',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 2,
-            name: '这是产品2',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 3,
-            name: '这是产品3',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 4,
-            name: '这是产品4',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 5,
-            name: '这是产品1',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 6,
-            name: '这是产品2',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 7,
-            name: '这是产品3',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          },
-          {
-            id: 8,
-            name: '这是产品4',
-            link: '#',
-            parameter1: '这是参数1',
-            parameter2: '这是参数2',
-            image: 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg'
-          }
-        ]
+        []
       }
     }
   }

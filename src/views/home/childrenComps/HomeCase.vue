@@ -11,14 +11,14 @@
       </div>
     </div>
     <swiper ref="caseSwiper" :options="swiperOptions">
-      <swiper-slide v-for="item in banners" :key="item.index">
-        <a :href="item.link" @click.prevent="clikeNext">
+      <swiper-slide v-for="item in banners" :key="item.id">
+        <a href="" @click.prevent="clikeNext">
           <div class="pic">
             <div class="o">
-              <img :src="item.image">
+              <img :src="item.caseImage">
             </div>
           </div>
-          <div class="box"><span>能源行业起重机应用</span>
+          <div class="box"><span>{{item.caseName}}</span>
           </div>
         </a>
       </swiper-slide>

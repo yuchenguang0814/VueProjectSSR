@@ -2,10 +2,10 @@
   <div class="product">
     <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
       <swiper-slide class="category-item" v-for="item in products.category" :key="item.id">
-        <a :href="item.link"><span>{{item.name}}</span>
-          <p>{{item.description}}</p>
+        <a :href="item.pagePath"><span>{{item.pageName}}</span>
+          <p>{{item.pageDescription}}</p>
           <div class="box">
-            <img :src="item.imagePro" class="p">
+            <img :src="item.cSmallImage" class="p">
             <img src="~assets/image/icon_num_5.png" class="num">
           </div>
           </a>
@@ -13,11 +13,20 @@
     </swiper>
     <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
-        <a :href="item.link">
-            <div class="img"><img :src="item.imagePro" alt="img"></div>
+        <a :href="item.pagePath">
+            <div class="img"><img :src="item.cSmallImage" alt="img"></div>
             <div class="info">
-                <h3>{{item.name}}</h3>
-                <p>{{item.description}}</p>
+                <h3>{{item.pageName}}</h3>
+                <p>{{item.pageDescription}}</p>
+            </div>
+        </a>
+      </div>
+      <div class="ih-item circle effect3 right_to_left">
+        <a href="#">
+            <div class="img"><img src="http://www.qizhong114.com/uploads/images/20200506/72c5cf0880e1eb2cb1f224b18881d9d9.png" alt="img"></div>
+            <div class="info">
+                <h3>更多设备</h3>
+                <p>查看更多的设备</p>
             </div>
         </a>
       </div>
@@ -35,12 +44,12 @@
         <div class="pro-item">
           <ul>
             <li v-for="item in products.product" :key="item.id">
-              <a :href="item.link">
+              <a href="#">
                 <div class="pic"><img :src="item.image"></div>
                 <span>{{item.name}}</span>
                 <div class="box">
-                  <p><img src="http://qizhong114.com/static/home/img/icon_zdjl.png"><em>适用起重量：</em>{{item.parameter1}}</p>
-                  <p><img src="http://qizhong114.com/static/home/img/icon_scnl.png"><em>适用跨度：</em>{{item.parameter2}}m</p>
+                  <p><img src="http://qizhong114.com/static/home/img/icon_zdjl.png"><em>机器重量：</em>{{item.weight}}KG</p>
+                  <p><img src="http://qizhong114.com/static/home/img/icon_scnl.png"><em>外形尺寸：</em>{{item.dimensions}}mm</p>
                 </div>
               </a>
             </li>
