@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-11-14 14:36:01
+Date: 2020-11-19 16:34:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,6 +35,26 @@ INSERT INTO `banners` VALUES ('3', 'http://www.qizhong114.com/uploads/images/202
 INSERT INTO `banners` VALUES ('4', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg');
 
 -- ----------------------------
+-- Table structure for `cases`
+-- ----------------------------
+DROP TABLE IF EXISTS `cases`;
+CREATE TABLE `cases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `caseImage` varchar(255) DEFAULT NULL,
+  `caseName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cases
+-- ----------------------------
+INSERT INTO `cases` VALUES ('1', 'http://www.qizhong114.com/uploads/images/20200710/9f4f01731fc0e24562137565d917c05b.jpg', '轨道交通起重机应用');
+INSERT INTO `cases` VALUES ('2', 'http://www.qizhong114.com/uploads/images/20200704/7813f3c3c4a551d468f25f6127f226ad.jpg', '建材行业起重机应用');
+INSERT INTO `cases` VALUES ('3', 'http://www.qizhong114.com/uploads/images/20200704/9751dd1be1a8a15c96c415b8478d6073.jpg', '冶金铸造熔炼起重机应用');
+INSERT INTO `cases` VALUES ('4', 'http://www.qizhong114.com/uploads/images/20200715/b8fe86826e4155f7b2db00b880107488.png', '航天航空起重机应用');
+INSERT INTO `cases` VALUES ('5', 'http://www.qizhong114.com/uploads/images/20200715/f726e4e844fea5c39b151e06c89925c5.jpg', '能源行业起重机应用');
+
+-- ----------------------------
 -- Table structure for `category`
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
@@ -47,21 +67,76 @@ CREATE TABLE `category` (
   `pageTitleImage` varchar(255) DEFAULT NULL,
   `pageDescription` varchar(255) DEFAULT NULL,
   `pageKey` varchar(255) DEFAULT NULL,
-  `pagePImage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `pageId` (`pageId`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '5', '荣誉中心', '/about/honor', 'http://www.qizhong114.com/static/home/img/pic_banner_project.jpg', 'http://www.qizhong114.com/static/home/img/tit_hongxing.png', '广东顺发起重设备有限公司长期与广大新老客户的合作中积累了丰富的经验，使得公司的产品在同行业中更具独特性，深受广大用户的青睐和好评，并在起重机行业中拥有最高级别的A级生产许可证，公司生产依据ISO9001质量控制体系对产品在其来料、加工过程、整机、出货各个环节严格把关，确保出货产品的性能和质量，多个产品系列已获得欧盟CE认证。经过多年发展公司已先后获“广东省著名商标”、“中国AAA级信用企业”、“中国行业十佳品牌”、“民营科技企业”等荣誉称号.', '荣誉中心', null);
-INSERT INTO `category` VALUES ('2', '5', '工厂实景', '/about/factory', 'http://www.qizhong114.com/uploads/images/20200606/8e4dfed80f42cafb01259428a0a656e2.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司拥有多个大型标准生产车间，按起重机模块流水线生产布局，完全符合ISO国际标准，欧洲标准、中国标准。我们拥有包括40m数控火焰切割生产线，40m数控等离子切割系统、箱型梁成型生产线、多台龙门式自动埋弧焊系统、机器人焊接系统生产线(60m 10台)、整机预组装平台、整梁抛丸处理线等生产装备。', '工厂实景', null);
-INSERT INTO `category` VALUES ('3', '6', '企业新闻', '/news/companyNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是经国家质量监督检验检疫总局颁证认可的起重机制造生产厂家并提供安装、维修、保养为一体的专业性厂家。从1994年至今已有接近30年的起重机设计、制造、安装的丰富经验。', '企业新闻', null);
-INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻', null);
-INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献', null);
-INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg', 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例', null);
-INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用', null);
+INSERT INTO `category` VALUES ('1', '5', '荣誉中心', '/about/honor', 'http://www.qizhong114.com/static/home/img/pic_banner_project.jpg', 'http://www.qizhong114.com/static/home/img/tit_hongxing.png', '广东顺发起重设备有限公司长期与广大新老客户的合作中积累了丰富的经验，使得公司的产品在同行业中更具独特性，深受广大用户的青睐和好评，并在起重机行业中拥有最高级别的A级生产许可证，公司生产依据ISO9001质量控制体系对产品在其来料、加工过程、整机、出货各个环节严格把关，确保出货产品的性能和质量，多个产品系列已获得欧盟CE认证。经过多年发展公司已先后获“广东省著名商标”、“中国AAA级信用企业”、“中国行业十佳品牌”、“民营科技企业”等荣誉称号.', '荣誉中心');
+INSERT INTO `category` VALUES ('2', '5', '工厂实景', '/about/factory', 'http://www.qizhong114.com/uploads/images/20200606/8e4dfed80f42cafb01259428a0a656e2.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司拥有多个大型标准生产车间，按起重机模块流水线生产布局，完全符合ISO国际标准，欧洲标准、中国标准。我们拥有包括40m数控火焰切割生产线，40m数控等离子切割系统、箱型梁成型生产线、多台龙门式自动埋弧焊系统、机器人焊接系统生产线(60m 10台)、整机预组装平台、整梁抛丸处理线等生产装备。', '工厂实景');
+INSERT INTO `category` VALUES ('3', '6', '企业新闻', '/news/companyNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是经国家质量监督检验检疫总局颁证认可的起重机制造生产厂家并提供安装、维修、保养为一体的专业性厂家。从1994年至今已有接近30年的起重机设计、制造、安装的丰富经验。', '企业新闻');
+INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻');
+INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献');
+INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg', 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例');
+INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用');
+INSERT INTO `category` VALUES ('8', '1', '给袋式包装机', '/products/category', null, null, '给袋式包装机', '给袋式包装机');
+INSERT INTO `category` VALUES ('9', '1', '真空包装机', '/products/category', null, null, '真空包装机', '真空包装机');
+INSERT INTO `category` VALUES ('10', '1', '立式包装机', '/products/category', null, null, '立式包装机', '立式包装机');
+INSERT INTO `category` VALUES ('11', '1', '其他设备', '/products/category', null, null, '其他设备', '其他设备');
+
+-- ----------------------------
+-- Table structure for `goodcates`
+-- ----------------------------
+DROP TABLE IF EXISTS `goodcates`;
+CREATE TABLE `goodcates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `cBigImage` varchar(255) DEFAULT NULL,
+  `cSmallImage` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of goodcates
+-- ----------------------------
+INSERT INTO `goodcates` VALUES ('1', '8', 'http://www.qizhong114.com/static/home/img/pro_bg01.jpg', 'http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png');
+INSERT INTO `goodcates` VALUES ('2', '9', 'http://www.qizhong114.com/static/home/img/pro_bg02.jpg', 'http://www.qizhong114.com/uploads/images/20200702/be9bdcf680f71c6b65372d3c8683bd6b.png');
+INSERT INTO `goodcates` VALUES ('3', '10', 'http://www.qizhong114.com/static/home/img/pro_bg03.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png');
+INSERT INTO `goodcates` VALUES ('4', '11', 'http://www.qizhong114.com/static/home/img/pro_bg04.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png');
+
+-- ----------------------------
+-- Table structure for `goods`
+-- ----------------------------
+DROP TABLE IF EXISTS `goods`;
+CREATE TABLE `goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `overView` varchar(255) DEFAULT NULL,
+  `advantage` varchar(255) DEFAULT NULL,
+  `content` text,
+  `weight` varchar(255) DEFAULT NULL,
+  `dimensions` varchar(255) DEFAULT NULL,
+  `pageKey` varchar(255) DEFAULT NULL,
+  `pageDescription` varchar(255) DEFAULT NULL,
+  `pageTitle` varchar(255) DEFAULT NULL,
+  `isHome` enum('否','是') NOT NULL DEFAULT '否' COMMENT '产品是否首页显示',
+  `sort` int(11) NOT NULL DEFAULT '1' COMMENT '产品排序',
+  `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of goods
+-- ----------------------------
+INSERT INTO `goods` VALUES ('1', '8', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '是', '2', '2020-11-19 09:55:52');
+INSERT INTO `goods` VALUES ('2', '11', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '1', '2020-11-19 09:55:52');
+INSERT INTO `goods` VALUES ('3', '8', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '3', '2020-11-19 09:55:52');
+INSERT INTO `goods` VALUES ('4', '9', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '4', '2020-11-19 09:55:52');
+INSERT INTO `goods` VALUES ('5', '10', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '5', '2020-11-19 09:55:52');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -112,26 +187,18 @@ INSERT INTO `page` VALUES ('8', '服务支持', '我们的服务承诺并不是�
 INSERT INTO `page` VALUES ('9', '联系我们', '为客户成功、为行业进步、为国家强盛、为奋斗者铸梦!”广东顺发起重设备有限公司致力打造起重机机械设备全球高端品牌，专业与专注是我们的特质，我们希望通过不懈的努力与探索去做到行业的引领者，成为最受信赖的全球智能起重机设备解决方案供应提供商', '/contact', 'http://www.qizhong114.com/uploads/images/20200430/2a3e1eac861362af929652f35c506a26.jpg', 'http://www.qizhong114.com/uploads/images/20200430/f226bac12c20312db39e38b09c4d16d1.png', '联系我们');
 
 -- ----------------------------
--- Table structure for `product`
+-- Table structure for `users`
 -- ----------------------------
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
-  `cid` int(11) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `model` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `overView` varchar(255) DEFAULT NULL,
-  `advantage` varchar(255) DEFAULT NULL,
-  `content` text,
-  `weight` varchar(255) DEFAULT NULL,
-  `dimensions` varchar(255) DEFAULT NULL,
-  `pageKey` varchar(255) DEFAULT NULL,
-  `pageDescription` varchar(255) DEFAULT NULL,
-  `pageTitle` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of product
+-- Records of users
 -- ----------------------------
+INSERT INTO `users` VALUES ('1', 'admin', 'adminadmin');
+INSERT INTO `users` VALUES ('2', 'yuchen', '11231');
