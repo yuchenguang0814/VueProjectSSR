@@ -2,10 +2,10 @@
   <div class="product">
     <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
       <swiper-slide class="category-item" v-for="item in products.category" :key="item.id">
-        <a :href="item.pagePath"><span>{{item.pageName}}</span>
+        <a href="#"><span>{{item.pageName}}</span>
           <p>{{item.pageDescription}}</p>
           <div class="box">
-            <img :src="item.cSmallImage" class="p">
+            <img :src="item.pageTitleImage" class="p">
             <img src="~assets/image/icon_num_5.png" class="num">
           </div>
           </a>
@@ -13,8 +13,8 @@
     </swiper>
     <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
-        <a :href="item.pagePath">
-            <div class="img"><img :src="item.cSmallImage" alt="img"></div>
+        <a href="#">
+            <div class="img"><img :src="item.pageTitleImage" alt="img"></div>
             <div class="info">
                 <h3>{{item.pageName}}</h3>
                 <p>{{item.pageDescription}}</p>
