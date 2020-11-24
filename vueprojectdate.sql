@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50726
+Source Server Version : 50715
 Source Host           : localhost:3306
 Source Database       : vueprojectdate
 
 Target Server Type    : MYSQL
-Target Server Version : 50726
+Target Server Version : 50715
 File Encoding         : 65001
 
-Date: 2020-11-19 16:34:39
+Date: 2020-11-24 20:25:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,7 +59,7 @@ INSERT INTO `cases` VALUES ('5', 'http://www.qizhong114.com/uploads/images/20200
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) NOT NULL AUTO_INCREMENT,
   `pageId` int(11) NOT NULL,
   `pageName` varchar(255) DEFAULT NULL,
   `pagePath` varchar(255) DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `category` (
   `pageTitleImage` varchar(255) DEFAULT NULL,
   `pageDescription` varchar(255) DEFAULT NULL,
   `pageKey` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`cid`),
   KEY `pageId` (`pageId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
@@ -81,30 +81,10 @@ INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', '
 INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献');
 INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg', 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例');
 INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用');
-INSERT INTO `category` VALUES ('8', '1', '给袋式包装机', '/products/category', null, null, '给袋式包装机', '给袋式包装机');
-INSERT INTO `category` VALUES ('9', '1', '真空包装机', '/products/category', null, null, '真空包装机', '真空包装机');
-INSERT INTO `category` VALUES ('10', '1', '立式包装机', '/products/category', null, null, '立式包装机', '立式包装机');
-INSERT INTO `category` VALUES ('11', '1', '其他设备', '/products/category', null, null, '其他设备', '其他设备');
-
--- ----------------------------
--- Table structure for `goodcates`
--- ----------------------------
-DROP TABLE IF EXISTS `goodcates`;
-CREATE TABLE `goodcates` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) DEFAULT NULL,
-  `cBigImage` varchar(255) DEFAULT NULL,
-  `cSmallImage` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of goodcates
--- ----------------------------
-INSERT INTO `goodcates` VALUES ('1', '8', 'http://www.qizhong114.com/static/home/img/pro_bg01.jpg', 'http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png');
-INSERT INTO `goodcates` VALUES ('2', '9', 'http://www.qizhong114.com/static/home/img/pro_bg02.jpg', 'http://www.qizhong114.com/uploads/images/20200702/be9bdcf680f71c6b65372d3c8683bd6b.png');
-INSERT INTO `goodcates` VALUES ('3', '10', 'http://www.qizhong114.com/static/home/img/pro_bg03.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png');
-INSERT INTO `goodcates` VALUES ('4', '11', 'http://www.qizhong114.com/static/home/img/pro_bg04.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png');
+INSERT INTO `category` VALUES ('8', '1', '给袋式包装机', '1', 'http://www.qizhong114.com/static/home/img/pro_bg01.jpg', 'http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png', '给袋式包装机', '给袋式包装机');
+INSERT INTO `category` VALUES ('9', '1', '真空包装机', '2', 'http://www.qizhong114.com/static/home/img/pro_bg02.jpg', 'http://www.qizhong114.com/uploads/images/20200702/be9bdcf680f71c6b65372d3c8683bd6b.png', '真空包装机', '真空包装机');
+INSERT INTO `category` VALUES ('10', '1', '立式包装机', '3', 'http://www.qizhong114.com/static/home/img/pro_bg03.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png', '立式包装机', '立式包装机');
+INSERT INTO `category` VALUES ('11', '1', '其他设备', '4', 'http://www.qizhong114.com/static/home/img/pro_bg04.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png', '其他设备', '其他设备');
 
 -- ----------------------------
 -- Table structure for `goods`
@@ -112,7 +92,7 @@ INSERT INTO `goodcates` VALUES ('4', '11', 'http://www.qizhong114.com/static/hom
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cid` int(11) DEFAULT NULL,
+  `c_id` int(11) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `overView` varchar(255) DEFAULT NULL,
