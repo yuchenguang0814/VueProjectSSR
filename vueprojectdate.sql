@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50715
+Source Server Version : 50726
 Source Host           : localhost:3306
 Source Database       : vueprojectdate
 
 Target Server Type    : MYSQL
-Target Server Version : 50715
+Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-11-24 20:25:30
+Date: 2020-12-04 16:58:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,18 +21,17 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `banners`;
 CREATE TABLE `banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `link` varchar(255) DEFAULT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banners
 -- ----------------------------
-INSERT INTO `banners` VALUES ('1', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg');
-INSERT INTO `banners` VALUES ('2', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg');
-INSERT INTO `banners` VALUES ('3', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg');
-INSERT INTO `banners` VALUES ('4', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg');
+INSERT INTO `banners` VALUES ('1', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg');
+INSERT INTO `banners` VALUES ('2', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg');
+INSERT INTO `banners` VALUES ('3', 'http://www.qizhong114.com/uploads/images/20200714/7c56292edf9dbeb802a34af3ddabc09d.jpg');
+INSERT INTO `banners` VALUES ('4', 'http://www.qizhong114.com/uploads/images/20200608/e04854781d4f6794f54abfcff77e8e8f.jpg');
 
 -- ----------------------------
 -- Table structure for `cases`
@@ -69,7 +68,7 @@ CREATE TABLE `category` (
   `pageKey` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cid`),
   KEY `pageId` (`pageId`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
@@ -81,10 +80,10 @@ INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', '
 INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', 'http://qizhong114.com/uploads/images/20200707/384e0bc58acadc57179f835caaca6453.jpg', 'http://www.qizhong114.com/static/home/img/tit_news.png', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献');
 INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', 'http://www.qizhong114.com/uploads/images/20200530/60ed40345c8cdf4a986ccd11aa085644.jpg', 'http://www.qizhong114.com/uploads/images/20200430/10beb461640387bbd798312cb0bf3668.png', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例');
 INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', 'http://www.qizhong114.com/uploads/images/20200707/4306d5f000d85d473e6aa31c4db00ecd.jpg', 'http://www.qizhong114.com/uploads/images/20200430/5499c7929e08efdc766104b0e091a88a.png', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用');
-INSERT INTO `category` VALUES ('8', '1', '给袋式包装机', '1', 'http://www.qizhong114.com/static/home/img/pro_bg01.jpg', 'http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png', '给袋式包装机', '给袋式包装机');
-INSERT INTO `category` VALUES ('9', '1', '真空包装机', '2', 'http://www.qizhong114.com/static/home/img/pro_bg02.jpg', 'http://www.qizhong114.com/uploads/images/20200702/be9bdcf680f71c6b65372d3c8683bd6b.png', '真空包装机', '真空包装机');
-INSERT INTO `category` VALUES ('10', '1', '立式包装机', '3', 'http://www.qizhong114.com/static/home/img/pro_bg03.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png', '立式包装机', '立式包装机');
+INSERT INTO `category` VALUES ('10', '1', '立式包装机', '3', 'http://www.qizhong114.com/static/home/img/pro_bg04.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png', '立式包装机', '立式包装机');
 INSERT INTO `category` VALUES ('11', '1', '其他设备', '4', 'http://www.qizhong114.com/static/home/img/pro_bg04.jpg', 'http://www.qizhong114.com/uploads/images/20200608/e35dab0d4c7539a17cbab1d5e2ec3933.png', '其他设备', '其他设备');
+INSERT INTO `category` VALUES ('12', '1', '111', '1', '/uploads/catespics/2_2020_10_3_9_32.jpg', '/uploads/catespics/1_2020_10_3_9_32.jpg', '12312', '12');
+INSERT INTO `category` VALUES ('13', '1', '12312', '123123', '/uploads/catespics/2_2020_10_3_11_50.jpg', '/uploads/catespics/1_2020_10_3_11_50.jpg', '132131', '123123');
 
 -- ----------------------------
 -- Table structure for `goods`
@@ -107,16 +106,18 @@ CREATE TABLE `goods` (
   `sort` int(11) NOT NULL DEFAULT '1' COMMENT '产品排序',
   `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
 INSERT INTO `goods` VALUES ('1', '8', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '是', '2', '2020-11-19 09:55:52');
-INSERT INTO `goods` VALUES ('2', '11', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '1', '2020-11-19 09:55:52');
 INSERT INTO `goods` VALUES ('3', '8', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '3', '2020-11-19 09:55:52');
-INSERT INTO `goods` VALUES ('4', '9', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '4', '2020-11-19 09:55:52');
-INSERT INTO `goods` VALUES ('5', '10', 'http://www.qizhong114.com/uploads/images/20200514/4cd7cad7f1c8d459a1e282785bac489f.jpg', '给袋式包装机', '这个是给袋式包装机概述', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', '给袋式包装机', '给袋式包装机', '给袋式包装机', '否', '5', '2020-11-19 09:55:52');
+INSERT INTO `goods` VALUES ('18', '9', '/uploads/goodspics/6_2020_10_2_10_21.jpg', '21313', '213', '123123', '<p>123123123</p>', '2321', '121', '21312', '123123', '121', '是', '11', '2020-11-24 10:21:32');
+INSERT INTO `goods` VALUES ('9', '12', '1_2020_10_1_10_16.jpg', 'mc', 'gs', 'td', '', 'kg', '11x11x11', 'gjc', 'ms', 'bt', '是', '1', '2020-11-26 09:41:17');
+INSERT INTO `goods` VALUES ('15', '8', '1_2020_10_1_10_16.jpg', 'mc', 'gs', 'td', '<p>content</p>', 'kg', '11x11x11', 'gjc', 'ms', 'bt', '是', '1', '2020-11-23 10:51:12');
+INSERT INTO `goods` VALUES ('16', '8', '1_2020_10_1_10_16.jpg', 'mc', 'gs', 'td', '<p>content</p>', 'kg', '11x11x11', 'gjc', 'ms', 'bt', '是', '1', '2020-11-23 10:52:40');
+INSERT INTO `goods` VALUES ('17', '11', '1_2020_10_1_10_16.jpg', 'mc', 'gs', 'td', '', 'kg', '11x11x11', 'gjc', 'ms', 'bt', '是', '1', '2020-11-26 09:41:24');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -174,11 +175,18 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `userEmail` varchar(255) DEFAULT NULL,
+  `userPhone` varchar(255) DEFAULT NULL,
+  `userQQ` varchar(255) DEFAULT NULL,
+  `companyName` varchar(255) DEFAULT NULL,
+  `companyAddress` varchar(255) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', 'adminadmin');
-INSERT INTO `users` VALUES ('2', 'yuchen', '11231');
+INSERT INTO `users` VALUES ('1', 'admin', 'adminadmin', '虞先生', '546448821@qq.com', '18968919292', '546448821', 'aicoco居家协会', '浙江省瑞安市', null);
+INSERT INTO `users` VALUES ('2', 'yuchen', '11231', '', '', '', '', '', '', null);
