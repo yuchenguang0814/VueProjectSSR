@@ -45,7 +45,7 @@
                 </div>
               </transition>
             </li>
-            <li><a href="">英文</a></li>
+            <li><a href="">{{ screenWidth }}</a></li>
           </ul>
         </nav>
       </div>
@@ -60,7 +60,8 @@ export default {
     return {
       telPhone: 18968919292,
       isShow: -1,
-      showN: false
+      showN: false,
+      screenWidth: ''
     }
   },
   computed: {
@@ -69,6 +70,16 @@ export default {
     },
     navItem () {
       return this.$store.state.pageList.slice(3)
+    }
+  },
+  watch: {
+    screenWidth () {
+      console.log(this.screenWidth)
+      if (this.screenWidth > 999) {
+        document.getElementById('nav').style.display = 'block'
+      } else if (this.screenWidth <= 999) {
+        document.getElementById('nav').style.display = 'none'
+      }
     }
   },
   methods: {
@@ -94,7 +105,7 @@ export default {
     showNav (e) {
       if (this.$store.state.isPc) {
         const nav = document.getElementById('nav')
-        if (this.showN) {
+        if (nav.style.display === '' || nav.style.display === 'none') {
           nav.style.display = 'block'
         } else {
           nav.style.display = 'none'
@@ -104,6 +115,12 @@ export default {
     }
   },
   mounted () {
+    this.screenWidth = document.body.clientWidth
+    window.onresize = () => {
+      return (() => {
+        this.screenWidth = document.body.clientWidth
+      })()
+    }
   }
 }
 </script>
@@ -212,7 +229,8 @@ header .top .tel .t em {
   font-size: 20px
 }
 
-header nav {
+header .box nav {
+  display: block;
   border-top: 2px solid #f0f3fa
 }
 header nav ul li {

@@ -198,9 +198,6 @@ line-height: 50px;
     height: 18px;
     margin-top: 8px;
   }
-  body {
-    /* overflow-y: hidden; */
-  }
   .container {
     padding: 0 10px
   }
