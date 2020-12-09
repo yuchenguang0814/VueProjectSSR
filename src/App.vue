@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-nav></header-nav>
-    <router-view :pageList="pageList">
+    <router-view>
       <div slot="nb" slot-scope="props"><nbanner :nbanners="props"></nbanner></div>
       <div slot="crumb"><breadcrumb/></div>
     </router-view>
@@ -44,8 +44,6 @@ export default {
   methods: {
     setcate () {
       this.pageList = this.pageDate
-      // console.log('app')
-      // console.log(this.pageList)
     }
   },
   created () {

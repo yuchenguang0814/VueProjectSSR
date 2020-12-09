@@ -2,41 +2,50 @@
 <div>
   <div class="main_cate">
   <div class="container">
-    <ul>
-        <li class="on"><a href="http://www.qizhong114.com/overheadcranes"><img src="http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png">
-        <div class="bt"><span>桥式起重机</span></div>
+    <ul v-if="cateList[0].child !== ''">
+        <li :class="`${item.cid === cid ? 'on': ''}`" v-for="item in cateList[0].child" :key="item.cid"><a :href="`/category/${item.cid}`"><img :src="`${$baseUrl + item.pageTitleImage}`">
+        <div class="bt"><span>{{item.pageName}}</span></div>
         </a></li>
     </ul>
   </div>
 </div>
 <div class="line_height60"></div>
 <div class="container">
-    <div class="in-tit"><img src="http://www.qizhong114.com/static/home/img/tit_products.png">
-      <div class="dt"><img src="http://www.qizhong114.com/static/home/img/tit_zs.png">同类产品</div>
+    <div class="in-tit"><img src="~assets/image/tit_products.png">
+      <div class="dt"><img src="~assets/image/tit_zs.png">同类产品</div>
       <div class="text">产品系列完备，满足客户的差异化需求；绿色环保理念与创新成熟工艺的结合，悉心打造，为您创值增值</div>
     </div>
-<mains class="list"><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
+<mains class="list" :List = "productList" ><img slot="dt1" src="~assets/image/icon_more.png"></mains>
   </div>
   </div>
 </template>
 
 <script>
 import Mains from 'components/common/main/Main'
+import { getGoodsByCid } from 'network/product'
 export default {
   name: '',
   components: {
     Mains
   },
-  mounted () {
-    if (this.$store.state.pageList.length > 0) {
-      console.log(this.$store.state.pageList)
+  created () {
+    getGoodsByCid({ id: this.cid }).then(res => {
+      this.productList = res.data.product
+    })
+  },
+  computed: {
+    cateList () {
+      return this.$store.state.pageList.filter(item => item.id === 1)
+    },
+    cid () {
+      return parseInt(this.$route.params.id)
     }
   },
   props: {
   },
   data () {
     return {
-      List: []
+      productList: []
     }
   }
 }

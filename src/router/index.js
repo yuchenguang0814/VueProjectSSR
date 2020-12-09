@@ -25,7 +25,7 @@ const routes = [
       name: 'Category',
       meta: { title: '产品分类' }
     }, {
-      path: 'product',
+      path: '/product/:id',
       component: () => import('../views/product/child/Product.vue'),
       name: 'Product',
       meta: { title: '商品详情' }
