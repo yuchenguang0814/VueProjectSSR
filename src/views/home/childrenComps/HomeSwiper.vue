@@ -1,8 +1,8 @@
 <template>
   <swiper class="banner" ref="mySwiper" :options="swiperOptions">
     <swiper-slide v-for="item in banners" :key="item.index">
-      <a :href="item.link">
-        <img :src="item.image" alt="">
+      <a href="#">
+        <img :src="`${$baseUrl + item.image}`" alt="">
       </a>
     </swiper-slide>
     <div class="swiper-pagination banner-num" slot="pagination"></div>
@@ -26,6 +26,7 @@ export default {
     SwiperSlide
   },
   mounted () {
+    console.log(this.banners)
   },
   computed: {
     swiper () {

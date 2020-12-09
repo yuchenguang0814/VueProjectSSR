@@ -1,12 +1,13 @@
 <template>
   <div class="product">
     <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
-      <swiper-slide class="category-item" v-for="item in products.category" :key="item.id">
+      <swiper-slide class="category-item" v-for="(item, index) in products.category" :key="item.id">
         <a href="#"><span>{{item.pageName}}</span>
           <p>{{item.pageDescription}}</p>
+          <p>{{index}}</p>
           <div class="box">
-            <img :src="item.pageTitleImage" class="p">
-            <img src="~assets/image/icon_num_5.png" class="num">
+            <img :src="`${$baseUrl + item.pageTitleImage}`" class="p">
+            <img :src="require(`@/assets/image/icon_num_${index + 1}.png`)" class="num">
           </div>
           </a>
       </swiper-slide>
@@ -14,19 +15,10 @@
     <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
         <a href="#">
-            <div class="img"><img :src="item.pageTitleImage" alt="img"></div>
+            <div class="img"><img :src="`${$baseUrl + item.pageTitleImage}`" alt="img"></div>
             <div class="info">
                 <h3>{{item.pageName}}</h3>
                 <p>{{item.pageDescription}}</p>
-            </div>
-        </a>
-      </div>
-      <div class="ih-item circle effect3 right_to_left">
-        <a href="#">
-            <div class="img"><img src="http://www.qizhong114.com/uploads/images/20200506/72c5cf0880e1eb2cb1f224b18881d9d9.png" alt="img"></div>
-            <div class="info">
-                <h3>更多设备</h3>
-                <p>查看更多的设备</p>
             </div>
         </a>
       </div>
@@ -45,7 +37,7 @@
           <ul>
             <li v-for="item in products.product" :key="item.id">
               <a href="#">
-                <div class="pic"><img :src="item.image"></div>
+                <div class="pic"><img :src="`${$baseUrl + item.image}`"></div>
                 <span>{{item.name}}</span>
                 <div class="box">
                   <p><img src="http://qizhong114.com/static/home/img/icon_zdjl.png"><em>机器重量：</em>{{item.weight}}KG</p>

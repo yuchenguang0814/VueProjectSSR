@@ -20,7 +20,7 @@ const routes = [
     component: Products,
     meta: { title: '产品中心' },
     children: [{
-      path: 'category',
+      path: '/category/:id',
       component: () => import('views/product/child/Category.vue'),
       name: 'Category',
       meta: { title: '产品分类' }

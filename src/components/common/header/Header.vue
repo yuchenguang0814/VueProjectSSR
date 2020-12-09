@@ -19,7 +19,7 @@
               <a :href="item.pagePath">{{item.pageName}}</a>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub" v-show="item.id==isShow">
-                  <a :href="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  <a :href="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
                   </a>
                 </div>
               </transition>

@@ -3,23 +3,8 @@
   <div class="main_cate">
   <div class="container">
     <ul>
-          <li class="on"><a href="http://www.qizhong114.com/overheadcranes"><img src="http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png">
+        <li class="on"><a href="http://www.qizhong114.com/overheadcranes"><img src="http://www.qizhong114.com/uploads/images/20200702/ebfa72cc414dffcdd54ed488a12b1d04.png">
         <div class="bt"><span>桥式起重机</span></div>
-        </a></li>
-            <li><a href="http://www.qizhong114.com/gantrycranes"><img src="http://www.qizhong114.com/uploads/images/20200702/7caa35382275aa32799261a9e79f109c.png">
-        <div class="bt"><span>门式起重机</span></div>
-        </a></li>
-            <li><a href="http://www.qizhong114.com/eotcranes"><img src="http://www.qizhong114.com/uploads/images/20200702/a174bddad8dcf546ad7e6c65f7c62f62.png">
-        <div class="bt"><span>欧式起重机</span></div>
-        </a></li>
-            <li class="on"><a href="http://www.qizhong114.com/Specialcrane"><img src="http://www.qizhong114.com/uploads/images/20200702/5d6c266ec4c4cf5525ed5c142790febb.png">
-        <div class="bt"><span>特殊定制起重机</span></div>
-        </a></li>
-            <li><a href="http://www.qizhong114.com/Cranefittings"><img src="http://www.qizhong114.com/uploads/images/20200702/c22c5d9f1243bbcf6aab1b1960ed8dcb.png">
-        <div class="bt"><span>起重机配件</span></div>
-        </a></li>
-            <li><a href="http://www.qizhong114.com/gdsb"><img src="http://www.qizhong114.com/uploads/images/20200506/72c5cf0880e1eb2cb1f224b18881d9d9.png">
-        <div class="bt"><span>更多设备</span></div>
         </a></li>
     </ul>
   </div>
@@ -42,8 +27,16 @@ export default {
   components: {
     Mains
   },
+  mounted () {
+    if (this.$store.state.pageList.length > 0) {
+      console.log(this.$store.state.pageList)
+    }
+  },
+  props: {
+  },
   data () {
     return {
+      List: []
     }
   }
 }

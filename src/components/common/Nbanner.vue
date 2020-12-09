@@ -1,5 +1,5 @@
 <template>
-  <div v-if="nbanners.props !== undefined" class="nbanner" :style="`background-image: url(${nbanners.props.pageImage});`">
+  <div v-if="nbanners.props !== undefined" class="nbanner" :style="`background-image: url(${$baseUrl + nbanners.props.pageImage});`">
     <div class="container">
       <div class="box">
         <div class="in-tit"><img :src="nbanners.props.pageTitleImage">
