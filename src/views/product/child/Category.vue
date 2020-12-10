@@ -1,9 +1,9 @@
 <template>
 <div>
   <div class="main_cate">
-  <div class="container">
-    <ul v-if="cateList[0].child !== ''">
-        <li :class="`${item.cid === cid ? 'on': ''}`" v-for="item in cateList[0].child" :key="item.cid"><a :href="`/category/${item.cid}`"><img :src="`${$baseUrl + item.pageTitleImage}`">
+  <div class="container" >
+    <ul v-if="cateList !== false">
+        <li :class="`${item.cid === cid ? 'on': ''}`" v-for="item in cateList" :key="item.cid"><a :href="`/category/${item.cid}`"><img :src="`${$baseUrl + item.pageTitleImage}`">
         <div class="bt"><span>{{item.pageName}}</span></div>
         </a></li>
     </ul>
@@ -35,7 +35,12 @@ export default {
   },
   computed: {
     cateList () {
-      return this.$store.state.pageList.filter(item => item.id === 1)
+      const list = this.$store.state.pageList.filter(item => item.id === 1)
+      if (list[0]) {
+        return list[0].child
+      } else {
+        return false
+      }
     },
     cid () {
       return parseInt(this.$route.params.id)
@@ -45,6 +50,7 @@ export default {
   },
   data () {
     return {
+      categoryList: [],
       productList: []
     }
   }

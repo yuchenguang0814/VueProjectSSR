@@ -2,7 +2,7 @@
   <div class="product">
     <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
       <swiper-slide class="category-item" v-for="(item, index) in products.category" :key="item.id">
-        <a href="#"><span>{{item.pageName}}</span>
+        <a :href="`/category/${item.cid}`"><span>{{item.pageName}}</span>
           <p>{{item.pageDescription}}</p>
           <p>{{index}}</p>
           <div class="box">
@@ -14,7 +14,7 @@
     </swiper>
     <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
-        <a href="#">
+        <a :href="`/category/${item.cid}`">
             <div class="img"><img :src="`${$baseUrl + item.pageTitleImage}`" alt="img"></div>
             <div class="info">
                 <h3>{{item.pageName}}</h3>
@@ -130,16 +130,15 @@ export default {
 
 .ih-item.circle {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 115px;
+    height: 150px;
     border-radius: 50%;
     margin-right: 60px;
 }
 
 .ih-item.circle .img {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 100%;
     border-radius: 50%;
 }
 
