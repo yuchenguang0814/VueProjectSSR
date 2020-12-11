@@ -3,12 +3,13 @@
     <!-- <slot v-if="this.$route.path == '/products'" name="nb" :props="$store.getters.getNbanner" ></slot> -->
     <slot name="crumb"></slot>
     <div  v-if="this.$route.path == '/products'" class="pro_index">
-      <div class="pro_index_li">
+      <div class="pro_index_li" v-for="item in cateList" :key="item.cid">
     <div class="container category">
       <div class="proLeft b1">
-        <div class="bt"><span>桥式起重机</span><em 变频="">变频</em></div>
-        <div class="text">我们作为优质的起重机设备提供商，我们能为您提供品质良好的桥式起重机，具体主要包括LD型电动单梁桥式起重机、LH型双梁桥式起重机、QD型通用桥式起重机等各种不同类型的桥式起重机设备，并根据您的具体要求，量身定制配套的整体设计和施工方案。</div>
-        <a href="http://www.qizhong114.com/overheadcranes" class="more">查看更多产品<img src="http://www.qizhong114.com/static/home/img/icon_jtr.png"></a> </div>
+        <img :src="`${$baseUrl + item.pageTitleImage}`" :alt="item.pageName" class="proImg">
+        <div class="bt"><span>{{item.pageName}}</span><em 火热="">火热</em></div>
+        <div class="text">{{item.pageDescription}}</div>
+        <a :href="`/category/${item.cid}`" class="more">查看更多产品<img src="~assets/image/icon_jtr.png"></a> </div>
       <div class="proRight list">
         <mains><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
       </div>
@@ -28,26 +29,20 @@ export default {
   },
   data () {
     return {
-      nbanners: [{
-        path: '/products',
-        backgroundImage: 'http://www.qizhong114.com/uploads/images/20200704/5e82270fe8eaf738812aae7eeeb791e1.jpg',
-        inTitImg: '',
-        dtImg: '',
-        text: ''
-      }, {
-        path: '/products/category'
-      }, {
-        path: '/products/product'
-      }]
     }
   },
-  mounted () {
-    this.$store.commit('getPath', this.$route.path)
+  computed: {
+    cateList () {
+      const list = this.$store.state.pageList.filter(item => item.id === 1)
+      if (list[0]) {
+        return list[0].child
+      } else {
+        return false
+      }
+    }
   }
 }
-
 </script>
-
 <style>
 .pro_index .pro_index_li {
   padding: 90px 0 50px 0
@@ -104,9 +99,15 @@ export default {
 }
 
 .pro_index .pro_index_li .proLeft.b1 {
+  height:520px;
   background-image: url(~assets/image/pro_bg01.jpg)
 }
-
+.proImg {
+  position: absolute;
+  bottom: 50px;
+  width: 250px;
+  z-index: 100;
+}
 .pro_index .pro_index_li .proLeft.b1:before {
   background-image: url(~assets/image/icon_nums_1.png)
 }
@@ -118,7 +119,8 @@ export default {
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-  align-items: center
+  align-items: center;
+  z-index: 103;
 }
 
 .pro_index .pro_index_li .proLeft .bt span {

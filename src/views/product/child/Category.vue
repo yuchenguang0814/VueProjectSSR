@@ -32,17 +32,15 @@ export default {
     getGoodsByCid({ id: this.cid }).then(res => {
       this.productList = res.data.product
     })
-    if (this.cateList.length > 0) {
-      const arr = this.cateList.filter(item => item.cid === this.cid)[0]
-      document.title = arr.pageName
-      document.querySelector('meta[name="keywords"]').setAttribute('content', arr.pageKey)
-      document.querySelector('meta[name="description"]').setAttribute('content', arr.pageDescription)
-    }
   },
   computed: {
     cateList () {
       const list = this.$store.state.pageList.filter(item => item.id === 1)
       if (list[0]) {
+        const arr = list[0].child.filter(item => item.cid === this.cid)[0]
+        document.title = arr.pageName
+        document.querySelector('meta[name="keywords"]').setAttribute('content', arr.pageKey)
+        document.querySelector('meta[name="description"]').setAttribute('content', arr.pageDescription)
         return list[0].child
       } else {
         return false
