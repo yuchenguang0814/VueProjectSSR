@@ -5,3 +5,14 @@ export function getGoodsByCid (cid) {
     params: cid
   })
 }
+export function getGoodByid (id) {
+  return request({
+    url: '/product',
+    params: id
+  })
+}
+export function getGood () {
+  return request({
+    url: '/goods'
+  })
+}

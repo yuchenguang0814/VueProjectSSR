@@ -10,7 +10,8 @@ export default new Vuex.Store({
     nbanners: [],
     childPath: [],
     routePath: '',
-    pageList: []
+    pageList: [],
+    userList: {}
   },
   getters: {
     getPageNbanner (state) {
@@ -53,6 +54,7 @@ export default new Vuex.Store({
         item.child = res.category.filter(item1 => item.id === item1.pageId)
       })
       state.pageList = res.page
+      state.userList = res.user[0]
     }
   },
   actions: {

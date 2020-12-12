@@ -34,6 +34,9 @@ export default {
       }
     }
   },
+  created () {
+    console.log(this.List)
+  },
   data () {
     return {
     }

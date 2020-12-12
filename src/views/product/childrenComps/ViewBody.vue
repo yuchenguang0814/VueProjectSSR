@@ -4,31 +4,38 @@
     <div class="bodyLeft">
       <div class="web_body">
         <div class="top">
-          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" title="5a167c5cbc460.png" alt="5a167c5cbc460.png"/>
+          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="概述"/>
             <span>
               产品概述
             </span>
           </div>
-          <!-- 产品内容  -->
+          <div>{{product.overView}}</div>
           <hr>
           <div class="top">
-          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" title="5a167c5cbc460.png" alt="5a167c5cbc460.png"/>
+          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="特点"/>
             <span>
               产品特点
             </span>
           </div>
-          <!-- 产品内容  -->
+          <div>{{product.advantage}}</div>
           <hr>
           <div class="top">
-          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" title="5a167c5cbc460.png" alt="5a167c5cbc460.png"/>
+          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="技术参数"/>
             <span>
               技术参数
             </span>
           </div>
-          <!-- 产品内容  -->
+          <div>{{product.c_id}}</div>
+          <hr>
+          <div class="top">
+          <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="产品视频"/>
+            <span>
+              产品视频
+            </span>
+          </div>
       </div>
     </div>
-    <view-right/>
+    <view-right v-if="proId!==-1" :pro = "proId"></view-right>
   </div>
   <div class="line_height60"></div>
   <div class="pd10">
@@ -50,8 +57,22 @@ export default {
     MainMess,
     ViewBottom
   },
+  watch: {
+    product () {
+      this.proId = this.product.c_id
+    }
+  },
+  props: {
+    product: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
   data () {
     return {
+      proId: -1
     }
   }
 }

@@ -26,9 +26,9 @@
     <div class="product-container">
       <div class="container">
         <div class="in-tit">
-          <img src="http://qizhong114.com/static/home/img/tit_products.png">
+          <img src="~assets/image/tit_products.png">
           <div class="dt">
-            <img src="http://qizhong114.com/static/home/img/tit_zs.png">
+            <img src="~assets/image/tit_zs.png">
             "广东顺发-起重机专业制造和服务供应商"
           </div>
           <div class="text">推荐设备：单梁起重机、双梁起重机、欧式起重机</div>
@@ -36,12 +36,12 @@
         <div class="pro-item">
           <ul>
             <li v-for="item in products.product" :key="item.id">
-              <a href="#">
+              <a :href="`/product/${item.id}`">
                 <div class="pic"><img :src="`${$baseUrl + item.image}`"></div>
                 <span>{{item.name}}</span>
                 <div class="box">
-                  <p><img src="http://qizhong114.com/static/home/img/icon_zdjl.png"><em>机器重量：</em>{{item.weight}}KG</p>
-                  <p><img src="http://qizhong114.com/static/home/img/icon_scnl.png"><em>外形尺寸：</em>{{item.dimensions}}mm</p>
+                  <p><img src="~assets/image/icon_zdjl.png"><em>机器重量：</em>{{item.weight}}KG</p>
+                  <p><img src="~assets/image/icon_scnl.png"><em>外形尺寸：</em>{{item.dimensions}}mm</p>
                 </div>
               </a>
             </li>
@@ -99,8 +99,13 @@ export default {
 .product-category {
   display: flex ;
   padding: 30px 0 30px 100px;
-  background-image: url(~assets/image/bj_wljg.jpg);
-  background-size: 100% 100%;
+  background-image: linear-gradient(30deg, rgb(68, 68, 179), WHITE);
+  background-size: auto 200%;
+  background-position: 0 100%;
+  transition: background-position 0.5s;
+}
+.product-category:hover {
+  background-position: 0 0;
 }
 .ih-item {
     position: relative;
@@ -130,18 +135,22 @@ export default {
 
 .ih-item.circle {
     position: relative;
-    width: 115px;
+    width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-right: 60px;
+    margin-right: 75px;
 }
 
 .ih-item.circle .img {
     position: relative;
     width: 100%;
     border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
-
+.ih-item.circle .img img{
+    padding: 15px;
+}
 .ih-item.circle .img:before {
     position: absolute;
     display: block;
@@ -149,14 +158,10 @@ export default {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out;
-}
-
-.ih-item.circle .img img {
-    border-radius: 50%;
 }
 
 .ih-item.circle .info {
@@ -185,10 +190,10 @@ export default {
     text-transform: uppercase;
     position: relative;
     letter-spacing: 2px;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0 30px;
-    padding: 55px 0 0 0;
-    height: 110px;
+    padding: 30px 0 0 0;
+    height: 75px;
     text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -276,7 +281,7 @@ export default {
   text-align: center;
   margin-top: -20px;
   padding-top: 20px;
-  line-height: 60px;
+  line-height: 75px;
   display: block;
   white-space: nowrap;
   overflow: hidden;

@@ -4,15 +4,15 @@
   <div class="text">60s人工响应 / 30min技术答复 / 24h免费提供方案</div>
   <div class="white">
     <ul>
-      <li><img src="http://qizhong114.com/static/home/img/pic_sip_one.png"></li>
-      <li><img src="http://qizhong114.com/static/home/img/pic_sip_two.png"></li>
-      <li><img src="http://qizhong114.com/static/home/img/pic_sip_three.png"></li>
-      <li><img src="http://qizhong114.com/static/home/img/pic_sip_four.png"></li>
+      <li><img src="~assets/image/pic_sip_one.png"></li>
+      <li><img src="~assets/image/pic_sip_two.png"></li>
+      <li><img src="~assets/image/pic_sip_three.png"></li>
+      <li><img src="~assets/image/pic_sip_four.png"></li>
     </ul>
-    <div class="box"> <a href="#"><img src="http://qizhong114.com/static/home/img/icon_lyb_kf.png"></a>
-      <div class="tel"><img src="http://qizhong114.com/static/home/img/icon_tel.png">
+    <div class="box"> <a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`"><img src="~assets/image/icon_lyb_kf.png"></a>
+      <div class="tel"><img src="~assets/image/icon_tel.png">
         <p>24h全国免费咨询热线<br>
-          86-<em>13929139265</em></p>
+          86-<em>{{this.$store.state.userList.userPhone}}</em></p>
       </div>
     </div>
   </div>

@@ -2,10 +2,10 @@
   <div class="view_pro" id="tiao_detail">
   <div class="viewLeft">
       <div v-if="this.$store.state.isPc == true" class="pic1" >
-      <photo-card :img="img"></photo-card>
+      <photo-card :img="`${$baseUrl + product.image}`"></photo-card>
       </div>
       <div v-else class="pic">
-        <img :src="img" alt="">
+        <img :src="`${$baseUrl + product.image}`" alt="">
       </div>
     <ul class="cs">
       <li><em>免</em>免费设计</li>
@@ -15,21 +15,21 @@
   </div>
   <div class="viewRight">
     <div class="kj">
-      <div class="tit">LH型双梁桥式起重机</div>
-      <div class="text"><p style="white-space: normal;">本产品与普通吊钩桥式双梁起重机相比具有重量轻、结构简单、安装操作方便等优点，特别适用于机械制造、装配仓库等场所。</p><p style="white-space: normal;">应用行业：桥式起重机应用于仓储物流、精密加工、金属制造、风电、汽车制造、轨道交通、工程机械等工厂。</p></div>
+      <div class="tit">{{product.name}}</div>
+      <div class="text"><p style="white-space: normal;">{{product.overView}}</p><p style="white-space: normal;"></p></div>
       <ul class="canshu">
-        <li><img src="http://qizhong114.com/static/home/img/icon_nyjl.png"><span>适用起重量</span><em>3t-100t</em></li>
-        <li><img src="http://qizhong114.com/static/home/img/icon_nysc.png"><span>适用跨度</span><em>5m-50m</em></li>
+        <li><img src="~assets/image/icon_nyjl.png"><span>机器重量</span><em>{{product.weight}}KG</em></li>
+        <li><img src="~assets/image/icon_nysc.png"><span>外形尺寸</span><em>{{product.dimensions}}M</em></li>
       </ul>
       <div class="info"> <p><br></p>
       <p style="white-space: normal;">
-        <img src="~assets/image/d03ee38d49ca96ec5da55fc54db9584f.png" title="起重机模块化设计.png" alt="起重机模块化设计.png" width="40" height="40">起重机进行优化设计、实现模块化、结构紧凑、新型的技术设计改善整机性能，提供通用化程度。</p>
-      <p style="white-space: normal;"><img src="~assets/image/e2543e0169d57ca0fee45a2f9b21ad8d.png" title="起重机先进制造工艺.png" width="40" height="40" alt="起重机先进制造工艺.png">采用先进的制造工艺流程和设备,例如采用机器人自动焊接系统、等离子切割机、高效抛丸机等。</p>
-      <p style="white-space: normal;"><img src="~assets/image/466d621f6b94b1ec20867eaf7504b05f.png" title="起重机高安全性.png" alt="起重机高安全性.png" width="40" height="40">我司采用先进的制造工艺保证起重机的精密度、采用优质的零部件、质量稳定、安全装置灵敏度高。</p> </div>
-      <div class="but"> <a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank" class="baoj">获取报价</a>
-        <div class="tel"> <img src="http://qizhong114.com/static/home/img/pic_pro_ewm.jpg">
+        <img src="~assets/image/d03ee38d49ca96ec5da55fc54db9584f.png" title="模块化设计.png" alt="模块化设计.png" width="40" height="40">机器进行优化设计、实现模块化、结构紧凑、新型的技术设计改善整机性能，提供通用化程度。</p>
+      <p style="white-space: normal;"><img src="~assets/image/e2543e0169d57ca0fee45a2f9b21ad8d.png" title="先进制造工艺.png" width="40" height="40" alt="先进制造工艺.png">采用先进的制造工艺流程和设备,例如采用机器人自动焊接系统、等离子切割机、高效抛丸机等。</p>
+      <p style="white-space: normal;"><img src="~assets/image/466d621f6b94b1ec20867eaf7504b05f.png" title="高安全性.png" alt="高安全性.png" width="40" height="40">我司采用先进的制造工艺保证机器的精密度、采用优良的零部件、质量稳定、安全装置灵敏度高。</p> </div>
+      <div class="but"> <a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`" target="_blank" class="baoj">获取报价</a>
+        <div class="tel"> <img src="~assets/image/pic_pro_ewm.jpg">
           <p>24h全国免费咨询热线<br>
-            86-<em>13929139265</em></p>
+            86-<em>{{this.$store.state.userList.userPhone}}</em></p>
         </div>
       </div>
     </div>
@@ -41,18 +41,21 @@
 import PhotoCard from 'components/common/photoCard.vue'
 export default {
   name: '',
+  props: {
+    product: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
   components: {
     PhotoCard
   },
-  data () {
-    return {
-      img: 'http://www.qizhong114.com/uploads/images/20200514/9475c1fc062baeba4ff0e3709d5212e5.jpg'
-    }
-  },
-  mounted () {
+  created () {
+    console.log(this.$store.state)
   }
 }
-
 </script>
 
 <style>

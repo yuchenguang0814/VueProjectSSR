@@ -1,16 +1,16 @@
 <template>
 <div class='map'>
   <div class='container'>
-    <div class='in-tit'><img src='http://www.qizhong114.com/static/home/img/tit_address.png'>
-      <div class='dt'><img src='http://www.qizhong114.com/static/home/img/tit_zs.png'>我们的位置</div>
+    <div class='in-tit'><img src='~assets/image/tit_address.png'>
+      <div class='dt'><img src='~assets/image/tit_zs.png'>我们的位置</div>
       <div class='text'>顺发起重真诚的欢迎您通过热线电话、在线咨询等即时通讯方式与我们联系，无论是项目咨询还是意见反馈，我们都会以较快的方式服务于您</div>
     </div>
     <div class='box'>
       <div class='dt'>起重机维修_天车维护_行车保养_行吊配件_龙门吊维修-广东顺发起重设备有限公司</div>
       <div class='text'>简介：顺发起重是一家以生产起重机设备为主，集设计、生产制造、销售、服务为一体的起重机A级企业。公司位于广东省佛山市。</div>
-      <div class='tel'>服务热线：<em>0757-86283883</em></div>
-      <a href='http://wpa.qq.com/msgrd?uin=980101050' target='_blank' class='but'>在线咨询
-      <img src='http://www.qizhong114.com/static/home/img/icon_shou.png'>
+      <div class='tel'>服务热线：<em>86-{{this.$store.state.userList.userPhone}}</em></div>
+      <a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`" target='_blank' class='but'>在线咨询
+      <img src='~assets/image/icon_shou.png'>
       </a>
       </div>
     <baidu-map class='bdMap' ak='AFESzB0jhTmdwl2RLH9AMGR5faVqhlIT' :mapStyle='mapStyle'

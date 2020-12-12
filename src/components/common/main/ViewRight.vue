@@ -4,18 +4,9 @@
         <div class="tit">相关产品</div>
         <div class="box">
           <ul class="picx">
-            <li><a href="http://www.qizhong114.com/Specialcrane/307.html">
-              <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200803/8f440935383de15624409126173f00c1.jpg"></div>
-              <span>自动化智能化仓储起重机系统</span></a></li>
-              <li><a href="http://www.qizhong114.com/Specialcrane/307.html">
-              <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200803/8f440935383de15624409126173f00c1.jpg"></div>
-              <span>自动化智能化仓储起重机系统</span></a></li>
-              <li><a href="http://www.qizhong114.com/Specialcrane/307.html">
-              <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200803/8f440935383de15624409126173f00c1.jpg"></div>
-              <span>自动化智能化仓储起重机系统</span></a></li>
-              <li><a href="http://www.qizhong114.com/Specialcrane/307.html">
-              <div class="pic"><img src="http://www.qizhong114.com/uploads/images/20200803/8f440935383de15624409126173f00c1.jpg"></div>
-              <span>自动化智能化仓储起重机系统</span></a></li>
+            <li v-show="index<=4" v-for="(item,index) in productList" :key=item.id><a :href="`/product/${item.id}`">
+              <div class="pic"><img :src="`${$baseUrl + item.image}`"></div>
+              <span>{{item.name}}</span></a></li>
           </ul>
         </div>
       </div>
@@ -23,8 +14,26 @@
 </template>
 
 <script>
+import { getGoodsByCid } from 'network/product'
 export default {
-
+  props: {
+    pro: {
+      type: Number,
+      default () {
+        return -1
+      }
+    }
+  },
+  data () {
+    return {
+      productList: []
+    }
+  },
+  created () {
+    getGoodsByCid({ id: this.pro }).then(res => {
+      this.productList = res.data.product
+    })
+  }
 }
 </script>
 

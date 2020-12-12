@@ -17,17 +17,17 @@
           <li>
             <div class="box"><img src="~assets/image/con_dh.png">
               <div class="n"><span>服务热线</span>
-                <p>0757-86283883</p>
+                <p>86-{{this.$store.state.userList.userPhone}}</p>
               </div>
             </div>
           </li>
-          <li><a href="http://wpa.qq.com/msgrd?uin=980101050" target="_blank" class="box"><img src="~assets/image/con_kf.png">
+          <li><a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`" target="_blank" class="box"><img src="~assets/image/con_kf.png">
             <div class="n"><span>联系客服</span>
               <p>点击马上咨询</p>
             </div>
             </a></li>
         </ul>
-        <div class="address"><img src="~assets/image/icon_wzxx.png">公司 地址： 佛山市三水区南山镇华侨工业园</div>
+        <div class="address"><img src="~assets/image/icon_wzxx.png">公司地址：{{this.$store.state.userList.companyAddress}}</div>
       </div>
   </div>
       </div>

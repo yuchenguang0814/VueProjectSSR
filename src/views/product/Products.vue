@@ -9,9 +9,10 @@
         <img :src="`${$baseUrl + item.pageTitleImage}`" :alt="item.pageName" class="proImg">
         <div class="bt"><span>{{item.pageName}}</span><em 火热="">火热</em></div>
         <div class="text">{{item.pageDescription}}</div>
-        <a :href="`/category/${item.cid}`" class="more">查看更多产品<img src="~assets/image/icon_jtr.png"></a> </div>
+        <a :href="`/category/${item.cid}`" class="more">查看更多产品<img src="~assets/image/icon_jtr.png"></a>
+        </div>
       <div class="proRight list">
-        <mains><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
+        <mains v-if="productList !== ''" class="list" :List="fit(item.cid)"><img slot="dt1" src="~assets/image/icon_more.png"></mains>
       </div>
     </div>
   </div>
@@ -22,6 +23,7 @@
 
 <script>
 import Mains from 'components/common/main/Main'
+import { getGood } from 'network/product'
 export default {
   name: '',
   components: {
@@ -29,7 +31,13 @@ export default {
   },
   data () {
     return {
+      productList: ''
     }
+  },
+  created () {
+    getGood().then(res => {
+      this.productList = res.data.product
+    })
   },
   computed: {
     cateList () {
@@ -38,6 +46,16 @@ export default {
         return list[0].child
       } else {
         return false
+      }
+    }
+  },
+  methods: {
+    fit (id) {
+      const arr = this.productList.filter(item => item.c_id === id)
+      if (arr.length > 6) {
+        return arr.slice(0, 6)
+      } else {
+        return arr
       }
     }
   }
@@ -102,11 +120,21 @@ export default {
   height:520px;
   background-image: url(~assets/image/pro_bg01.jpg)
 }
+.pro_index .pro_index_li .proLeft.b1 span{
+  z-index: 103;
+}
+.pro_index .pro_index_li .proLeft.b1 em{
+  z-index: 103;
+}
+.pro_index .pro_index_li .proLeft.b1 .text{
+  z-index: 103;
+  position: relative;
+}
 .proImg {
   position: absolute;
   bottom: 50px;
   width: 250px;
-  z-index: 100;
+  z-index: 1;
 }
 .pro_index .pro_index_li .proLeft.b1:before {
   background-image: url(~assets/image/icon_nums_1.png)
@@ -147,7 +175,8 @@ export default {
   font-size: 16px;
   color: #fff;
   line-height: 30px;
-  padding: 15% 0
+  padding: 15% 0;
+  z-index:103;
 }
 
 .pro_index .pro_index_li .proLeft .more {
@@ -157,6 +186,9 @@ export default {
   padding: 14px 32px;
   display: inline-block;
   transition: all 0.5s;
+  position: absolute;
+  bottom: 20px;
+  z-index: 103;
 }
 
 .pro_index .pro_index_li .proLeft .more img {
@@ -185,6 +217,19 @@ export default {
 }
 
 @media (max-width: 999px) {
+  .pro_index .pro_index_li .proLeft.b1 {
+    height: 200px;
+    overflow: hidden;
+  }
+  .pro_index .pro_index_li .proLeft.b1 .proImg{
+    bottom: 0;
+  }
+  .pro_index .pro_index_li .proLeft.b1 span{
+    color:#000000;
+  }
+.pro_index .pro_index_li .proLeft.b1 .text{
+  color:#000000;
+}
   .pro_index .pro_index_li .proRight .container {
     padding:0 !important;
   }

@@ -4,7 +4,7 @@
       <!-- logo栏 -->
       <div class="logo">
         <a href="#">
-          <img src="~assets/image/logo.jpg" alt="logo图">
+          <img :src="`${$baseUrl + this.$store.state.userList.logo}`" alt="logo图">
         </a>
       </div>
       <!-- 手机端小图标 -->
@@ -45,7 +45,7 @@
                 </div>
               </transition>
             </li>
-            <li><a href="">{{ screenWidth }}</a></li>
+            <li><a href="">英文</a></li>
           </ul>
         </nav>
       </div>
