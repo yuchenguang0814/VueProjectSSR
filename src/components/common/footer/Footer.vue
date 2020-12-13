@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="footer">
-    <div class="container">CopyRight 广东顺发起重设备有限公司 版权所有 全国销售热线：0757-86283883 13929139265 李生</div>
+    <div class="container">CopyRight {{this.$store.state.userList.companyName}} 版权所有 全国销售热线：86-{{this.$store.state.userList.userPhone}} {{this.$store.state.userList.name}}</div>
   </div>
 </footer>
 </template>
