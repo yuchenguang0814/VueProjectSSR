@@ -9,26 +9,12 @@
           </div>
           <div class="box">
             <ul class="list_news_wz">
-              <li>
-                <a href="http://www.qizhong114.com/shunfanews/238.html">
+              <li v-for="item in news" :key="item.id">
+                <a :href="`/news/${item.id}`">
                   <div class="date">
-                    <img src="http://www.qizhong114.com/static/home/img/icon_time.png"/>发布时间：2020-07-07
+                    <img src="~assets/image/icon_time.png"/>发布时间：{{item.createtime | dateFormat}}
                   </div>
-                  <span>起重机的发展方向</span><em>了解更多+</em></a>
-              </li>
-              <li>
-                <a href="http://www.qizhong114.com/shunfanews/238.html">
-                  <div class="date">
-                    <img src="http://www.qizhong114.com/static/home/img/icon_time.png"/>发布时间：2020-07-07
-                  </div>
-                  <span>起重机的发展方向</span><em>了解更多+</em></a>
-              </li>
-              <li>
-                <a href="http://www.qizhong114.com/shunfanews/238.html">
-                  <div class="date">
-                    <img src="http://www.qizhong114.com/static/home/img/icon_time.png"/>发布时间：2020-07-07
-                  </div>
-                  <span>起重机的发展方向</span><em>了解更多+</em></a>
+                  <span>{{item.title}}</span><em>了解更多+</em></a>
               </li>
             </ul>
           </div>
@@ -41,6 +27,14 @@ import MainPages from 'components/common/main/MainPages'
 export default {
   components: {
     MainPages
+  },
+  props: {
+    news: {
+      type: Array,
+      defaut () {
+        return []
+      }
+    }
   }
 }
 </script>

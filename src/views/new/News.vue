@@ -4,7 +4,7 @@
     <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/news'" class="box_news">
       <div class="container">
-        <news-list></news-list>
+        <news-list :news="news"></news-list>
       </div>
     </div>
     <router-view v-else></router-view>
@@ -13,6 +13,7 @@
 
 <script>
 import NewsList from './childrenComps/NewsList'
+import { getNews } from 'network/news'
 export default {
   name: '',
   components: {
@@ -20,11 +21,14 @@ export default {
   },
   data () {
     return {
-
+      news: []
     }
   },
   created () {
     this.$store.commit('getPath', this.$route.path)
+    getNews().then(res => {
+      this.news = res.data.new
+    })
   },
   mounted () {
   }

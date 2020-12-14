@@ -17,34 +17,18 @@
       <div class="xun">
         <dl data-title="行业新闻">
           <div v-show="ison==1">
-                    <dt><a href="http://www.qizhong114.com/hyxw/306.html">打造智能制造的“佛山路径”</a></dt>
-                    <dt><a href="http://www.qizhong114.com/hyxw/305.html">佛山召开2020年“智能制造、本质安全”示范企业创建工作政策解读会</a></dt>
-                    <dt><a href="http://www.qizhong114.com/hyxw/304.html">国内外机械巨头扎堆佛山机械展</a></dt>
-                    <dt><a href="http://www.qizhong114.com/hyxw/248.html">“中国制造”如何变成“中国智造”</a></dt>
-                    <dd><em>2020-07-09</em><a href="http://www.qizhong114.com/hyxw/246.html">（泰山号）大国利器，万吨级起重机</a></dd>
-                    <dd><em>2020-07-07</em><a href="http://www.qizhong114.com/hyxw/229.html">智能建筑市场规模持续增长 行业竞争力仍需提升</a></dd>
-                    <dd><em>2020-07-07</em><a href="http://www.qizhong114.com/hyxw/226.html">佛山市三水36家企业上榜行业龙头名单，有你上班的公司吗？</a></dd>
-                    <dd><em>2020-05-30</em><a href="http://www.qizhong114.com/hyxw/123.html">最平凡的普通人，最伟大的英雄们</a></dd>
-                    </div>
+            <div  v-for="(item,index) in newsList.cNews" :key="item.id">
+              <dt v-if="index<=1"><a :href="`/news/${item.id}`">{{item.title}}</a></dt>
+              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><a :href="`/news/${item.id}`">{{item.title}}</a></dd>
+              </div>
+            </div>
           </dl>
         <dl data-title="技术文献">
           <div v-show="ison==2">
-                    <dt><a href="http://www.qizhong114.com/jswx/339.html">起重机起升部分维保注意事项 </a></dt>
-                    <dt><a href="http://www.qizhong114.com/jswx/338.html">起重机维修也有标准，还不快来看看!</a></dt>
-                    <dt><a href="http://www.qizhong114.com/jswx/337.html">起重机维修保养起重有哪些注意事项</a></dt>
-                    <dt><a href="http://www.qizhong114.com/jswx/336.html">起重机安装配件维修时的注意事项</a></dt>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/335.html">起重机维护保养目的和作用</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/334.html">起重机的保养项目有哪些？</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/333.html">桥式起重机维护规程</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/332.html">双梁起重机使用寿命的延长好处在哪里？</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/331.html">吊车起重机设备如何保养？</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/330.html">起重机摆线针轮减速机轴承座维修</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/329.html">桥式起重机传动机构的保养步骤</a></dd>
-                    <dd><em>2020-09-02</em><a href="http://www.qizhong114.com/jswx/328.html">双梁起重机检修细节注意</a></dd>
-                    <dd><em>2020-08-06</em><a href="http://www.qizhong114.com/jswx/327.html">欧式起重机的控制方式注意要点</a></dd>
-                    <dd><em>2020-08-05</em><a href="http://www.qizhong114.com/jswx/325.html">起重机的试运转检验记录</a></dd>
-                    <dd><em>2020-08-05</em><a href="http://www.qizhong114.com/jswx/324.html">起重机械制造监督检验内容要求与方法（桥架型起重机）</a></dd>
-                    <dd><em>2020-08-05</em><a href="http://www.qizhong114.com/jswx/323.html">起重机起升部分维保注意事项</a></dd>
+            <div  v-for="(item,index) in newsList.iNews" :key="item.id">
+              <dt v-if="index<=1"><a :href="`/news/${item.id}`">{{item.title}}</a></dt>
+              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><a :href="`/news/${item.id}`">{{item.title}}</a></dd>
+            </div>
           </div>
           </dl>
       </div>
@@ -58,6 +42,14 @@ export default {
   data () {
     return {
       ison: 1
+    }
+  },
+  props: {
+    newsList: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
   },
   methods: {

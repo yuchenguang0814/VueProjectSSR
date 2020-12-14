@@ -8,7 +8,7 @@
     </home-case>
     <home-appointment>
     </home-appointment>
-    <home-news></home-news>
+    <home-news :newsList="newsList"></home-news>
     <home-about></home-about>
   </div>
 </template>
@@ -38,6 +38,8 @@ export default {
       this.caseBanners = this.homeLists.case
       this.products.category = this.homeLists.goodCates
       this.products.product = this.homeLists.goods
+      this.newsList.cNews = this.homeLists.news.filter(item => item.cid === 3)
+      this.newsList.iNews = this.homeLists.news.filter(item => item.cid === 4)
     }
   },
   created () {
@@ -54,6 +56,12 @@ export default {
         category:
         [],
         product:
+        []
+      },
+      newsList: {
+        cNews:
+        [],
+        iNews:
         []
       }
     }

@@ -3,9 +3,10 @@
     <!-- <slot v-if="this.$route.path == '/products'" name="nb" :props="$store.getters.getNbanner" ></slot> -->
     <slot name="crumb"></slot>
     <div  v-if="this.$route.path == '/products'" class="pro_index">
-      <div class="pro_index_li" v-for="item in cateList" :key="item.cid">
+      <div class="pro_index_li" v-for="(item, index) in cateList" :key="item.cid">
     <div class="container category">
       <div class="proLeft b1">
+        <img :src="require(`@/assets/image/icon_nums_${index + 1}.png`)" class="num">
         <img :src="`${$baseUrl + item.pageTitleImage}`" :alt="item.pageName" class="proImg">
         <div class="bt"><span>{{item.pageName}}</span><em 火热="">火热</em></div>
         <div class="text">{{item.pageDescription}}</div>
@@ -92,7 +93,10 @@ export default {
   background-size: 100% 100%;
   z-index: 2
 }
-
+.pro_index .pro_index_li .container.category .num {
+  position: absolute;
+  top: -50px;
+}
 .pro_index .pro_index_li:nth-child(even) {
   background: #f0f3fa
 }
@@ -117,7 +121,7 @@ export default {
 }
 
 .pro_index .pro_index_li .proLeft.b1 {
-  height:520px;
+  height:556px;
   background-image: url(~assets/image/pro_bg01.jpg)
 }
 .pro_index .pro_index_li .proLeft.b1 span{
@@ -136,10 +140,6 @@ export default {
   width: 250px;
   z-index: 1;
 }
-.pro_index .pro_index_li .proLeft.b1:before {
-  background-image: url(~assets/image/icon_nums_1.png)
-}
-
 .pro_index .pro_index_li .proLeft .bt {
   display: -webkit-box;
   display: -moz-box;
@@ -215,6 +215,9 @@ export default {
 .proRight .main{
   padding: 0;
 }
+.proRight .main ul{
+  width: 100%;
+}
 
 @media (max-width: 999px) {
   .pro_index .pro_index_li .proLeft.b1 {
@@ -222,7 +225,9 @@ export default {
     overflow: hidden;
   }
   .pro_index .pro_index_li .proLeft.b1 .proImg{
-    bottom: 0;
+    width: 50%;
+    right: 20px;
+    top:50px;
   }
   .pro_index .pro_index_li .proLeft.b1 span{
     color:#000000;
@@ -288,13 +293,14 @@ export default {
     padding: 10px;
     line-height: 1;
     background: #e61e37;
-    border-color: #e61e37
+    border-color: #e61e37;
+    position: unset;
   }
 
   .pro_index .pro_index_li .proLeft .more img {
     height: 10px;
     margin-top: -2px;
-    margin-left: 3px
+    margin-left: 3px;
   }
 
   .pro_index .pro_index_li .proRight {
