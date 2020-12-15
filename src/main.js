@@ -14,6 +14,23 @@ Vue.filter('dateFormat', function (originVal) {
   const d = (dt.getDate() + '').padStart(2, '0')
   return `${y}-${m}-${d}`
 })
+Vue.filter('yearFormat', function (originVal) {
+  const dt = new Date(originVal)
+  const y = dt.getFullYear()
+  return `${y}`
+})
+Vue.filter('monthFormat', function (originVal) {
+  const dt = new Date(originVal)
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + '').padStart(2, '0')
+  return `${m}-${d}`
+})
+Vue.filter('hoursFormat', function (originVal) {
+  const dt = new Date(originVal)
+  const h = (dt.getHours() + '').padStart(2, '0')
+  const m = (dt.getMinutes() + '').padStart(2, '0')
+  return `${h}:${m}`
+})
 router.beforeEach((to, from, next) => {
   GetSeoMultidata().then(res => {
     const arr = res.data.seo.filter(item => item.pageName === to.meta.title)[0]

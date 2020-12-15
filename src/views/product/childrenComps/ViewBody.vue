@@ -34,15 +34,14 @@
             </span>
           </div>
       </div>
+      <div class="pd10">
+        <main-mess id="tiao_mess"/>
+        <div class="line_height60"></div>
+        <view-bottom/>
+      </div>
     </div>
     <view-right v-if="proId!==-1" :pro = "proId"></view-right>
   </div>
-  <div class="line_height60"></div>
-  <div class="pd10">
-    <main-mess id="tiao_mess"/>
-    <div class="line_height60"></div>
-    <view-bottom/>
-    </div>
 </div>
 </template>
 
@@ -123,7 +122,7 @@ export default {
   -ms-flex: 1;
   flex: 1;
   width: 0;
-  max-width: 943px;
+  max-width: 1100px;
   padding: 0 20px 0 0
 }
 .view_body .web_body {

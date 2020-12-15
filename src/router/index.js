@@ -97,6 +97,11 @@ const routes = [
       component: () => import('../views/new/child/LiteratureNews.vue'),
       name: 'LiteratureNews',
       meta: { title: '技术文献' }
+    }, {
+      path: '/news/:id',
+      component: () => import('../views/new/child/New.vue'),
+      name: 'New',
+      meta: { title: '新闻详情' }
     }]
   },
   {

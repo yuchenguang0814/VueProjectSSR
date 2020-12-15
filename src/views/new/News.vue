@@ -1,9 +1,9 @@
 <template>
   <div>
-    <slot name="nb" :props="$store.getters.getPageNbanner" ></slot>
+    <slot v-if="this.$route.params.id === undefined" name="nb" :props="$store.getters.getPageNbanner" ></slot>
     <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/news'" class="box_news">
-      <div class="container">
+      <div class="container" v-if="newsList !== ''">
         <news-list :news="news"></news-list>
       </div>
     </div>
@@ -21,7 +21,8 @@ export default {
   },
   data () {
     return {
-      news: []
+      news: [],
+      newsList: {}
     }
   },
   created () {

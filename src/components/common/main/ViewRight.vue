@@ -1,5 +1,6 @@
 <template>
   <div class="viewRight">
+    <slot name="cont"></slot>
       <div class="box_xgboxr">
         <div class="tit">相关产品</div>
         <div class="box">
@@ -30,23 +31,29 @@ export default {
     }
   },
   created () {
-    getGoodsByCid({ id: this.pro }).then(res => {
-      this.productList = res.data.product
-    })
+    if (this.pro === -1) {
+      getGoodsByCid({ id: 12 }).then(res => {
+        this.productList = res.data.product
+      })
+    } else {
+      getGoodsByCid({ id: this.pro }).then(res => {
+        this.productList = res.data.product
+      })
+    }
   }
 }
 </script>
 
 <style>
-.view_body .container .viewRight {
+.container .viewRight {
     width: 260px
 }
 
-.view_body .box_xgboxl {
+.box_xgboxl {
     padding: 35px 0
 }
 
-.view_body .box_xgboxr .box {
+.box_xgboxr .box {
     background: #f0f3fa
 }
 

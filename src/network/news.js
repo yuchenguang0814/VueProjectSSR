@@ -4,3 +4,15 @@ export function getNews () {
     url: '/news'
   })
 }
+export function getNewByid (id) {
+  return request({
+    url: '/new',
+    params: id
+  })
+}
+export function getNew (id) {
+  return request({
+    url: '/gnew',
+    params: id
+  })
+}

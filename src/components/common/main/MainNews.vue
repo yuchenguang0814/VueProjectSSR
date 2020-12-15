@@ -2,43 +2,13 @@
 <div class="main news">
   <div class="container">
     <ul class="list_news">
-      <li>
-        <a href="http://www.qizhong114.com/shunfanews/238.html">
-          <div class="date">2020<em>07-07</em>19:01</div>
-            <div class="box"> <span>起重机的发展方向</span>
+      <li v-for="item in news" :key="item.id">
+        <a :href="`/news/${item.id}`">
+          <div class="date">{{item.createtime | yearFormat}}<em>{{item.createtime | monthFormat}}</em>{{item.createtime | hoursFormat}}</div>
+            <div class="box"> <span>{{item.title}}</span>
               <div class="cs">
-                <img src="http://www.qizhong114.com/static/home/img/icon_kh.png">
-                <em>发布者：admin</em>
-                <img src="http://www.qizhong114.com/static/home/img/icon_look.png">
-                <em>浏览：102</em>
-              </div>
-              <p></p>
-            </div>
-          </a>
-        </li>
-        <li>
-        <a href="http://www.qizhong114.com/shunfanews/238.html">
-          <div class="date">2020<em>07-07</em>19:01</div>
-            <div class="box"> <span>起重机的发展方向</span>
-              <div class="cs">
-                <img src="http://www.qizhong114.com/static/home/img/icon_kh.png">
-                <em>发布者：admin</em>
-                <img src="http://www.qizhong114.com/static/home/img/icon_look.png">
-                <em>浏览：102</em>
-              </div>
-              <p></p>
-            </div>
-          </a>
-        </li>
-        <li>
-        <a href="http://www.qizhong114.com/shunfanews/238.html">
-          <div class="date">2020<em>07-07</em>19:01</div>
-            <div class="box"> <span>起重机的发展方向</span>
-              <div class="cs">
-                <img src="http://www.qizhong114.com/static/home/img/icon_kh.png">
-                <em>发布者：admin</em>
-                <img src="http://www.qizhong114.com/static/home/img/icon_look.png">
-                <em>浏览：102</em>
+                <img src="~assets/image/icon_kh.png">
+                <em>发布者：{{item.author}}</em>
               </div>
               <p></p>
             </div>
@@ -55,6 +25,14 @@ import MainPages from './MainPages.vue'
 export default {
   components: {
     MainPages
+  },
+  props: {
+    news: {
+      type: Array,
+      defaut () {
+        return []
+      }
+    }
   }
 }
 </script>
