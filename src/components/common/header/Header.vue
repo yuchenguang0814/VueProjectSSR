@@ -68,23 +68,18 @@ export default {
     topItem () {
       return this.$store.state.pageList.slice(0, 3)
     },
-    homeItem () {
-      return this.$store.state.pageList[3]
-    },
-    Item () {
-      return this.$store.state.pageList
-    },
     navItem () {
+      const arr = this.$store.state.pageList.filter(item => item.id !== 4)
+      const arr1 = this.$store.state.pageList.filter(item => item.id === 4)[0]
+      arr.unshift(arr1)
       if (this.$store.state.isPc) {
         if (this.screenWidth <= 999) {
-          const arr = this.$store.state.pageList
-          arr.slice(3, 4)
           return arr
         } else {
           return this.$store.state.pageList.slice(3)
         }
       } else {
-        return this.$store.state.pageList
+        return arr
       }
     }
   },
