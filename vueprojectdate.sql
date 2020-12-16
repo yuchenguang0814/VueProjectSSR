@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-12-10 14:26:07
+Date: 2020-12-16 16:35:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -106,7 +106,7 @@ CREATE TABLE `goods` (
   `sort` int(11) NOT NULL DEFAULT '1' COMMENT '产品排序',
   `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
@@ -119,6 +119,7 @@ INSERT INTO `goods` VALUES ('9', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e28
 INSERT INTO `goods` VALUES ('15', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机1', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '150', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '6', '2020-12-09 15:40:40');
 INSERT INTO `goods` VALUES ('16', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '170', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '7', '2020-12-09 15:40:41');
 INSERT INTO `goods` VALUES ('17', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '180', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '8', '2020-12-09 15:40:43');
+INSERT INTO `goods` VALUES ('21', '8', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '55', '0.8x2x0.5', '1232131', '213123', '12312321', '否', '1', '2020-12-14 10:24:19');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -128,17 +129,26 @@ CREATE TABLE `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
+  `pageKey` varchar(255) DEFAULT NULL,
+  `pageDescription` varchar(255) DEFAULT NULL,
   `author` varchar(255) DEFAULT NULL,
-  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '当前时间',
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `content` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO `news` VALUES ('1', null, '112', '2212', '2020-11-12 11:25:02', '111');
-INSERT INTO `news` VALUES ('2', null, '1', '22', '2020-11-12 11:25:22', '232133123131');
+INSERT INTO `news` VALUES ('1', '3', '112', '1', '123', '2212', '2020-12-14 11:34:14', '111');
+INSERT INTO `news` VALUES ('2', '4', '1', '2', '213', '22', '2020-12-14 11:34:13', '232133123131');
+INSERT INTO `news` VALUES ('3', '4', '11', '213', '3213', 'admin', '2020-12-14 11:34:13', '1213');
+INSERT INTO `news` VALUES ('4', '3', '34', '34', '213', '3242', '2020-12-14 11:34:16', '23432');
+INSERT INTO `news` VALUES ('5', '3', '12', '32', '2', '232', '2020-12-14 11:34:12', '123');
+INSERT INTO `news` VALUES ('6', '3', '21', '423', '12', '213', '2020-12-14 11:34:12', '1231');
+INSERT INTO `news` VALUES ('7', '5', '21312', '123', '12312', 'admin', '2020-12-14 15:43:44', '<p>123123</p>');
+INSERT INTO `news` VALUES ('8', '5', '2', '123', '12312', 'admin', '2020-12-14 15:46:36', '<p>12312312</p>');
+INSERT INTO `news` VALUES ('9', '4', '11', '213', '123', 'admin', '2020-12-14 15:47:11', '<p>213</p>');
 
 -- ----------------------------
 -- Table structure for `page`
@@ -189,5 +199,26 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('1', 'admin', '8af29dfc30345d72ba74466bcf82455ayWycs', '虞先生', '546448821@qq.com', '18968919292', '5464488211', 'aicoco居家协会', '浙江省瑞安市', '/uploads/banner/logo_2020_11_6_13_35.jpg');
-INSERT INTO `users` VALUES ('2', 'yuchen', '11231', '', '', '', '', '', '', null);
+INSERT INTO `users` VALUES ('1', 'admin', 'ec15d79e36e14dd258cfff3d48b73d35yWycs', '虞先生', '546448821@qq.com', '18968919292', '5464488211', 'aicoco居家协会', '浙江省瑞安市', '/uploads/banner/logo_2020_11_6_13_37.jpg');
+INSERT INTO `users` VALUES ('2', 'yuchen', 'ec15d79e36e14dd258cfff3d48b73d35yWycs', '', '', '', '', '', '', null);
+
+-- ----------------------------
+-- Table structure for `video`
+-- ----------------------------
+DROP TABLE IF EXISTS `video`;
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vidurl` varchar(255) DEFAULT NULL,
+  `imgurl` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `pageKey` varchar(255) DEFAULT NULL,
+  `pageDescription` varchar(255) DEFAULT NULL,
+  `createtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of video
+-- ----------------------------
+INSERT INTO `video` VALUES ('1', 'n3212ocatx6', null, '2342', '3234', '23423', '2020-12-16 15:00:23');
+INSERT INTO `video` VALUES ('2', 'l3212uy453l', null, '123', '23', '213', '2020-12-16 15:00:31');
