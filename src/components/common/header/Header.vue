@@ -19,8 +19,8 @@
               <router-link :to="item.pagePath">{{item.pageName}}</router-link>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub" v-show="item.id==isShow">
-                  <router-link :to="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
-                  </router-link>
+                  <a :href="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  </a>
                 </div>
               </transition>
             </li>
@@ -33,14 +33,14 @@
           </div>
         </div>
         <!-- 导航栏底部 -->
-        <nav id="nav">
+        <nav v-show="this.$store.state.isPc | showN !== false" id="nav">
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <router-link :to="item.pagePath">{{item.pageName}}</router-link>
+              <router-link :to="item.pagePath" @click.native="showN=false">{{item.pageName}}</router-link>
               <i v-if="item.child.length>0" @click="showNsub($event,item.id)"></i>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub"  v-show="item.id==isShow">
-                  <router-link :to="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  <router-link :to="item2.pagePath" v-for="(item2) in item.child" :key="item2.id" @click.native="showN=false">{{item2.pageName}}
                   </router-link>
                 </div>
               </transition>
@@ -68,8 +68,24 @@ export default {
     topItem () {
       return this.$store.state.pageList.slice(0, 3)
     },
+    homeItem () {
+      return this.$store.state.pageList[3]
+    },
+    Item () {
+      return this.$store.state.pageList
+    },
     navItem () {
-      return this.$store.state.pageList.slice(3)
+      if (this.$store.state.isPc) {
+        if (this.screenWidth <= 999) {
+          const arr = this.$store.state.pageList
+          arr.slice(3, 4)
+          return arr
+        } else {
+          return this.$store.state.pageList.slice(3)
+        }
+      } else {
+        return this.$store.state.pageList
+      }
     }
   },
   watch: {
@@ -114,7 +130,10 @@ export default {
       this.showN = !this.showN
     }
   },
-  mounted () {
+  beforeRouteEnter (to, from, next) {
+    console.log(to)
+  },
+  created () {
     this.screenWidth = document.body.clientWidth
     window.onresize = () => {
       return (() => {
