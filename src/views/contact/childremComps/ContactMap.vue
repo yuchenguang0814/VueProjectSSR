@@ -6,7 +6,7 @@
       <div class='text'>顺发起重真诚的欢迎您通过热线电话、在线咨询等即时通讯方式与我们联系，无论是项目咨询还是意见反馈，我们都会以较快的方式服务于您</div>
     </div>
     <div class='box'>
-      <div class='dt'>起重机维修_天车维护_行车保养_行吊配件_龙门吊维修-广东顺发起重设备有限公司</div>
+      <div class='dt'>起重机维修_天车维护_行车保养_行吊配件_龙门吊维修-{{this.$store.state.userList.companyName}}</div>
       <div class='text'>简介：顺发起重是一家以生产起重机设备为主，集设计、生产制造、销售、服务为一体的起重机A级企业。公司位于广东省佛山市。</div>
       <div class='tel'>服务热线：<em>86-{{this.$store.state.userList.userPhone}}</em></div>
       <a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`" target='_blank' class='but'>在线咨询

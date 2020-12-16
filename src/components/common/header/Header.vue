@@ -16,11 +16,11 @@
           <slot></slot>
           <ul>
             <li v-for="(item) in topItem" :key="item.id" @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <a :href="item.pagePath">{{item.pageName}}</a>
+              <router-link :to="item.pagePath">{{item.pageName}}</router-link>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub" v-show="item.id==isShow">
-                  <a :href="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
-                  </a>
+                  <router-link :to="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  </router-link>
                 </div>
               </transition>
             </li>
@@ -33,15 +33,15 @@
           </div>
         </div>
         <!-- 导航栏底部 -->
-        <nav v-show="this.$store.state.isPc | showN !== false" id="nav">
+        <nav id="nav">
           <ul>
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
-              <a :href="item.pagePath">{{item.pageName}}</a>
+              <router-link :to="item.pagePath">{{item.pageName}}</router-link>
               <i v-if="item.child.length>0" @click="showNsub($event,item.id)"></i>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub"  v-show="item.id==isShow">
-                  <a :href="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
-                  </a>
+                  <router-link :to="item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  </router-link>
                 </div>
               </transition>
             </li>

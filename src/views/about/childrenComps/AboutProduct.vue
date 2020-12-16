@@ -3,7 +3,7 @@
       <div class="container">
         <div class="in-tit"><img src="http://qizhong114.com/static/home/img/tit_products_bg.png">
           <div class="dt"><img src="http://qizhong114.com/static/home/img/tit_zs.png">起重机制造基地</div>
-          <div class="texts">广东顺发起重设备有限公司先后学习的欧洲同行业起重设备制造商的先进技术和工艺，建立了先进的现代化自动焊接生产线，并由广东省科学厅成立了欧式起重机研发中心。公司以科学的管理方法，精益求精的制造工艺，勇于创新的制造理念。</div>
+          <div class="texts">{{this.$store.state.userList.companyName}}先后学习的欧洲同行业起重设备制造商的先进技术和工艺，建立了先进的现代化自动焊接生产线，并由广东省科学厅成立了欧式起重机研发中心。公司以科学的管理方法，精益求精的制造工艺，勇于创新的制造理念。</div>
         </div>
         <div class="xun">
           <ul class="tab">

@@ -53,7 +53,6 @@ export default {
     PhotoCard
   },
   created () {
-    console.log(this.$store.state)
   }
 }
 </script>

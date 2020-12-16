@@ -10,7 +10,7 @@
         <img :src="`${$baseUrl + item.pageTitleImage}`" :alt="item.pageName" class="proImg">
         <div class="bt"><span>{{item.pageName}}</span><em 火热="">火热</em></div>
         <div class="text">{{item.pageDescription}}</div>
-        <a :href="`/category/${item.cid}`" class="more">查看更多产品<img src="~assets/image/icon_jtr.png"></a>
+        <router-link :to="`/category/${item.cid}`" class="more">查看更多产品<img src="~assets/image/icon_jtr.png"></router-link>
         </div>
       <div class="proRight list">
         <mains v-if="productList !== ''" class="list" :List="fit(item.cid)"><img slot="dt1" src="~assets/image/icon_more.png"></mains>

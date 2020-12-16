@@ -7,7 +7,7 @@
         <img src="http://qizhong114.com/static/home/img/tit_zs.png">
         "新闻聚焦"
       </div>
-      <div class="text">在这里，你可以了解到广东顺发设备的新鲜动态及行业的热门资讯</div>
+      <div class="text">在这里，你可以了解到{{this.$store.state.userList.companyName}}的新鲜动态及行业的热门资讯</div>
     </div>
     <div class="in_news">
       <ul class="tab">
@@ -18,16 +18,16 @@
         <dl data-title="行业新闻">
           <div v-show="ison==1">
             <div  v-for="(item,index) in newsList.cNews" :key="item.id">
-              <dt v-if="index<=1"><a :href="`/news/${item.id}`">{{item.title}}</a></dt>
-              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><a :href="`/news/${item.id}`">{{item.title}}</a></dd>
+              <dt v-if="index<=1"><router-link :to="`/news/${item.id}`">{{item.title}}</router-link></dt>
+              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><router-link :to="`/news/${item.id}`">{{item.title}}</router-link></dd>
               </div>
             </div>
           </dl>
         <dl data-title="技术文献">
           <div v-show="ison==2">
             <div  v-for="(item,index) in newsList.iNews" :key="item.id">
-              <dt v-if="index<=1"><a :href="`/news/${item.id}`">{{item.title}}</a></dt>
-              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><a :href="`/news/${item.id}`">{{item.title}}</a></dd>
+              <dt v-if="index<=1"><router-link :to="`/news/${item.id}`">{{item.title}}</router-link></dt>
+              <dd v-if="index> 1"><em>{{item.createtime | dateFormat}}</em><router-link :to="`/news/${item.id}`">{{item.title}}</router-link></dd>
             </div>
           </div>
           </dl>

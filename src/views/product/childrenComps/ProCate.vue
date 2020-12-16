@@ -1,7 +1,7 @@
 <template>
   <div class="pro_cate" id="pro_tab">
   <div class="container">
-    <ul>
+    <ul :class="showTop ? 'cur' : '' ">
       <li><a href="javascript:;"  @click="scrollFun('#tiao_detail')">产品描述</a></li>
       <li><a href="javascript:;"  @click="scrollFun('#tiao_body')">产品介绍</a></li>
       <li><a href="javascript:;"  @click="scrollFun('#tiao_mess')">在线留言</a></li>
@@ -17,7 +17,11 @@ export default {
   },
   data () {
     return {
+      showTop: false
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     scrollFun (hash) {
@@ -26,6 +30,10 @@ export default {
         behavior: 'smooth',
         block: 'start'
       })
+    },
+    handleScroll () {
+      this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
+      this.showTop = this.scrollTop > 1080
     }
   }
 }
@@ -33,7 +41,14 @@ export default {
 </script>
 
 <style>
-
+.cur {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
 .pro_cate ul {
   overflow: hidden;
   border: 1px solid #e8ebf1;

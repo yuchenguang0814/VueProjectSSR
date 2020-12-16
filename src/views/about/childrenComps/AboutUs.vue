@@ -3,7 +3,7 @@
       <div class="container">
       <div class="in-tit"><img src="http://qizhong114.com/static/home/img/tit_hongxing.png">
           <div class="dt"><img src="http://qizhong114.com/static/home/img/tit_zs.png">起重机生产制造及服务商</div>
-          <div class="texts">广东顺发起重设备有限公司是一家以生产制造起重机为主，集科研、生产、销售为一体的企业。公司总部位于佛山市三水区南山镇华侨开发区，占地共6万平方米，拥有3万平方米标准化重型工业厂房，各种大、中型金加工、铆焊、自动焊接机器人、自动埋弧焊接设备、钢材表面处理设备、装配设备等200余台。</div>
+          <div class="texts">{{this.$store.state.userList.companyName}}是一家以生产制造起重机为主，集科研、生产、销售为一体的企业。公司总部位于佛山市三水区南山镇华侨开发区，占地共6万平方米，拥有3万平方米标准化重型工业厂房，各种大、中型金加工、铆焊、自动焊接机器人、自动埋弧焊接设备、钢材表面处理设备、装配设备等200余台。</div>
       </div>
       <div class="box_about">
         <div class="box">
@@ -11,7 +11,7 @@
           <div class="left">
             <div class="t1">起重机设备专业的制造商和服务商</div>
             <div class="t2">责任成就品质，品质打造品牌</div>
-            <div class="text">广东顺发起重设备有限公司是领先的A级起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、服务于一体。主要生产欧式起重机、双梁桥式起重机、单梁桥式起重机、门式起重机、悬挂起重机、旋臂起重机、通用钢丝绳电动葫芦；其它非标起重机及各类起重机专用部件，包括：欧式卷扬小车，欧式电动葫芦，欧式端梁等起重机产品。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。</div>
+            <div class="text">{{this.$store.state.userList.companyName}}是领先的A级起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、服务于一体。主要生产欧式起重机、双梁桥式起重机、单梁桥式起重机、门式起重机、悬挂起重机、旋臂起重机、通用钢丝绳电动葫芦；其它非标起重机及各类起重机专用部件，包括：欧式卷扬小车，欧式电动葫芦，欧式端梁等起重机产品。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。</div>
           </div>
         </div>
         <ul>
@@ -31,7 +31,7 @@
       </div>
       <div class="in-tit"><img src="http://qizhong114.com/static/home/img/tit_strength.png">
         <div class="dt"><img src="http://qizhong114.com/static/home/img/tit_zs.png">起重机制造基地</div>
-        <div class="texts">广东顺发起重设备有限公司先后学习的欧洲同行业起重设备制造商的先进技术和工艺，建立了先进的现代化自动焊接生产线，并由广东省科学厅成立了欧式起重机研发中心。公司以科学的管理方法，精益求精的制造工艺，勇于创新的制造理念。</div>
+        <div class="texts">{{this.$store.state.userList.companyName}}先后学习的欧洲同行业起重设备制造商的先进技术和工艺，建立了先进的现代化自动焊接生产线，并由广东省科学厅成立了欧式起重机研发中心。公司以科学的管理方法，精益求精的制造工艺，勇于创新的制造理念。</div>
       </div>
         <ul class="xun_sdjd">
           <li>

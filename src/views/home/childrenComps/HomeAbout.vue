@@ -3,7 +3,7 @@
   <div class="container">
     <div class="box">
       <div class="in-tit"><img src="http://qizhong114.com/static/home/img/tit_strong.png">
-        <div class="dt"><img src="http://qizhong114.com/static/home/img/tit_zs.png">实力广东顺发</div>
+        <div class="dt"><img src="http://qizhong114.com/static/home/img/tit_zs.png">{{this.$store.state.userList.companyName}}</div>
         <div class="text">满足用户需求,提升生产效率,精密精确运行,安全可靠使用,三十年来我们始终如一，诚信服务每一位客户。</div>
       </div>
       <ul>

@@ -1,58 +1,64 @@
 <template>
-  <div class="box_news_li">
+  <div class="box_video_li">
     <div class="tit">
-      <span>热点资讯</span>
+      <span>影像资料</span>
       <ul>
         <li>随时到厂参观考察</li>
         <li>提供免费定制服务</li>
       </ul>
     </div>
     <div class="box">
-      <ul class="list_news_wz">
-        <li v-for="item in news" :key="item.id">
-          <router-link :to="`/news/${item.id}`">
+      <ul class="list_video_wz">
+        <li v-for="item in vid" :key="item.id">
+          <router-link :to="`/video/${item.id}`">
             <div class="date">
               <img src="~assets/image/icon_time.png"/>发布时间：{{item.createtime | dateFormat}}
             </div>
-            <span>{{item.title}}</span><em>了解更多+</em></router-link>
+            <span>{{item.title}}</span><em>了解更多+</em>
+            </router-link>
+            <img src="../../../assets/image/pic_sip_four.png" :alt="item.title" class="img">
         </li>
       </ul>
     </div>
-    <main-Pages></main-Pages>
   </div>
 </template>
 
 <script>
-import MainPages from 'components/common/main/MainPages'
 export default {
+  name: '',
   components: {
-    MainPages
   },
   props: {
-    news: {
+    vid: {
       type: Array,
       defaut () {
         return []
       }
     }
+  },
+  data () {
+    return {
+    }
   }
 }
+
 </script>
 
 <style>
-.box_news_li {
+
+.box_video_li {
     margin-top: 40px;
     background: #fff;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px
 }
-.box_news_li .tit {
+.box_video_li .tit {
     background: url(~assets/image/bj_zone_bg.jpg) no-repeat;
     background-size: 100% 100%;
     height: 179px;
     padding: 44px 30px 0 32px
 }
-.box_news_li .tit span {
+.box_video_li .tit span {
     font-size: 30px;
     color: #f0f3fa;
     position: relative;
@@ -69,7 +75,7 @@ export default {
     border-radius: 0 15px 15px 15px;
     float: left
 }
-.box_news_li .tit span:after {
+.box_video_li .tit span:after {
     position: absolute;
     bottom: 15px;
     content: "";
@@ -81,11 +87,11 @@ export default {
     left: 50%;
     margin-left: -65px
 }
-.box_news_li .tit ul {
+.box_video_li .tit ul {
     float: right
 }
 
-.box_news_li .tit ul li {
+.box_video_li .tit ul li {
     font-size: 18px;
     color: #cad7f6;
     float: left;
@@ -93,7 +99,7 @@ export default {
     margin-left: 80px
 }
 
-.box_news_li .tit ul li:before {
+.box_video_li .tit ul li:before {
     position: absolute;
     left: -30px;
     top: 3px;
@@ -105,23 +111,31 @@ export default {
     display: block
 }
 
-.box_news_li .tit ul li:first-child {
+.box_video_li .tit ul li:first-child {
     margin-left: 0
 }
-.box_news_li .box {
+.box_video_li .box {
     padding: 20px
 }
-.list_news_wz {
+.list_video_wz {
     margin: -10px -8px
 }
-
-.list_news_wz li {
-    width: 33.33333333%;
+.list_video_wz .img {
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  right: 100px;
+  top: 50px;
+  display: block;
+}
+.list_video_wz li {
+    width: 100%;
     float: left;
-    padding: 10px 8px
+    padding: 10px 8px;
+    position: relative;
 }
 
-.list_news_wz li a {
+.list_video_wz li a {
     background: #f0f3fa;
     padding: 40px 35px;
     display: block;
@@ -131,15 +145,14 @@ export default {
     color: #788291
 }
 
-.list_news_wz li .date img {
+.list_video_wz li .date img {
     height: 15px;
     width: auto;
     margin-right: 5px;
     margin-top: -3px;
     vertical-align: middle
 }
-
-.list_news_wz li span {
+.list_video_wz li span {
     font-size: 20px;
     color: #05163f;
     margin: 30px 0;
@@ -151,20 +164,20 @@ export default {
     transition: all .5s
 }
 
-.list_news_wz li em {
+.list_video_wz li em {
     font-size: 16px
 }
 
-.list_news_wz li:hover a {
+.list_video_wz li:hover a {
     box-shadow: 4px 4px 20px 5px rgba(0, 0, 0, 0.13);
     transform: translate(0, -3px)
 }
 
-.list_news_wz li:hover span {
+.list_video_wz li:hover span {
     color: #e61e37
 }
 
-.list_news_wz:after {
+.list_video_wz:after {
     width: 100%;
     clear: both;
     line-height: 0;
@@ -175,81 +188,80 @@ export default {
     content: '.'
 }
 @media (max-width: 999px) {
-  .box_news_li {
+  .box_video_li {
         margin-top: 20px
     }
 
-    .box_news_li .tit {
+    .box_video_li .tit {
         height: 80px;
         padding: 18px 10px 0 10px
     }
 
-    .box_news_li .tit span {
+    .box_video_li .tit span {
         font-size: 20px;
         width: 120px;
         height: 42px;
         line-height: 36px
     }
 
-    .box_news_li .tit span:after {
+    .box_video_li .tit span:after {
         bottom: 5px;
         width: 80px;
         height: 3px;
         margin-left: -40px
     }
 
-    .box_news_li .tit ul {
+    .box_video_li .tit ul {
         margin-top: -8px;
         opacity: .5
     }
 
-    .box_news_li .tit ul li {
+    .box_video_li .tit ul li {
         float: none;
         font-size: 12px;
         margin-left: 0;
         margin-bottom: 5px
     }
 
-    .box_news_li .tit ul li:before {
+    .box_video_li .tit ul li:before {
         left: -20px;
         top: 3px;
         width: 16px;
         height: 12px
     }
-    .box_news_li .box {
+    .box_video_li .box {
         padding: 10px
     }
-    .list_news_wz {
+    .list_video_wz {
         margin: -5px
     }
 
-    .list_news_wz li {
-        width: 50%;
+    .list_video_wz li {
         padding: 5px
     }
 
-    .list_news_wz li a {
+    .list_video_wz li a {
         padding: 10px
     }
 
-    .list_news_wz li .date {
+    .list_video_wz li .date {
         font-size: 12px
     }
 
-    .list_news_wz li .date img {
+    .list_video_wz li .date img {
         height: 12px;
         margin-right: 3px;
         margin-top: -3px
     }
 
-    .list_news_wz li span {
+    .list_video_wz li span {
         font-size: 16px;
         margin: 5px 0;
         line-height: 24px;
         height: 48px
     }
 
-    .list_news_wz li em {
+    .list_video_wz li em {
         font-size: 12px
     }
 }

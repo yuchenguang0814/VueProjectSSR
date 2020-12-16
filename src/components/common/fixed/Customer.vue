@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section ref="cust">
     <div class="fixed_kefu">
     <span :class="`close pc ${isClose?'active':''}`" @click="clickClose">
       <img src="~assets/image/icon_jtb_s.png" alt="">

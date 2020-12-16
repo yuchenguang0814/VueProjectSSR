@@ -1,6 +1,6 @@
 <template>
   <div class="box_zzssi">
-  <div class="bt">广东顺发-起重机专业制造和服务供应商</div>
+  <div class="bt">{{this.$store.state.userList.companyName}}-起重机专业制造和服务供应商</div>
   <div class="text">60s人工响应 / 30min技术答复 / 24h免费提供方案</div>
   <div class="white">
     <ul>

@@ -7,9 +7,16 @@ import Solution from '../views/solution/Solution.vue'
 import NotFound from 'components/common/NotFound.vue'
 
 Vue.use(VueRouter)
+
 const routes = [
   {
     path: '/',
+    name: 'Home',
+    component: Home,
+    meta: { title: '首页' }
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home,
     meta: { title: '首页' }
@@ -52,7 +59,13 @@ const routes = [
     path: '/video',
     name: 'Video',
     component: Vid,
-    meta: { title: '视频中心' }
+    meta: { title: '视频中心' },
+    children: [{
+      path: '/video/:id',
+      name: 'vid',
+      component: () => import('../views/vid/child/Vid'),
+      meta: { title: '视频详情' }
+    }]
   },
   {
     path: '/about',

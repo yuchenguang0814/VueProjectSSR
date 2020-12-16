@@ -3,9 +3,9 @@
   <div class="main_cate">
   <div class="container" >
     <ul v-if="cateList !== false">
-        <li :class="`${item.cid === cid ? 'on': ''}`" v-for="item in cateList" :key="item.cid"><a :href="`/category/${item.cid}`"><img :src="`${$baseUrl + item.pageTitleImage}`">
+        <li :class="`${item.cid === cid ? 'on': ''}`" v-for="item in cateList" :key="item.cid"><router-link :to="`/category/${item.cid}`"><img :src="`${$baseUrl + item.pageTitleImage}`">
         <div class="bt"><span>{{item.pageName}}</span></div>
-        </a></li>
+        </router-link></li>
     </ul>
   </div>
 </div>
@@ -28,10 +28,25 @@ export default {
   components: {
     Mains
   },
-  created () {
-    getGoodsByCid({ id: this.cid }).then(res => {
-      this.productList = res.data.product
+  beforeRouteEnter (to, from, next) {
+    getGoodsByCid({ id: to.params.id }).then(res => {
+      next(vm => {
+        vm.changeProList()
+      })
     })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeProList()
+    }
+  },
+  methods: {
+    changeProList () {
+      getGoodsByCid({ id: this.cid }).then(res => {
+        this.productList = res.data.product
+      })
+    }
   },
   computed: {
     cateList () {

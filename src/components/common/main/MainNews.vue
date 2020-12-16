@@ -3,7 +3,7 @@
   <div class="container">
     <ul class="list_news">
       <li v-for="item in news" :key="item.id">
-        <a :href="`/news/${item.id}`">
+        <router-link :to="`/news/${item.id}`">
           <div class="date">{{item.createtime | yearFormat}}<em>{{item.createtime | monthFormat}}</em>{{item.createtime | hoursFormat}}</div>
             <div class="box"> <span>{{item.title}}</span>
               <div class="cs">
@@ -12,7 +12,7 @@
               </div>
               <p></p>
             </div>
-          </a>
+          </router-link>
         </li>
       </ul>
   </div>

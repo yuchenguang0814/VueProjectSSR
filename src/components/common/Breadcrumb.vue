@@ -3,9 +3,9 @@
     <div class="container">
     <p>您当前的位置:
       <span v-for="(item, index) in breadList" :key="index">
-        <a class="breadTitle" :href="item.path">
+        <router-link class="breadTitle" :to="item.path">
         <span>{{item.meta.title}}</span>
-      </a>
+      </router-link>
       <span v-show="index!=spnum">></span>
       </span>
     </p>
@@ -42,10 +42,8 @@ export default {
         matched = [{ path: '/home', meta: { title: '首页' } }].concat(matched)
       }
       this.breadList = matched
+      this.spnum = this.breadList.length - 1
     }
-  },
-  mounted () {
-    this.spnum = document.getElementsByClassName('breadTitle').length - 1
   },
   created () {
     this.getBreadcrumb()

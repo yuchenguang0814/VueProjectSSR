@@ -7,7 +7,7 @@
           <div class="text">{{nbanners.props.pageDescription}}</div>
         </div>
         <ul v-if="nbanners.props.child" class="tab">
-          <li v-for="item in nbanners.props.child" :key="item.id" :class="`${path == item.pagePath?'on':''}`"><a :href="item.pagePath">{{item.pageName}}</a></li>
+          <li v-for="item in nbanners.props.child" :key="item.id" :class="`${path == item.pagePath?'on':''}`"><router-link :to="item.pagePath">{{item.pageName}}</router-link></li>
         </ul>
         <div v-if="path.indexOf('/solution') != -1">
         <form-order></form-order>

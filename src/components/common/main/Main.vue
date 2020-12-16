@@ -3,10 +3,10 @@
   <div class="container">
     <ul class="list_case">
       <li v-for="item in List" :key="item.id">
-        <a :href="`/product/${item.id}`">
+        <router-link :to="`/product/${item.id}`">
         <div class="pic"><img :src="`${$baseUrl + item.image}`"></div>
         <div class="dt">{{item.name}}<slot name='dt1'></slot></div>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -35,7 +35,6 @@ export default {
     }
   },
   created () {
-    console.log(this.List)
   },
   data () {
     return {

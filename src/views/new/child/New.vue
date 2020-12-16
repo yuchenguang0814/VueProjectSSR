@@ -1,5 +1,5 @@
 <template>
-  <div class="view_news">
+  <div class="view_news" ref="viewNews">
   <div class="container">
     <div class="b_tit"> <span>{{newList.title}}</span>
       <div class="cs"><em>发布时间：{{newList.createtime | dateFormat}} {{newList.createtime | hoursFormat}}</em><em>作者：{{newList.author}}</em></div>
@@ -13,8 +13,8 @@
           {{newList.content}}
         </div>
         <ul class="prevnext">
-          <li><img src="~assets/image/icon_new_up.png">上一篇：<a :href="preNewList === '' ? 'javascript:void(0)': '/news/'+preNewList.id">{{preNewList === '' ? '没有了': preNewList.title}}</a></li>
-          <li><img src="~assets/image/icon_new_down.png">下一篇：<a :href="nextNewList === '' ? 'javascript:void(0)': '/news/'+nextNewList.id">{{nextNewList === '' ? '没有了': nextNewList.title}}</a></li>
+          <li><img src="~assets/image/icon_new_up.png">上一篇：<a href="javascript:void(0)"  v-if="preNewList === ''">没有了</a><router-link v-else :to=" `/news/${preNewList.id}`">{{preNewList.title}}</router-link></li>
+          <li><img src="~assets/image/icon_new_down.png">下一篇：<a href="javascript:void(0)" v-if="nextNewList === ''">没有了</a><router-link v-else :to=" `/news/${nextNewList.id}`">{{nextNewList.title}}</router-link></li>
         </ul>
         <div class="pd10">
         <main-mess id="tiao_mess"/>
@@ -51,22 +51,40 @@ export default {
       nextNewList: ''
     }
   },
-  created () {
-    getNew({ id: this.$route.params.id }).then(res => {
-      this.newList = res.data.new[0]
-      if (this.newList !== null) {
-        document.title = this.newList.title
-        document.querySelector('meta[name="keywords"]').setAttribute('content', this.newList.pageKey)
-        document.querySelector('meta[name="description"]').setAttribute('content', this.newList.pageDescription)
-      }
-      if (res.data.pre.length !== 0) {
-        this.preNewList = res.data.pre[0]
-      }
-      if (res.data.next.length !== 0) {
-        this.nextNewList = res.data.next[0]
-      }
-      console.log(res)
+  methods: {
+    changeNewList () {
+      getNew({ id: this.$route.params.id }).then(res => {
+        this.newList = res.data.new[0]
+        if (this.newList !== null) {
+          document.title = this.newList.title
+          document.querySelector('meta[name="keywords"]').setAttribute('content', this.newList.pageKey)
+          document.querySelector('meta[name="description"]').setAttribute('content', this.newList.pageDescription)
+        }
+        if (res.data.pre.length === 0) {
+          this.preNewList = ''
+        } else {
+          this.preNewList = res.data.pre[0]
+        }
+        if (res.data.next.length === 0) {
+          this.nextNewList = ''
+        } else {
+          this.nextNewList = res.data.next[0]
+        }
+      })
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    getNew({ id: to.params.id }).then(res => {
+      next(vm => {
+        vm.changeNewList()
+      })
     })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeNewList()
+    }
   }
 }
 

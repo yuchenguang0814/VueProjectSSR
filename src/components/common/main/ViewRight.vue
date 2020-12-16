@@ -121,4 +121,9 @@ export default {
 .box_xgboxr .picx li:hover .pic img {
     transform: scale(1.05)
 }
+@media (max-width:999px) {
+  .container .viewRight {
+    display: none;
+  }
+}
 </style>

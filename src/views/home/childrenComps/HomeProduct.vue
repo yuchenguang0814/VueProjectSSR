@@ -2,25 +2,25 @@
   <div class="product">
     <swiper v-show="!this.$store.state.isPc" class="category-swiper" ref="categorySwiper" :options="swiperOptions">
       <swiper-slide class="category-item" v-for="(item, index) in products.category" :key="item.id">
-        <a :href="`/category/${item.cid}`"><span>{{item.pageName}}</span>
+        <router-link :to="`/category/${item.cid}`"><span>{{item.pageName}}</span>
           <p>{{item.pageDescription}}</p>
           <p>{{index}}</p>
           <div class="box">
             <img :src="`${$baseUrl + item.pageTitleImage}`" class="p">
             <img :src="require(`@/assets/image/icon_num_${index + 1}.png`)" class="num">
           </div>
-          </a>
+          </router-link>
       </swiper-slide>
     </swiper>
     <div v-show="this.$store.state.isPc" class="product-category">
       <div class="ih-item circle effect3 right_to_left"  v-for="item in products.category" :key="item.id">
-        <a :href="`/category/${item.cid}`">
+        <router-link :to="`/category/${item.cid}`">
             <div class="img"><img :src="`${$baseUrl + item.pageTitleImage}`" alt="img"></div>
             <div class="info">
                 <h3>{{item.pageName}}</h3>
                 <p>{{item.pageDescription}}</p>
             </div>
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="product-container">
@@ -29,21 +29,21 @@
           <img src="~assets/image/tit_products.png">
           <div class="dt">
             <img src="~assets/image/tit_zs.png">
-            "广东顺发-起重机专业制造和服务供应商"
+            "{{this.$store.state.userList.companyName}}-起重机专业制造和服务供应商"
           </div>
           <div class="text">推荐设备：单梁起重机、双梁起重机、欧式起重机</div>
         </div>
         <div class="pro-item">
           <ul>
             <li v-for="item in products.product" :key="item.id">
-              <a :href="`/product/${item.id}`">
+              <router-link :to="`/product/${item.id}`">
                 <div class="pic"><img :src="`${$baseUrl + item.image}`"></div>
                 <span>{{item.name}}</span>
                 <div class="box">
                   <p><img src="~assets/image/icon_zdjl.png"><em>机器重量：</em>{{item.weight}}KG</p>
                   <p><img src="~assets/image/icon_scnl.png"><em>外形尺寸：</em>{{item.dimensions}}mm</p>
                 </div>
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>

@@ -5,7 +5,7 @@
       <div class="box">
         <div class="dt">创造客户价值 助力客户成功</div>
         <div class="text">
-          广东顺发凭借良好的声誉，优异的品质及完善的服务赢得世界点赞，在国内外众多企业大放异彩。
+          {{this.$store.state.userList.companyName}}凭借良好的声誉，优异的品质及完善的服务赢得世界点赞，在国内外众多企业大放异彩。
         </div>
       </div>
     </div>

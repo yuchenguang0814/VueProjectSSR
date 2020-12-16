@@ -16,3 +16,14 @@ export function getNew (id) {
     params: id
   })
 }
+export function getVideos () {
+  return request({
+    url: '/vids'
+  })
+}
+export function getVid (id) {
+  return request({
+    url: '/vid',
+    params: id
+  })
+}

@@ -26,7 +26,6 @@ export default {
     SwiperSlide
   },
   mounted () {
-    console.log(this.banners)
   },
   computed: {
     swiper () {
