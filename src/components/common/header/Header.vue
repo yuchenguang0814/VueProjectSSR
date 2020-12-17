@@ -3,9 +3,9 @@
     <div class="container">
       <!-- logo栏 -->
       <div class="logo">
-        <a href="#">
+        <router-link to="#">
           <img :src="`${$baseUrl + this.$store.state.userList.logo}`" alt="logo图">
-        </a>
+        </router-link>
       </div>
       <!-- 手机端小图标 -->
       <div class="navbut wap" @click="showNav($event)"></div>
@@ -19,8 +19,8 @@
               <router-link :to="item.pagePath">{{item.pageName}}</router-link>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub" v-show="item.id==isShow">
-                  <a :href="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
-                  </a>
+                  <router-link :to="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id">{{item2.pageName}}
+                  </router-link>
                 </div>
               </transition>
             </li>
@@ -34,13 +34,13 @@
         </div>
         <!-- 导航栏底部 -->
         <nav v-show="this.$store.state.isPc | showN !== false" id="nav">
-          <ul>
+          <ul v-if="navItem.length > 1">
             <li v-for="item in navItem" :key="item.id"  @mouseenter="showSub($event,item.id)" @mouseleave="hiddenSub($event)">
               <router-link :to="item.pagePath" @click.native="showN=false">{{item.pageName}}</router-link>
-              <i v-if="item.child.length>0" @click="showNsub($event,item.id)"></i>
+              <i class="navI" v-if="item.child.length>0" @click="showNsub($event,item.id)"></i>
               <transition name="fade">
                 <div v-if="item.child.length>0" class="sub"  v-show="item.id==isShow">
-                  <router-link :to="item2.pagePath" v-for="(item2) in item.child" :key="item2.id" @click.native="showN=false">{{item2.pageName}}
+                  <router-link :to="item.pageName === '产品中心'?'/category/'+item2.cid:item2.pagePath" v-for="(item2) in item.child" :key="item2.id" @click.native="showN=false">{{item2.pageName}}
                   </router-link>
                 </div>
               </transition>
@@ -85,10 +85,9 @@ export default {
   },
   watch: {
     screenWidth () {
-      console.log(this.screenWidth)
       if (this.screenWidth > 999) {
         document.getElementById('nav').style.display = 'block'
-      } else if (this.screenWidth <= 999) {
+      } else if (this.screenWidth <= 999 && this.$store.state.isPc) {
         document.getElementById('nav').style.display = 'none'
       }
     }
@@ -104,6 +103,9 @@ export default {
         this.isShow = -1
         e.target.className = ''
       } else {
+        if (document.getElementsByClassName('up')[0]) {
+          document.getElementsByClassName('up')[0].className = ''
+        }
         this.isShow = index
         e.target.className = 'up'
       }
@@ -124,9 +126,6 @@ export default {
       }
       this.showN = !this.showN
     }
-  },
-  beforeRouteEnter (to, from, next) {
-    console.log(to)
   },
   created () {
     this.screenWidth = document.body.clientWidth

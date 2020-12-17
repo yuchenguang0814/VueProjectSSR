@@ -7,24 +7,24 @@
         <div class="box_wenda">
           <div class="left">
             <div class="cate_tit">
-              <img src="http://qizhong114.com/static/home/img/icon_zxwd.png">
+              <img src="~assets/image/icon_zxwd.png">
               <span>最新问答</span>
               <a href="http://www.qizhong114.com/questions">查看全部问答
-              <img src="http://qizhong114.com/static/home/img/icon_jtr_s.png">
+              <img src="~assets/image//icon_jtr_s.png">
               </a>
             </div>
             <ul class="list_wenda">
               <li>
                 <div class="box">
-                  <div class="info ask"><img src="http://www.qizhong114.com/uploads/images/20200508/58acda9f469d616029c31d546a58920f.png">
+                  <div class="info ask"><img src="~assets/image/58acda9f469d616029c31d546a58920f.png">
                     <div class="n"></div>
                   </div>
                   <div class="text"> <a href="http://www.qizhong114.com/questions/235.html" class="bt"><span>游客 ：</span>桥式起重机是怎么组成和有什么特点呢？</a>
                     <div class="date">2020-07-07</div>
                   </div>
                   <div class="info answer">
-                    <div class="n">顺发起重技术工程师</div>
-                    <img src="http://www.qizhong114.com/uploads/images/20200707/262a67fda7b22603fc825f2ec4895370.png"></div>
+                    <div class="n">技术工程师</div>
+                    <img src="~assets/image/262a67fda7b22603fc825f2ec4895370.png"></div>
                   <div class="text">
                     <p></p>
                     <a href="http://www.qizhong114.com/questions/235.html" class="more">查看详细解答&gt;&gt;</a> </div>
@@ -32,7 +32,7 @@
               </li>
             </ul>
             <main-pages></main-pages>
-            <div class="cate_tit"><img src="http://qizhong114.com/static/home/img/icon_qbwd.png"><span>精彩问答</span><a href="http://www.qizhong114.com/questions">查看更多问答<img src="http://qizhong114.com/static/home/img/icon_jtr_s.png"></a></div>
+            <div class="cate_tit"><img src="~assets/image/icon_qbwd.png"><span>精彩问答</span><a href="http://www.qizhong114.com/questions">查看更多问答<img src="http://qizhong114.com/static/home/img/icon_jtr_s.png"></a></div>
             <div class="shabor">
               <ul class="list_wendajc">
                 <li><em>2020-07-20 18:08:30</em><a href="http://www.qizhong114.com/questions/300.html">单梁起重机的安全规定有哪些？</a></li>
@@ -46,45 +46,11 @@
             <div class="box_xgboxr">
               <div class="tit">我要提问</div>
               <div class="box">
-                <form action="http://www.qizhong114.com/form/wdliuyan" method="post" onsubmit="javascript:return messdd()">
-                  <ul class="form">
-                    <li>
-                      <select name="title" id="mess_type">
-                        <option value="">请输入您的问题分类 (必填项)</option>
-                        <option>桥式起重机</option>
-                        <option>门式起重机</option>
-                        <option>欧式起重机</option>
-                        <option>特殊定制起重机</option>
-                        <option>起重机配件</option>
-                        <option>更多设备</option>
-                      </select>
-                    </li>
-                    <li>
-                      <textarea name="body" id="mess_body" placeholder="请输入您的问题 (必填项)"></textarea>
-                    </li>
-                    <li>
-                      <input type="text" name="name" id="mess_name" placeholder="您的姓名或昵称 (必填项)" autocomplete="off">
-                    </li>
-                    <li>
-                      <input type="text" name="tel" id="mess_tel" placeholder="您的联系方式" autocomplete="off">
-                    </li>
-                    <li>
-                      <input type="submit" value="提交" id="mess_but">
-                    </li>
-                  </ul>
-                </form>
+                <form-order></form-order>
               </div>
             </div>
             <div class="all_pic"><img src="http://qizhong114.com/static/home/img/icon_line.png"></div>
-            <div class="box_rscont">
-              <div class="blue">
-                <p>想了解物料、产量、选型及本月优惠报价信息，欢迎您拨打我们的服务电话或者在线咨询获取！</p>
-                <div class="tel"><img src="http://qizhong114.com/static/home/img/icon_tel.png">
-                  <p>服务热线：86-<em>13929139265</em></p>
-                </div>
-              </div>
-              <a href="http://wpa.qq.com/msgrd?uin=980101050" class="kefu">在线咨询</a>
-            </div>
+            <view-right-cont></view-right-cont>
           </div>
         </div>
       </div>
@@ -94,9 +60,13 @@
 
 <script>
 import MainPages from 'components/common/main/MainPages'
+import ViewRightCont from 'components/common/main/ViewRightCont'
+import FormOrder from 'components/common/form/FormOrder'
 export default {
   components: {
-    MainPages
+    MainPages,
+    ViewRightCont,
+    FormOrder
   },
   data () {
     return {
@@ -131,6 +101,9 @@ export default {
 
 .box_wenda .left .cate_tit:first-of-type {
     margin-top: 0
+}
+.box_rscont:before {
+  opacity: 0;
 }
 .cate_tit {
     display: -webkit-box;
@@ -430,14 +403,17 @@ export default {
 .box_xgboxr .tjwz li:first-child {
     margin-top: 0
 }
-
-.box_xgboxr .form li {
-    margin-top: 10px
+.box_xgboxr .mess {
 }
 
-.box_xgboxr .form li input[type='text'],
-.box_xgboxr .form li textarea,
-.box_xgboxr .form li select {
+.box_xgboxr .mess li {
+    margin-top: 10px;
+    width: 100%
+}
+
+.box_xgboxr .mess li input[type='text'],
+.box_xgboxr .mess li textarea,
+.box_xgboxr .mess li select {
     width: 100%;
     border: 0;
     border-radius: 10px;
@@ -446,12 +422,12 @@ export default {
     background: #fff
 }
 
-.box_xgboxr .form li textarea {
+.box_xgboxr .mess li textarea {
     height: 120px
 }
 
-.box_xgboxr .form li input[type='submit'] {
-    width: 60%;
+.box_xgboxr .mess li input[type='submit'] {
+    width: 100%;
     border: 0;
     padding: 10px 0;
     margin-left: 20%;
@@ -466,7 +442,7 @@ export default {
     background: linear-gradient(to right, #8d224e, #244698)
 }
 
-.box_xgboxr .form li:first-child {
+.box_xgboxr .mess li:first-child {
     margin-top: 0
 }
 .all_pic {

@@ -1,13 +1,11 @@
 <template>
-  <mains></mains>
+<div>还没做</div>
 </template>
 
 <script>
-import Mains from 'components/common/main/Main'
 export default {
   name: '',
   components: {
-    Mains
   },
   data () {
     return {

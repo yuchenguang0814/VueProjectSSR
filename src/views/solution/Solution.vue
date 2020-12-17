@@ -1,21 +1,23 @@
 <template>
   <div class="solution">
-    <slot name="nb" :props="$store.getters.getPageNbanner" ></slot>
+    <slot name="nb" :props="nbanner" ></slot>
     <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/solution'" class="main_index">
   <div class="container">
-    <div class="btit"> <img src="http://www.qizhong114.com/static/home/img/icon_wl_jg.png">       <div class="box">
+    <div class="btit"> <img src="~assets/image/icon_wl_jg.png">
+      <div class="box">
         <div class="bt"><span>客户案例</span><em>免费设计方案</em></div>
         <div class="text">我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案</div>
       </div>
-      <a href="http://www.qizhong114.com/khal" class="more">更多客户案例<img src="http://www.qizhong114.com/static/home/img/icon_jtr_s.png"></a> </div>
-      <div class="topMain"><mains></mains></div>
-    <div class="btit"> <img src="http://www.qizhong114.com/static/home/img/icon_wl_jg.png">       <div class="box">
+      <router-link to="/solution/customer" class="more">更多客户案例<img src="~assets/image/icon_jtr_s.png"></router-link> </div>
+      <div class="topMain"><mains class="list" :List="industryList"></mains></div>
+    <div class="btit"> <img src="~assets/image/icon_wl_jg.png">
+      <div class="box">
         <div class="bt"><span>行业应用</span><em>覆盖350业务领域</em></div>
         <div class="text">{{this.$store.state.userList.companyName}}的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品。</div>
       </div>
-      <a href="http://www.qizhong114.com/wljg" class="more">更多行业应用<img src="http://www.qizhong114.com/static/home/img/icon_jtr_s.png"></a> </div>
-      <mains class="list"><div slot="dt1"><img src="http://www.qizhong114.com/static/home/img/icon_more.png">LH型双梁桥式起重机视频1121323</div></mains>
+      <router-link to="/solution/industry" class="more">更多行业应用<img src="~assets/image/icon_jtr_s.png"></router-link> </div>
+      <mains class="list" :List="industryList"><img slot="dt1" src="~assets/image/icon_more.png"></mains>
   </div>
 </div>
     <router-view v-else></router-view>
@@ -29,10 +31,46 @@ export default {
     Mains
   },
   data () {
-    return {}
+    return {
+      nbanner: {},
+      industryList: [{
+        id: 1,
+        image: '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg',
+        name: '测试客户案例'
+      }, {
+        id: 2,
+        image: '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg',
+        name: '测试客户案例2'
+      }, {
+        id: 3,
+        image: '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg',
+        name: '测试客户案例4'
+      }, {
+        id: 4,
+        image: '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg',
+        name: '测试客户案例4'
+      }]
+    }
   },
   created () {
-    this.$store.commit('getPath', this.$route.path)
+    this.changeNbanner()
+  },
+  methods: {
+    changeNbanner () {
+      this.$store.commit('getPath', this.$route.path)
+      this.nbanner = this.$store.getters.getPageNbanner
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.changeNbanner()
+    })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeNbanner()
+    }
   }
 }
 </script>
@@ -221,7 +259,7 @@ export default {
     margin-left: 3px;
     margin-top: -2px
   }
-  .solution .list_case li {
+  .solution .list_case li, .solution .topMain .list_case li {
   width: 50%;
 }
   .solution .nbanner form {

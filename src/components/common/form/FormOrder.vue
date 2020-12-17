@@ -1,47 +1,77 @@
 <template>
-<form action="">
+<form id="orderForm">
       <ul class="mess">
         <li>
-          <select name="scx">
-              <option value="选择您的行业范围">选择您的行业范围</option>
-              <option value="机械制造">机械制造</option>
-              <option value="金属加工">金属加工</option>
-              <option value="轨道交通">轨道交通</option>
-              <option value="冶金熔炼">冶金熔炼</option>
-              <option value="船舶重工">船舶重工</option>
-              <option value="汽车或零部件">汽车或零部件</option>
-              <option value="基础工程建设">基础工程建设</option>
-              <option value="造纸/纸浆">造纸/纸浆</option>
-              <option value="其它">其它</option>
+          <select id="mess_type" v-model="orderList.cid">
+            <option value="1" disabled selected >请选择您问题的分类</option>
+              <option
+              v-for="item in cateList"
+              :key="item.cid"
+              :label="item.pageName"
+              :value="item.cid"></option>
           </select>
         </li>
         <li>
-          <select name="wuliao">
-              <option value="选择起重机机型或重量">选择起重机机型或重量</option>
-              <option value="LD型电动单梁起重机">LD型电动单梁起重机（起重量：1t-16t)</option>
-              <option value="LH型双梁桥式起重机">LH型双梁桥式起重机（起重量：3t-32t)</option>
-              <option value="QD型通用桥式起重机">QD型通用桥式起重机（起重量：5t-250t)</option>
-              <option value="MH型单梁门式起重机">MH型单梁门式起重机（起重量：3t-16t)</option>
-              <option value="MHS型双梁门式起重机">MHS型双梁门式起重机（起重量：5t-32t)</option>
-              <option value="MG型通用门式起重机">MG型型通用门式起重机（起重量：5t-250t)</option>
-              <option value="其它">其它</option>
-          </select>
+          <textarea id="mess_body" placeholder="请输入您的问题 (必填项)" v-model="orderList.content"></textarea>
         </li>
         <li>
-          <input type="text" placeholder="您的姓名" name="title" id="dingzhi_name" autocomplete="off">
+          <input type="text" placeholder="您的姓名" v-model="orderList.name" id="dingzhi_name" autocomplete="off">
         </li>
         <li>
-          <input type="text" placeholder="您的电话" name="tel" id="dingzhi_tel" autocomplete="off">
+          <input type="text" placeholder="您的电话" v-model="orderList.phone"  id="dingzhi_tel" autocomplete="off">
         </li>
         <li>
-          <input type="submit" value="申请定制" id="dingzhi_but" @click="onSubmit()">
+          <input type="button" value="提交问题" id="dingzhi_but" @click="onSubmit()">
         </li>
       </ul>
     </form>
 </template>
 
 <script>
+import { addQuestion } from 'network/order'
 export default {
+  data () {
+    return {
+      value: '',
+      orderList: {
+        cid: '1',
+        name: '',
+        phone: '',
+        content: '',
+        isQusetion: 1
+      }
+    }
+  },
+  computed: {
+    cateList () {
+      const list = this.$store.state.pageList.filter(item => item.id === 1)
+      if (list[0]) {
+        return list[0].child
+      } else {
+        return false
+      }
+    }
+  },
+  methods: {
+    onSubmit () {
+      if (this.orderList.content === '') {
+        alert('请输入问题描述')
+      } else if (this.orderList.name === '') {
+        alert('请输入您的姓名')
+      } else if (this.orderList.phone === '') {
+        alert('请输入您的电话')
+      } else {
+        addQuestion(this.orderList).then(res => {
+          if (res.code === 200) {
+            this.orderList.content = ''
+            this.orderList.name = ''
+            this.orderList.phone = ''
+            alert('提交成功')
+          }
+        })
+      }
+    }
+  }
 }
 </script>
 
@@ -58,7 +88,8 @@ export default {
 }
 
  .mess li select,
- .mess li input[type='text'] {
+ .mess li input[type='text'],
+ .mess li textarea {
   border: 1px solid #7882a0;
   border-radius: 10px;
   padding: 15px 20px;
@@ -67,7 +98,9 @@ export default {
   width: 100%;
   background: #fff
 }
-
+ .mess li textarea {
+   height: 50px;
+ }
  .mess li select {
   -webkit-appearance: none;
   background: url(~assets/image/icon_jtb_s.png) no-repeat 94%;
@@ -78,7 +111,7 @@ export default {
   background: url(~assets/image/icon_xing.png) no-repeat 8px center
 }
 
- .mess li input[type='submit'] {
+ .mess li input[type='button'] {
   width: 100%;
   font-size: 16px;
   color: #fff;
@@ -93,7 +126,7 @@ export default {
   transition: all .5s
 }
 
- .mess li input[type='submit']:hover {
+ .mess li input[type='button']:hover {
   background: linear-gradient(to right, #1b2057, #8d224e)
 }
 

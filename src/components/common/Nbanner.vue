@@ -2,12 +2,14 @@
   <div v-if="nbanners.props !== undefined" class="nbanner" :style="`background-image: url(${$baseUrl + nbanners.props.pageImage});`">
     <div class="container">
       <div class="box">
-        <div class="in-tit"><img :src="nbanners.props.pageTitleImage">
+        <div class="in-tit"><img :src="require(`@/assets/image/${nbanners.props.pageTitleImage}.png`)">
           <div class="dt"><img src="~assets/image/tit_zs.png">{{this.$route.meta.title}}</div>
           <div class="text">{{nbanners.props.pageDescription}}</div>
         </div>
         <ul v-if="nbanners.props.child" class="tab">
-          <li v-for="item in nbanners.props.child" :key="item.id" :class="`${path == item.pagePath?'on':''}`"><router-link :to="item.pagePath">{{item.pageName}}</router-link></li>
+          <li v-for="item in nbanners.props.child" :key="item.id" :class="`${path == item.pagePath?'on':''}`">
+            <router-link :to="item.pagePath">{{item.pageName}}</router-link>
+          </li>
         </ul>
         <div v-if="path.indexOf('/solution') != -1">
         <form-order></form-order>

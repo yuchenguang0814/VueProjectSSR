@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot v-if="this.$route.params.id === undefined" name="nb" :props="$store.getters.getPageNbanner" ></slot>
+    <slot v-if="this.$route.params.id === undefined || nbanner !== undefined" name="nb" :props="nbanner" ></slot>
     <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/news'" class="box_news">
       <div class="container" v-if="newsList !== ''">
@@ -22,16 +22,32 @@ export default {
   data () {
     return {
       news: [],
-      newsList: {}
+      newsList: {},
+      nbanner: {}
     }
   },
   created () {
-    this.$store.commit('getPath', this.$route.path)
+    this.changeNbanner()
     getNews().then(res => {
       this.news = res.data.new
     })
   },
-  mounted () {
+  methods: {
+    changeNbanner () {
+      this.$store.commit('getPath', this.$route.path)
+      this.nbanner = this.$store.getters.getPageNbanner
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.changeNbanner()
+    })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeNbanner()
+    }
   }
 }
 </script>

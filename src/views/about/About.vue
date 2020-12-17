@@ -1,11 +1,11 @@
 <template>
 <div>
-  <slot name="nb" :props="$store.getters.getPageNbanner" >
+  <slot name="nb" :props="nbanner" >
   </slot>
   <slot name="crumb"></slot>
     <div v-if="this.$route.path == '/about'">
     <about-us></about-us>
-    <about-product></about-product>
+    <!-- <about-product></about-product> -->
     <about-cooperation></about-cooperation>
     </div>
   <router-view v-else>
@@ -15,28 +15,41 @@
 
 <script>
 import AboutUs from './childrenComps/AboutUs'
-import AboutProduct from './childrenComps/AboutProduct'
+// import AboutProduct from './childrenComps/AboutProduct'
 import AboutCooperation from './childrenComps/AboutCooperation'
 export default {
   name: '',
   components: {
     AboutUs,
-    AboutProduct,
+    // AboutProduct,
     AboutCooperation
   },
   computed: {
   },
   data () {
     return {
-
+      nbanner: {}
     }
   },
-  methods: {
-  },
   created () {
-    this.$store.commit('getPath', this.$route.path)
+    this.changeNbanner()
   },
-  mounted () {
+  methods: {
+    changeNbanner () {
+      this.$store.commit('getPath', this.$route.path)
+      this.nbanner = this.$store.getters.getPageNbanner
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.changeNbanner()
+    })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeNbanner()
+    }
   }
 }
 

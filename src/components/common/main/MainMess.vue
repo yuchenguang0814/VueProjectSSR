@@ -1,6 +1,6 @@
 <template>
   <div class="box_mess big">
-      <form action="http://www.qizhong114.com/form/zxly" method="post">
+      <form>
         <div class="box">
           <div class="bt">在线留言</div>
           <div class="text">您好！如果您对我们的产品感兴趣，留下您的需求，我们将及时给您回复！</div>
@@ -12,24 +12,56 @@
           </ul>
           <ul class="form">
             <li>
-              <input type="text" name="title" id="mess_name" placeholder="您的姓名" autocomplete="off">
+              <input type="text" id="mess_name" v-model="orderList.name"  placeholder="您的姓名" autocomplete="off">
             </li>
             <li>
-              <input type="text" name="tel" id="mess_tel" placeholder="您的电话" autocomplete="off">
+              <input type="text" id="mess_tel" v-model="orderList.phone" placeholder="您的电话" autocomplete="off">
             </li>
             <li>
-              <textarea name="body" id="mess_body" placeholder="请写下您的需求！如起重机类型、起升起重量、使用情况及要求等等！"></textarea>
+              <textarea id="mess_body" v-model="orderList.content" placeholder="请写下您的需求！如机器类型、重量、使用情况及要求等等！"></textarea>
             </li>
           </ul>
         </div>
-        <button type="submit" id="mess_but">提交</button>
+        <input type="button" value="提交" id="mess_but" @click="onSubmit()">
       </form>
     </div>
 </template>
 
 <script>
+import { addQuestion } from 'network/order'
 export default {
-
+  data () {
+    return {
+      orderList: {
+        cid: '1',
+        name: '',
+        phone: '',
+        content: '',
+        isQusetion: '0'
+      }
+    }
+  },
+  methods: {
+    onSubmit () {
+      console.log(1)
+      if (this.orderList.content === '') {
+        alert('请输入问题描述')
+      } else if (this.orderList.name === '') {
+        alert('请输入您的姓名')
+      } else if (this.orderList.phone === '') {
+        alert('请输入您的电话')
+      } else {
+        addQuestion(this.orderList).then(res => {
+          if (res.code === 200) {
+            this.orderList.content = ''
+            this.orderList.name = ''
+            this.orderList.phone = ''
+            alert('提交成功')
+          }
+        })
+      }
+    }
+  }
 }
 </script>
 
@@ -153,7 +185,7 @@ export default {
     width: 100%
 }
 
-.box_mess button {
+.box_mess input[type='button'] {
     text-align: center;
     background: #ba2f81;
     background: -webkit-linear-gradient(left, #ba2f81, #2748de);
@@ -173,7 +205,7 @@ export default {
     cursor: pointer
 }
 
-.box_mess button:after {
+.box_mess input[type='button']:after {
     background: url(~assets/image/icon_sub_jt.png) no-repeat;
     width: 46px;
     height: 46px;
@@ -212,12 +244,15 @@ export default {
 
     .box_mess .box .bq li {
         padding: 0 15px 0 10px;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 36px;
         margin-left: 10px;
         width: auto;
         margin-top: 10px
     }
+    .box_mess .box .bq li:first-child {
+    margin-left: 10px
+}
 
     .box_mess .box .bq li:before {
         width: 20px;
@@ -229,10 +264,6 @@ export default {
         width: 30px;
         height: 100%;
         right: -10px
-    }
-
-    .box_mess .box .bq li:first-child {
-        margin-left: 0
     }
 
     .box_mess .box .form {
@@ -264,7 +295,7 @@ export default {
         background-size: 20px 20px
     }
 
-    .box_mess button {
+    .box_mess input[type='button'] {
         border-width: 4px;
         bottom: -20px;
         height: 50px;
@@ -273,7 +304,7 @@ export default {
         font-size: 18px
     }
 
-    .box_mess button:after {
+    .box_mess input[type='button']:after {
         width: 26px;
         height: 26px;
         right: 10px

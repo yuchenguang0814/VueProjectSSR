@@ -6,8 +6,7 @@
     </home-product>
     <home-case :banners="caseBanners">
     </home-case>
-    <home-appointment>
-    </home-appointment>
+    <!-- <home-appointment/> -->
     <home-news :newsList="newsList"></home-news>
     <home-about></home-about>
   </div>
@@ -17,7 +16,7 @@
 import HomeSwiper from './childrenComps/HomeSwiper'
 import HomeProduct from './childrenComps/HomeProduct'
 import HomeCase from './childrenComps/HomeCase'
-import HomeAppointment from './childrenComps/HomeAppointment'
+// import HomeAppointment from './childrenComps/HomeAppointment'
 import HomeNews from './childrenComps/HomeNews'
 import HomeAbout from './childrenComps/HomeAbout'
 import { GetHomeMultidata } from 'network/home'
@@ -28,7 +27,7 @@ export default {
     HomeSwiper,
     HomeProduct,
     HomeCase,
-    HomeAppointment,
+    // HomeAppointment,
     HomeNews,
     HomeAbout
   },
