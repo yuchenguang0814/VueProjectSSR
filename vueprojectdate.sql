@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50726
+Source Server Version : 50715
 Source Host           : localhost:3306
 Source Database       : vueprojectdate
 
 Target Server Type    : MYSQL
-Target Server Version : 50726
+Target Server Version : 50715
 File Encoding         : 65001
 
-Date: 2020-12-17 15:54:34
+Date: 2020-12-17 23:09:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -146,9 +146,6 @@ INSERT INTO `news` VALUES ('3', '4', '11', '213', '3213', 'admin', '2020-12-14 1
 INSERT INTO `news` VALUES ('4', '3', '34', '34', '213', '3242', '2020-12-14 11:34:16', '23432');
 INSERT INTO `news` VALUES ('5', '3', '12', '32', '2', '232', '2020-12-14 11:34:12', '123');
 INSERT INTO `news` VALUES ('6', '3', '21', '423', '12', '213', '2020-12-14 11:34:12', '1231');
-INSERT INTO `news` VALUES ('7', '5', '21312', '123', '12312', 'admin', '2020-12-14 15:43:44', '<p>123123</p>');
-INSERT INTO `news` VALUES ('8', '5', '2', '123', '12312', 'admin', '2020-12-14 15:46:36', '<p>12312312</p>');
-INSERT INTO `news` VALUES ('9', '4', '11', '213', '123', 'admin', '2020-12-14 15:47:11', '<p>213</p>');
 
 -- ----------------------------
 -- Table structure for `orders`
@@ -238,12 +235,11 @@ CREATE TABLE `video` (
   `title` varchar(255) DEFAULT NULL,
   `pageKey` varchar(255) DEFAULT NULL,
   `pageDescription` varchar(255) DEFAULT NULL,
-  `createtime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of video
 -- ----------------------------
 INSERT INTO `video` VALUES ('1', 'n3212ocatx6', null, '测试视频1', '测试视频1', '这是测试视频1', '2020-12-16 15:00:23');
-INSERT INTO `video` VALUES ('2', 'l3212uy453l', null, '这是测试视频2', '测试视频2', '这是测试视频2', '2020-12-16 15:00:31');
