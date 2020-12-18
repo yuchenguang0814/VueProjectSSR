@@ -188,6 +188,14 @@ export default {
     content: '.'
 }
 @media (max-width: 999px) {
+    .list_video_wz .img {
+      width: 84px;
+      height: 84px;
+      position: absolute;
+      right: 50px;
+      top: 0px;
+      display: block;
+    }
   .box_video_li {
         margin-top: 20px
     }

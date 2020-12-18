@@ -17,9 +17,7 @@ const routes = [
   },
   {
     path: '/home',
-    name: 'Home',
-    component: Home,
-    meta: { title: '首页' }
+    redirect: '/'
   },
   {
     path: '/products',

@@ -6,3 +6,9 @@ export function addQuestion (data) {
     data: data
   })
 }
+export function getOrder (data) {
+  return request({
+    url: '/admin/orders',
+    params: data
+  })
+}

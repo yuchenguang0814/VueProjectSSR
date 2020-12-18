@@ -9,36 +9,33 @@
             <div class="cate_tit">
               <img src="~assets/image/icon_zxwd.png">
               <span>最新问答</span>
-              <a href="http://www.qizhong114.com/questions">查看全部问答
-              <img src="~assets/image//icon_jtr_s.png">
-              </a>
+              <router-link to="/question">查看全部问答
+              <img src="~assets/image/icon_jtr_s.png">
+              </router-link>
             </div>
             <ul class="list_wenda">
               <li>
-                <div class="box">
+                <div v-for="item in orderList" :key="item.id" class="box">
                   <div class="info ask"><img src="~assets/image/58acda9f469d616029c31d546a58920f.png">
                     <div class="n"></div>
                   </div>
-                  <div class="text"> <a href="http://www.qizhong114.com/questions/235.html" class="bt"><span>游客 ：</span>桥式起重机是怎么组成和有什么特点呢？</a>
-                    <div class="date">2020-07-07</div>
+                  <div class="text"> <router-link :to="`/question`" class="bt"><span>{{item.user}} ：</span>{{item.content}}</router-link>
+                    <div class="date">{{item.createtime | dateFormat}}</div>
                   </div>
                   <div class="info answer">
                     <div class="n">技术工程师</div>
                     <img src="~assets/image/262a67fda7b22603fc825f2ec4895370.png"></div>
                   <div class="text">
                     <p></p>
-                    <a href="http://www.qizhong114.com/questions/235.html" class="more">查看详细解答&gt;&gt;</a> </div>
+                    <router-link :to="`/question`" class="more">查看详细解答&gt;&gt;</router-link> </div>
                 </div>
               </li>
             </ul>
             <main-pages></main-pages>
-            <div class="cate_tit"><img src="~assets/image/icon_qbwd.png"><span>精彩问答</span><a href="http://www.qizhong114.com/questions">查看更多问答<img src="http://qizhong114.com/static/home/img/icon_jtr_s.png"></a></div>
+            <div class="cate_tit"><img src="~assets/image/icon_qbwd.png"><span>精彩问答</span><router-link to="~assets/image/icon_jtr_s.png"></router-link></div>
             <div class="shabor">
               <ul class="list_wendajc">
-                <li><em>2020-07-20 18:08:30</em><a href="http://www.qizhong114.com/questions/300.html">单梁起重机的安全规定有哪些？</a></li>
-                <li><em>2020-07-07 18:54:23</em><a href="http://www.qizhong114.com/questions/235.html">桥式起重机是怎么组成和有什么特点呢？</a></li>
-                <li><em>2020-05-08 11:56:00</em><a href="http://www.qizhong114.com/questions/28.html">这款单梁起重机的价格大概是多少？</a></li>
-                <li><em>2020-07-07 18:49:00</em><a href="http://www.qizhong114.com/questions/232.html">起重机的剩余寿命还有多少？</a></li>
+                <li v-for="item in answer" :key="item.id"><em>{{item.createtime | dateFormat}} {{item.createtime | hoursFormat}}</em><router-link :to="`/question`">{{item.content}}</router-link></li>
               </ul>
             </div>
           </div>
@@ -62,6 +59,7 @@
 import MainPages from 'components/common/main/MainPages'
 import ViewRightCont from 'components/common/main/ViewRightCont'
 import FormOrder from 'components/common/form/FormOrder'
+import { getOrder } from 'network/order'
 export default {
   components: {
     MainPages,
@@ -70,10 +68,42 @@ export default {
   },
   data () {
     return {
+      queryInfo: {
+        query: { id: -1 },
+        pagenum: 1,
+        pagesize: 5
+      },
+      nbanner: {},
+      orderList: []
     }
   },
-  mounted () {
-    this.$store.commit('getPath', this.$route.path)
+  computed: {
+    answer () {
+      return this.orderList.filter(item => item.isQusetion === 2)
+    }
+  },
+  created () {
+    this.changeNbanner()
+  },
+  methods: {
+    changeNbanner () {
+      this.$store.commit('getPath', this.$route.path)
+      this.nbanner = this.$store.getters.getPageNbanner
+      getOrder(this.queryInfo).then(res => {
+        this.orderList = res.data.order
+      })
+    }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.changeNbanner()
+    })
+  },
+  beforeRouteUpdate (to, from, next) {
+    if (to.fullPath !== from.fullPath) {
+      next()
+      this.changeNbanner()
+    }
   }
 }
 </script>

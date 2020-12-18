@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50715
+Source Server Version : 50726
 Source Host           : localhost:3306
 Source Database       : vueprojectdate
 
 Target Server Type    : MYSQL
-Target Server Version : 50715
+Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-12-17 23:09:42
+Date: 2020-12-18 15:23:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,9 +28,9 @@ CREATE TABLE `banners` (
 -- ----------------------------
 -- Records of banners
 -- ----------------------------
-INSERT INTO `banners` VALUES ('9', '/uploads/banner/5b6da22a89ba295068203d04364b0412[1]_2020_11_3_15_44.jpg');
 INSERT INTO `banners` VALUES ('7', '/uploads/banner/7c56292edf9dbeb802a34af3ddabc09d[1]_2020_11_3_15_42.jpg');
 INSERT INTO `banners` VALUES ('8', '/uploads/banner/e04854781d4f6794f54abfcff77e8e8f[1]_2020_11_3_15_43.jpg');
+INSERT INTO `banners` VALUES ('1', '/uploads/banner/5b6da22a89ba295068203d04364b0412[1]_2020_11_3_15_44.jpg');
 
 -- ----------------------------
 -- Table structure for `cases`
@@ -72,16 +72,16 @@ CREATE TABLE `category` (
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '5', '荣誉中心', '/about/honor', '/uploads/banner/pic_banner_project[1]_2020_11_3_15_14.jpg', 'tit_hongxing', '广东顺发起重设备有限公司长期与广大新老客户的合作中积累了丰富的经验，使得公司的产品在同行业中更具独特性，深受广大用户的青睐和好评，并在起重机行业中拥有最高级别的A级生产许可证，公司生产依据ISO9001质量控制体系对产品在其来料、加工过程、整机、出货各个环节严格把关，确保出货产品的性能和质量，多个产品系列已获得欧盟CE认证。经过多年发展公司已先后获“广东省著名商标”、“中国AAA级信用企业”、“中国行业十佳品牌”、“民营科技企业”等荣誉称号.', '荣誉中心');
-INSERT INTO `category` VALUES ('2', '5', '工厂实景', '/about/factory', '/uploads/banner/8e4dfed80f42cafb01259428a0a656e2[1]_2020_11_3_15_14.jpg', 'tit_materials', '广东顺发起重设备有限公司拥有多个大型标准生产车间，按起重机模块流水线生产布局，完全符合ISO国际标准，欧洲标准、中国标准。我们拥有包括40m数控火焰切割生产线，40m数控等离子切割系统、箱型梁成型生产线、多台龙门式自动埋弧焊系统、机器人焊接系统生产线(60m 10台)、整机预组装平台、整梁抛丸处理线等生产装备。', '工厂实景');
-INSERT INTO `category` VALUES ('3', '6', '企业新闻', '/news/companyNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '广东顺发起重设备有限公司是经国家质量监督检验检疫总局颁证认可的起重机制造生产厂家并提供安装、维修、保养为一体的专业性厂家。从1994年至今已有接近30年的起重机设计、制造、安装的丰富经验。', '企业新闻');
-INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '广东顺发起重设备有限公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻');
-INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '广东顺发起重设备有限公司是领先的起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献');
+INSERT INTO `category` VALUES ('1', '5', '荣誉中心', '/about/honor', '/uploads/banner/pic_banner_project[1]_2020_11_3_15_14.jpg', 'tit_hongxing', '公司与广大新老客户的合作中积累了丰富的经验，使得公司的产品在同行业中更具独特性，深受广大用户的青睐和好评，并在起重机行业中拥有最高级别的A级生产许可证，公司生产依据ISO9001质量控制体系对产品在其来料、加工过程、整机、出货各个环节严格把关，确保出货产品的性能和质量，多个产品系列已获得欧盟CE认证。经过多年发展公司已先后获“广东省著名商标”、“中国AAA级信用企业”、“中国行业十佳品牌”、“民营科技企业”等荣誉称号.', '荣誉中心');
+INSERT INTO `category` VALUES ('2', '5', '工厂实景', '/about/factory', '/uploads/banner/8e4dfed80f42cafb01259428a0a656e2[1]_2020_11_3_15_14.jpg', 'tit_materials', '公司拥有多个大型标准生产车间，按起重机模块流水线生产布局，完全符合ISO国际标准，欧洲标准、中国标准。我们拥有包括40m数控火焰切割生产线，40m数控等离子切割系统、箱型梁成型生产线、多台龙门式自动埋弧焊系统、机器人焊接系统生产线(60m 10台)、整机预组装平台、整梁抛丸处理线等生产装备。', '工厂实景');
+INSERT INTO `category` VALUES ('3', '6', '企业新闻', '/news/companyNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '公司是经国家质量监督检验检疫总局颁证认可的起重机制造生产厂家并提供安装、维修、保养为一体的专业性厂家。从1994年至今已有接近30年的起重机设计、制造、安装的丰富经验。', '企业新闻');
+INSERT INTO `category` VALUES ('4', '6', '行业新闻', '/news/industryNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '公司把“自主、创新，追求卓越”作为产品的价值核心，把“安全、有效解决问题”作为公司的义务，提供“提供超越顾客期望的起重机产品”，作为市场立足之本。希望通过不断学习和努力，促进公司的发展与进步，为社会创造价值。', '行业新闻');
+INSERT INTO `category` VALUES ('5', '6', '技术文献', '/news/literatureNews', '/uploads/banner/384e0bc58acadc57179f835caaca6453[1]_2020_11_3_15_15.jpg', 'tit_new', '公司是起重机专业制造和服务供应商，公司引进欧洲先进的起重机技术，集起重机研发、制造、销售、安装、维修保养服务于一体。我们拥有丰富行业经验的技术专家和专业的技术服务团队，为客户提供完善的售前、售后服务体系。', '技术文献');
 INSERT INTO `category` VALUES ('6', '2', '客户案例', '/solution/customer', '/uploads/banner/60ed40345c8cdf4a986ccd11aa085644[1]_2020_11_6_22_36.jpg', 'tit_case', '我们积累了丰富的实战经验，精于起重机设备的研发与制造，并为您提供合理的解决方案', '客户案例');
-INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', '/uploads/banner/4306d5f000d85d473e6aa31c4db00ecd[1]_2020_11_3_15_14.jpg', 'tit_materials', '广东顺发起重设备有限公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用');
+INSERT INTO `category` VALUES ('7', '2', '行业应用', '/solution/industry', '/uploads/banner/4306d5f000d85d473e6aa31c4db00ecd[1]_2020_11_3_15_14.jpg', 'tit_materials', '公司的起重机产品品种齐全，历经 30 年发展，公司产品遍布机械、冶金、电力、轻工、重工、化工、造纸、陶瓷、建材、钢铁加工、铁路水利、港口、物流、电子、汽车、造船、军工等行业。未来，将走进新能源、新材料、新动力汽车、轨道交通、海洋装备、环保、机器人、航空航天等新兴领域，为更多客户提供优质的起重机械产品.', '行业应用');
 INSERT INTO `category` VALUES ('10', '1', '立式包装机', '1', '/uploads/catespics/6bc1ee9c78692e41069f76b770c61a7a[1]_2020_11_3_15_20.jpg', '/uploads/catespics/3a1de072d4d508acfbab7c88355a34df[1]_2020_11_3_15_22.png', '立式包装机', '立式包装机');
 INSERT INTO `category` VALUES ('11', '1', '给袋式包装机', '2', '/uploads/catespics/8afc67a4c300483764e980db282b0bf9[1]_2020_11_3_15_24.jpg', '/uploads/catespics/be9bdcf680f71c6b65372d3c8683bd6b[1]_2020_11_3_15_23.png', '其他设备', '其他设备');
-INSERT INTO `category` VALUES ('14', '1', '更多设备', '5', '/uploads/catespics/0a7464a97119ef313f350b3de8af4cc1[1]_2020_11_3_15_25.jpg', '/uploads/catespics/72c5cf0880e1eb2cb1f224b18881d9d9[1]_2020_11_3_16_17.png', '这是更多设备', '更多设备');
+INSERT INTO `category` VALUES ('14', '1', '更多设备', '5', '/uploads/catespics/0a7464a97119ef313f350b3de8af4cc1[1]_2020_11_3_15_25.jpg', '/uploads/catespics/e35dab0d4c7539a17cbab1d5e2ec3933[1]_2020_11_3_15_24[1]_2020_11_5_10_26.png', '这是更多设备2321312', '更多设备11');
 INSERT INTO `category` VALUES ('12', '1', '真空包装机', '3', '/uploads/catespics/0a7464a97119ef313f350b3de8af4cc1[1]_2020_11_3_15_25.jpg', '/uploads/catespics/e35dab0d4c7539a17cbab1d5e2ec3933[1]_2020_11_3_15_24.png', '这是真空包装机', '真空包装机');
 INSERT INTO `category` VALUES ('13', '1', '其他设备', '4', '/uploads/catespics/daf4a06e7d2a132af37785659f5e8ea4[1]_2020_11_3_15_26.jpg', '/uploads/catespics/42759733207881cd800f6f12f12925d9[1]_2020_11_3_15_26.png', '这是其他设备', '其他设备');
 
@@ -104,22 +104,24 @@ CREATE TABLE `goods` (
   `pageTitle` varchar(255) DEFAULT NULL,
   `isHome` enum('否','是') NOT NULL DEFAULT '否' COMMENT '产品是否首页显示',
   `sort` int(11) NOT NULL DEFAULT '1' COMMENT '产品排序',
-  `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `vidurl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('1', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x1', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '1', '2020-12-09 15:40:39');
-INSERT INTO `goods` VALUES ('3', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x3', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '否', '2', '2020-12-09 15:40:38');
-INSERT INTO `goods` VALUES ('18', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机4', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '130', '1.2x2.2x4', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '3', '2020-12-09 15:40:37');
-INSERT INTO `goods` VALUES ('20', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机3', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '110', '1.5x2x4', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '4', '2020-12-09 15:40:01');
-INSERT INTO `goods` VALUES ('9', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', '<pre class=\"ql-syntax\" spellcheck=\"false\">&lt;table border=\"1\"&gt;\n	&lt;tbody&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;型 号&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;HY-DP3I1-120A&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;最大移动速度&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;X,Y=60m/min，Z=24m/min&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;工作范围&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;X,Y,Z=380.600.100&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;料罐数（只）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;3&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;单罐容积（L）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;120&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵排量（L/R）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;20&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵数量（只）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;3&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵转速（r/min）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;60-280&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵精度（%）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;0.5&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机混合轴转速（r/min）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;9400&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机清洗型式&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;自动&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机清洗周期连续浇筑计数（次）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;&amp;gt;80&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;最大吞吐量（G/S）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;130&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;工位数&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;60/80&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;制品特性&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;四色双密度&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;额定电压（V）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;400V 30-45A/50HZ&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;整机功率（KW）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;12KW&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;最大移动速度&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;2-4m/min&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;加速度&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;10m/s²&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;精度&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;&amp;lt;0.2mm(ISO 9283)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;分配程序&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;(60-80)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;电能&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;400V 30-45A/50HZ(60HZ)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;能量功能&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;20-40Kw&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;压缩空气供应&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;&amp;gt;5.5&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;压缩空气消耗&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;50-20 l/min&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;重量&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;25T&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n	&lt;/tbody&gt;\n&lt;/table&gt;\n</pre><p class=\"ql-indent-www这个是给袋式内容', '100', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '5', '2020-12-09 15:40:40');
-INSERT INTO `goods` VALUES ('15', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机1', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '150', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '6', '2020-12-09 15:40:40');
-INSERT INTO `goods` VALUES ('16', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '170', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '7', '2020-12-09 15:40:41');
-INSERT INTO `goods` VALUES ('17', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '180', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '8', '2020-12-09 15:40:43');
-INSERT INTO `goods` VALUES ('21', '8', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '55', '0.8x2x0.5', '1232131', '213123', '12312321', '否', '1', '2020-12-14 10:24:19');
+INSERT INTO `goods` VALUES ('1', '10', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', '<p>www这个是给袋式内容</p>', '120', '1.2x3x1', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '1', '2020-12-18 14:54:43', 'n3212ocatx6');
+INSERT INTO `goods` VALUES ('3', '10', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '120', '1.2x3x3', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '否', '2', '2020-12-18 11:44:25', 'n3212ocatx6');
+INSERT INTO `goods` VALUES ('18', '10', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机4', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '130', '1.2x2.2x4', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '3', '2020-12-18 11:44:34', 'n3212ocatx6');
+INSERT INTO `goods` VALUES ('20', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机3', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '110', '1.5x2x4', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '4', '2020-12-09 15:40:01', 'n3212ocatx6');
+INSERT INTO `goods` VALUES ('9', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', '<pre class=\"ql-syntax\" spellcheck=\"false\">&lt;table border=\"1\"&gt;\n	&lt;tbody&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;型 号&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;HY-DP3I1-120A&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;最大移动速度&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;X,Y=60m/min，Z=24m/min&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;工作范围&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;X,Y,Z=380.600.100&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;料罐数（只）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;3&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;单罐容积（L）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;120&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵排量（L/R）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;20&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵数量（只）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;3&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵转速（r/min）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;60-280&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;计量泵精度（%）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;0.5&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机混合轴转速（r/min）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;9400&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机清洗型式&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;自动&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;浇注机清洗周期连续浇筑计数（次）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;&amp;gt;80&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;最大吞吐量（G/S）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;130&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;工位数&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;60/80&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;制品特性&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;四色双密度&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;额定电压（V）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;400V 30-45A/50HZ&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;整机功率（KW）&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;p&gt;\n					&lt;span&gt;12KW&lt;/span&gt;&nbsp;\n				&lt;/p&gt;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;最大移动速度&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;2-4m/min&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;加速度&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;10m/s²&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;精度&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;&amp;lt;0.2mm(ISO 9283)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;分配程序&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;(60-80)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;电能&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;400V 30-45A/50HZ(60HZ)&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;能量功能&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;20-40Kw&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;压缩空气供应&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;&amp;gt;5.5&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;压缩空气消耗&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;50-20 l/min&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n		&lt;tr&gt;\n			&lt;td&gt;\n				&lt;span&gt;重量&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n			&lt;td&gt;\n				&lt;span&gt;25T&lt;br&gt;\n&lt;/span&gt;&nbsp;\n			&lt;/td&gt;\n		&lt;/tr&gt;\n	&lt;/tbody&gt;\n&lt;/table&gt;\n</pre><p class=\"ql-indent-www这个是给袋式内容', '100', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '5', '2020-12-09 15:40:40', null);
+INSERT INTO `goods` VALUES ('15', '12', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机1', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '150', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '6', '2020-12-09 15:40:40', null);
+INSERT INTO `goods` VALUES ('16', '14', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '170', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '7', '2020-12-18 11:44:31', null);
+INSERT INTO `goods` VALUES ('17', '13', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', 'LD型电动单梁起重机2', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '优点：订货周期短、经济实惠；\n缺点：有效起升高度相对较低，使用中晃动相对较大，工作级别低，不适用繁重车间', 'www这个是给袋式内容', '180', '11x11x11', 'LD型电动单梁起重机', '这是LD型电动单梁起重机', 'LD型电动单梁起重机', '是', '11', '2020-12-18 14:21:27', null);
+INSERT INTO `goods` VALUES ('21', '11', '/uploads/goodspics/4cd7cad7f1c8d459a1e282785bac489f[1]_2020_11_3_15_27.jpg', '给袋式包装机', '应用范围：多用于工厂、机械制造、装配、仓库等使用频度低起重量起吊次数少的场所', '1.这个是给带是包装机特点', 'www这个是给袋式内容', '55', '0.8x2x0.5', '1232131', '213123', '12312321', '否', '1', '2020-12-18 11:44:23', null);
+INSERT INTO `goods` VALUES ('22', '11', '/uploads/goodspics/xfjx_2020_11_5_14_56.jpg', '测试商品2', '', '', '<p>测试测试</p>', '13', '12x12x12', '测试', '测试', '测试', '是', '12', '2020-12-18 14:56:50', 'n3212ocatx6');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -140,12 +142,11 @@ CREATE TABLE `news` (
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO `news` VALUES ('1', '3', '112', '1', '123', '2212', '2020-12-14 11:34:14', '111');
-INSERT INTO `news` VALUES ('2', '4', '1', '2', '213', '22', '2020-12-14 11:34:13', '232133123131');
-INSERT INTO `news` VALUES ('3', '4', '11', '213', '3213', 'admin', '2020-12-14 11:34:13', '1213');
-INSERT INTO `news` VALUES ('4', '3', '34', '34', '213', '3242', '2020-12-14 11:34:16', '23432');
-INSERT INTO `news` VALUES ('5', '3', '12', '32', '2', '232', '2020-12-14 11:34:12', '123');
-INSERT INTO `news` VALUES ('6', '3', '21', '423', '12', '213', '2020-12-14 11:34:12', '1231');
+INSERT INTO `news` VALUES ('1', '3', '测试新闻1', '1', '123', '2212', '2020-12-14 11:34:14', '111');
+INSERT INTO `news` VALUES ('2', '4', '测试新闻2', '2', '213', '22', '2020-12-14 11:34:13', '232133123131');
+INSERT INTO `news` VALUES ('3', '4', '测试新闻3', '213', '3213', 'admin', '2020-12-14 11:34:13', '1213');
+INSERT INTO `news` VALUES ('4', '3', '测试新闻4', '34', '213', '3242', '2020-12-14 11:34:16', '23432');
+INSERT INTO `news` VALUES ('5', '3', '测试新闻5', '32', '2', '232', '2020-12-14 11:34:12', '123');
 
 -- ----------------------------
 -- Table structure for `orders`
@@ -157,20 +158,19 @@ CREATE TABLE `orders` (
   `content` varchar(255) DEFAULT NULL,
   `user` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
-  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isQusetion` int(2) NOT NULL DEFAULT '0',
+  `answerContent` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('1', null, '这是问题', '游客', '18968919292', '2020-12-17 15:07:07', '0');
-INSERT INTO `orders` VALUES ('2', '11', '213', '213', '213', '2020-12-17 15:22:18', '1');
-INSERT INTO `orders` VALUES ('3', '11', '213', '213', '213', '2020-12-17 15:22:18', '1');
-INSERT INTO `orders` VALUES ('4', '1', '', '', '', '2020-12-17 15:26:04', '1');
-INSERT INTO `orders` VALUES ('5', '1', '123', '123', '213', '2020-12-17 15:46:44', '0');
-INSERT INTO `orders` VALUES ('6', '1', '213123', '123', '123', '2020-12-17 15:47:51', '0');
+INSERT INTO `orders` VALUES ('1', '13', '这是问题', '游客', '18968919292', '2020-12-18 14:21:00', '1', null);
+INSERT INTO `orders` VALUES ('2', '11', '213', '213', '213', '2020-12-18 13:41:25', '2', '<p>123123</p>');
+INSERT INTO `orders` VALUES ('3', '11', '213', '213', '213', '2020-12-17 15:22:18', '1', null);
+INSERT INTO `orders` VALUES ('5', '12', '123', '123', '213', '2020-12-18 14:20:29', '2', '<p>回答</p>');
 
 -- ----------------------------
 -- Table structure for `page`
@@ -237,9 +237,11 @@ CREATE TABLE `video` (
   `pageDescription` varchar(255) DEFAULT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of video
 -- ----------------------------
-INSERT INTO `video` VALUES ('1', 'n3212ocatx6', null, '测试视频1', '测试视频1', '这是测试视频1', '2020-12-16 15:00:23');
+INSERT INTO `video` VALUES ('1', 'n3212ocatx6', '/uploads/newspics/615251_0[1]_2020_11_4_22_36.png', '测试视频122', '测试视频12', '这是测试视频1222', '2020-12-16 15:00:23');
+INSERT INTO `video` VALUES ('4', 'n3212ocatx6', '/uploads/newspics/615251_0[1]_2020_11_4_22_36.png', '测试', '测试', '测试', '2020-12-18 14:32:09');
+INSERT INTO `video` VALUES ('5', 'n3212ocatx6', '/uploads/newspics/615251_0[1]_2020_11_4_22_36.png', '测试2', '测试2', '测试2', '2020-12-18 14:32:31');

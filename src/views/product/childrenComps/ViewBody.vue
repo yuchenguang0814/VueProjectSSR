@@ -3,36 +3,40 @@
   <div class="container">
     <div class="bodyLeft">
       <div class="web_body">
-        <div class="top">
+        <div v-if="product.overView" class="top">
           <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="概述"/>
             <span>
               产品概述
             </span>
           </div>
           <div>{{product.overView}}</div>
-          <hr>
-          <div class="top">
+          <hr v-if="product.overView">
+          <div v-if="product.advantage" class="top">
           <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="特点"/>
             <span>
               产品特点
             </span>
           </div>
           <div>{{product.advantage}}</div>
-          <hr>
-          <div class="top">
+          <hr v-if="product.advantage">
+          <div v-if="product.content" class="top">
           <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="技术参数"/>
             <span>
               技术参数
             </span>
           </div>
-          <div>{{product.c_id}}</div>
-          <hr>
-          <div class="top">
+          <div>{{product.content}}</div>
+          <hr v-if="product.content">
+          <div v-if="product.vidurl" class="top">
           <img src="~assets/image/cd66cc8146bd85a9f1126be9422e285b.png" alt="产品视频"/>
             <span>
               产品视频
             </span>
           </div>
+          <div class="video">
+            <iframe frameborder="0" :src="`https://v.qq.com/txp/iframe/player.html?vid=${product.vidurl}`" allowFullScreen="true"></iframe>
+          </div>
+          <hr v-if="product.vidurl">
       </div>
       <div class="pd10">
         <main-mess id="tiao_mess"/>
@@ -79,6 +83,14 @@ export default {
 </script>
 
 <style>
+.video {
+  overflow: hidden
+}
+
+.video iframe {
+  width: 100%;
+  height: 600px;
+}
 .view_body {
   padding: 40px 0 60px 0
 }
@@ -142,6 +154,9 @@ export default {
     text-align: center;
 }
 @media (max-width: 999px) {
+  .video {
+    height: auto;
+  }
   .pd10 {
     padding: 0 10px;
   }

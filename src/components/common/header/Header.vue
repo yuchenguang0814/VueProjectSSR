@@ -45,7 +45,7 @@
                 </div>
               </transition>
             </li>
-            <li><a href="">英文</a></li>
+            <li><router-link to="/home"><img src="~assets/image/us.png" alt=""></router-link></li>
           </ul>
         </nav>
       </div>
