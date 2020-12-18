@@ -16,7 +16,7 @@
             </div>
             <span>{{item.title}}</span><em>了解更多+</em>
             </router-link>
-            <img src="../../../assets/image/pic_sip_four.png" :alt="item.title" class="img">
+            <img :src="`${$baseUrl + item.imgurl}`" class="img">
         </li>
       </ul>
     </div>

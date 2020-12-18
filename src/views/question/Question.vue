@@ -102,7 +102,7 @@ export default {
 .box_wenda .left .cate_tit:first-of-type {
     margin-top: 0
 }
-.box_rscont:before {
+.box_wenda .box_rscont:before {
   opacity: 0;
 }
 .cate_tit {

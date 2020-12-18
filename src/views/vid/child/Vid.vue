@@ -20,7 +20,7 @@
             <ul>
               <li v-for="item in vid" :key="item.id">
                 <router-link :to="`/video/${item.id}`">
-                  <div class="pic"><img :src="item.imgurl"><em></em></div>
+                  <div class="pic"><img :src="`${$baseUrl + item.imgurl}`"><em></em></div>
                   <div class="box"><span>{{item.title}}</span><em>123</em></div>
                 </router-link>
               </li>
@@ -219,18 +219,6 @@ export default {
 }
 .view_video .box_rscont {
   margin: -41px 0 0 14px
-}
-
-.view_video .box_rscont:before {
-  background: url(~assets/image/icon_zs.png) no-repeat;
-  background-size: 100% 100%;
-  width: 14px;
-  height: 41px;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -14px;
-  content: ""
 }
 
 .view_video .xgvideo {
