@@ -21,7 +21,7 @@
   </div>
   <ul class="fixed_kefu_wap wap">
       <li><a :href="`http://wpa.qq.com/msgrd?uin=${this.$store.state.userList.userQQ}`" target="_blank"><img src="~assets/image/icon_zx.png"><em>咨询客服</em></a></li>
-      <li><a :href="`86-${this.$store.state.userList.userPhone}`"><img src="~assets/image/icon_dh.png"><em>一键拨打</em></a></li>
+      <li><a :href="`tel:86-${this.$store.state.userList.userPhone}`"><img src="~assets/image/icon_dh.png"><em>一键拨打</em></a></li>
       <transition name="back"><li class="backtop" v-show="showTop"  @click="scrollTopfun"><img src="~assets/image/icon_mtop.png"></li></transition>
   </ul>
   </section>

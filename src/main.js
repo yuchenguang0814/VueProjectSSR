@@ -6,7 +6,7 @@ import 'swiper/css/swiper.css'
 import { GetSeoMultidata } from 'network/seo'
 
 Vue.config.productionTip = false
-Vue.prototype.$baseUrl = 'http://localhost:3000'
+Vue.prototype.$baseUrl = 'http://47.98.178.4:3000'
 
 Vue.filter('dateFormat', function (originVal) {
   const dt = new Date(originVal)

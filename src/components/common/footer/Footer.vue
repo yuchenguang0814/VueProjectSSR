@@ -13,7 +13,7 @@
   <div class="in_box">
     <div class="container">
       <ul class="box_dpxun">
-              <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/c728e8297c13173cd3ba5a597ac98b76.jpg"></a></li>
+              <!-- <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/c728e8297c13173cd3ba5a597ac98b76.jpg"></a></li>
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/8ee6b563ffc4170bb779a8a796bf1ee1.jpg"></a></li>
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/10ba92c1fe047cec1b6b3f58d5f4f820.jpg"></a></li>
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/657a109811615b7ddc9c45a394a714b4.jpg"></a></li>
@@ -26,12 +26,12 @@
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/46e25a68c983fedfc0297d6ff6540bed.jpg"></a></li>
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/aa950cb4d0e47c8d6ed57f3a8691e72f.jpg"></a></li>
               <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/ebd904d9f28a7d1cb3e6669ef7fa9efc.jpg"></a></li>
-              <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/8b3a5bbd9880bd9344eebe9ebea00b79.jpg"></a></li>
-            </ul>
+              <li><a href="javascript:;"><img src="http://www.qizhong114.com/uploads/images/20200608/8b3a5bbd9880bd9344eebe9ebea00b79.jpg"></a></li> -->
+      </ul>
     </div>
   </div>
   <div class="footer">
-    <div class="container">CopyRight {{this.$store.state.userList.companyName}} 版权所有 全国销售热线：86-{{this.$store.state.userList.userPhone}} {{this.$store.state.userList.name}}</div>
+    <div class="container">CopyRight {{this.$store.state.userList.companyName}} 版权所有 备案号:浙ICP备2020044382号 全国销售热线：86-{{this.$store.state.userList.userPhone}} {{this.$store.state.userList.name}}</div>
   </div>
 </footer>
 </template>

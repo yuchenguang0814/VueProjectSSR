@@ -1,14 +1,15 @@
 <template>
   <div class="main_pages">
-      <ul class="pagination">
+    <!-- 还未完善 -->
+      <!-- <ul class="pagination">
         <li class="disabled"><span>«</span></li>
         <li class="active"><span>1</span></li>
         <li><a href="?page=2">2</a></li>
         <li><a href="?page=3">3</a></li>
         <li><a href="?page=4">4</a></li>
         <li><a href="?page=2">»</a></li>
-        </ul>
-      </div>
+        </ul> -->
+  </div>
 </template>
 
 <script>

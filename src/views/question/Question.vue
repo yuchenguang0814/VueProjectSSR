@@ -14,8 +14,8 @@
               </router-link>
             </div>
             <ul class="list_wenda">
-              <li>
-                <div v-for="item in orderList" :key="item.id" class="box">
+              <li v-for="item in orderList" :key="item.id">
+                <div class="box">
                   <div class="info ask"><img src="~assets/image/58acda9f469d616029c31d546a58920f.png">
                     <div class="n"></div>
                   </div>
@@ -110,6 +110,7 @@ export default {
 
 <style>
 .main {
+  background: #f0f3fa;
   padding: 40px 0 60px 0
 }
 .in_box.news {
@@ -538,6 +539,7 @@ export default {
 }
 @media (max-width: 999px) {
   .main {
+    background: #f0f3fa;
     padding: 20px 0
   }
   .box_wenda .left {
